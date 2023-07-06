@@ -1,0 +1,12 @@
+/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/intelligent-service/src/main/java/com/loga/intelligentservice/vendor/io/OntoDB.java
+/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/intelligent-service/src/main/java/com/loga/intelligentservice/controller/IntelligenceController.java
+/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/intelligent-service/src/main/java/com/loga/intelligentservice/IntelligentService.java
+/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/intelligent-service/src/main/java/com/loga/intelligentservice/service/IntelligenceService.java
+/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/intelligent-service/src/main/java/com/loga/intelligentservice/vendor/config/App.java
+/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/intelligent-service/src/main/java/com/loga/intelligentservice/service/IIntelligenceService.java
+/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/intelligent-service/src/main/java/com/loga/intelligentservice/vendor/io/Logger.java
+/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/intelligent-service/src/main/java/com/loga/intelligentservice/app/api/JenaAPI.java
+/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/intelligent-service/src/main/java/com/loga/intelligentservice/vendor/security/Crypto.java
+/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/intelligent-service/src/main/java/com/loga/intelligentservice/vendor/config/DateTimeConfig.java
+/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/intelligent-service/src/main/java/com/loga/intelligentservice/vendor/io/ExceptionWriter.java
+/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/intelligent-service/src/main/java/com/loga/intelligentservice/app/factory/Diagnosis.java

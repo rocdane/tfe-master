@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e45b2ae2-dcf1-4e0e-b2e4-26fe16c029c4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../intelligent-service/psql.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../monitoring-service/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/vendor/config/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/vendor/config/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/vendor/io/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/vendor/io/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/authentication-management-services-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/authentication-management-services-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/AuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/app/api/IntelligentServiceProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/controller/AuthenticationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/controller/IntelligentServiceProxyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/entity/AuthSession.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/entity/Log.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/repository/AuthSessionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/repository/LogRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/service/Authenticate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/service/Authentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/service/IAuthenticate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/config/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/config/DateTimeConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/config/Loader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/io/Database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/io/FileUploadResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/logging/ExceptionWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/logging/Logger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/security/Crypto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../monitoring-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.loga.microservices.ams.AuthenticationManagementServicesApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.loga.microservices.ams.AuthenticationManagementServicesApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/loga/microservices/ams/AuthenticationManagementServicesApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/vendor/config/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/vendor/config/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/vendor/io/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/vendor/io/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/config/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/config/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/io/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/io/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway-server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/psql.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/psql.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/automaintongologie.owl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/IntelligentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/app/api/JenaAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/app/factory/Diagnosis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/controller/IntelligenceController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/service/IIntelligenceService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/service/IntelligenceService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/vendor/config/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/vendor/config/DateTimeConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/vendor/io/ExceptionWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/vendor/io/Logger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/vendor/io/OntoDB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/vendor/security/Crypto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/intelligent-service-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/intelligent-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/surefire-reports/2023-06-06T12-16-28_714-jvmRun1.dump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/test-classes/com/loga/intelligentservice/IntelligentServiceTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/vendor/config/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/vendor/config/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../naming-server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../naming-server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../naming-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../naming-server/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/master" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="85d895bb-07a1-4070-8261-e8a490f273e2" />
+        <option name="url" value="https://github.com/rocdane/loga.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2P1IkdjhpljyQxlkQYACxwItISB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/authentication-service/Dockerfile&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/loga/microservices" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Docker.authentication-service">
+    <configuration name="authentication-service" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.loga.microservices.ams.AuthenticationService" />
+      <module name="authentication-management-service" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="authentication-service" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="authentication-service" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="authentication-service" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="install" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="authentication-service" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="tfe-master:authentication-service" />
+          <option name="attachToContainerNeeded" value="true" />
+          <option name="containerName" value="authentication-service" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8001" />
+                <option name="hostIp" value="127.0.0.1" />
+                <option name="hostPort" value="8001" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="commandLineOptions" value="--hostname &quot;authentication-service&quot; --rm --kernel-memory 50M --memory-reservation 500M" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.authentication-service" />
+      <item itemvalue="Docker.authentication-service" />
+      <item itemvalue="Maven.authentication-service" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e45b2ae2-dcf1-4e0e-b2e4-26fe16c029c4" name="Changes" comment="" />
+      <created>1682618306435</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682618306435</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
