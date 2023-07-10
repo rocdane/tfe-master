@@ -37,7 +37,7 @@ public class ReceptionController implements Initializable
     List<Notice> list_etat = new ArrayList<>();
     AtomicInteger rowNbr;
     List<Factor> list_factor = new ArrayList<>();
-    List allDossier = new ArrayList<>();
+    List<Dossier> allDossier = new ArrayList<>();
     long dossierID, receptionID;
 
     String etat111 = "OK",etat112="OK",etat113="OK",etat114="OK",etat115="OK",etat116="OK",etat117="OK",etat221="OK",etat222="OK",etat223="OK",etat224="OK",etat225="OK",

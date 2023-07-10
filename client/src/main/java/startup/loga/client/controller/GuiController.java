@@ -51,9 +51,6 @@ public class GuiController implements Initializable
     private AnchorPane content;
 
     @FXML
-    private Text navigation;
-
-    @FXML
     private ProgressIndicator progress_indicator;
 
     @FXML
@@ -188,15 +185,13 @@ public class GuiController implements Initializable
         };
 
         load.stateProperty().addListener((ObservableValue<? extends Worker.State> observableValue, Worker.State oldValue, Worker.State newValue) -> {
-            switch (newValue){
-                case FAILED:
-                case CANCELLED:
+            switch (newValue) {
+                case FAILED, CANCELLED -> {
                     AlertWarning.getInstance().setHeaderText("Fermeture de session");
                     AlertWarning.getInstance().setContentText("Opération avortée !!!");
                     AlertWarning.getInstance().showAndWait();
-                    break;
-                case SUCCEEDED:
-                    View.show(FxmlView.LOGIN);
+                }
+                case SUCCEEDED -> View.show(FxmlView.LOGIN);
             }
         });
 

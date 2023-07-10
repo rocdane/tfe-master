@@ -18,7 +18,7 @@ public class AuthPortal extends HttpRequestHelper {
     }
 
     public Client update(User user, Long id) throws IOException, InterruptedException {
-        return (Client) request("/authentication-service/update/"+id,"POST",user, User.class);
+        return (Client) request("/authentication-service/update/"+id,"PUT",user, User.class);
     }
 
     public void logout(String token) throws IOException, InterruptedException {

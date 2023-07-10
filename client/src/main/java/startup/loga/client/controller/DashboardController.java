@@ -252,12 +252,10 @@ public class DashboardController implements Initializable{
         };
 
         load.stateProperty().addListener((ObservableValue<? extends Worker.State> observableValue, Worker.State oldValue, Worker.State newValue) -> {
-            switch (newValue){
-                case FAILED:
-                case CANCELLED:
-                case SUCCEEDED:
-                    Popup.getInstance().hide();
-                    //GuiController.getInstance().setProgress(false);
+            switch (newValue) {
+                case FAILED, CANCELLED, SUCCEEDED -> Popup.getInstance().hide();
+
+                //GuiController.getInstance().setProgress(false);
             }
         });
 

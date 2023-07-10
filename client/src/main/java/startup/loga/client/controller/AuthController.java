@@ -96,21 +96,20 @@ public class AuthController implements Initializable {
         };
 
         load.stateProperty().addListener((ObservableValue<? extends Worker.State> observableValue, Worker.State oldValue, Worker.State newValue) -> {
-            switch (newValue){
-                case FAILED:
+            switch (newValue) {
+                case FAILED -> {
                     loader.setVisible(false);
                     AlertError.getInstance().setHeaderText("Ouverture de session");
                     AlertError.getInstance().setContentText("Nom d'utilisateur / mot de passe incorrect ou utilisateur non autorisé!!!");
                     AlertError.getInstance().showAndWait();
-                    break;
-                case CANCELLED:
+                }
+                case CANCELLED -> {
                     loader.setVisible(false);
                     AlertWarning.getInstance().setHeaderText("Ouverture de session");
                     AlertWarning.getInstance().setContentText("Opération avortée!!!");
                     AlertWarning.getInstance().showAndWait();
-                    break;
-                case SUCCEEDED:
-                    View.show(FxmlView.MAIN);
+                }
+                case SUCCEEDED -> View.show(FxmlView.MAIN);
             }
         });
 
@@ -173,6 +172,5 @@ public class AuthController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 }

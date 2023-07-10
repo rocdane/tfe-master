@@ -327,17 +327,14 @@ public class ClientController implements Initializable
     public Tab getTab(int i) {
         Tab tab = null;
         switch (i) {
-            case 1: {
+            case 1 -> {
                 tab = tabNew;
-                break;
             }
-            case 2: {
+            case 2 -> {
                 tab = tabList;
-                break;
             }
-            case 3: {
+            case 3 -> {
                 tab = tabDetail;
-                break;
             }
         }
         return tab;
@@ -384,12 +381,10 @@ public class ClientController implements Initializable
         };
 
         load.stateProperty().addListener((ObservableValue<? extends Worker.State> observableValue, Worker.State oldValue, Worker.State newValue) -> {
-            switch (newValue){
-                case FAILED:
-                case CANCELLED:
-                case SUCCEEDED:
-                    Popup.getInstance().hide();
-                    //GuiController.getInstance().setProgress(false);
+            switch (newValue) {
+                case FAILED, CANCELLED, SUCCEEDED -> Popup.getInstance().hide();
+
+                //GuiController.getInstance().setProgress(false);
             }
         });
 

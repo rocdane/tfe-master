@@ -12,6 +12,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.8.2</junit.version>
+        <start-class>startup.loga.client.Main</start-class>
     </properties>
 
     <dependencies>
@@ -70,9 +71,13 @@
                 <version>0.0.8</version>
                 <executions>
                     <execution>
-                        <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
+                            <archive>
+                                <manifest>
+                                    <mainClass>startup.loga.client/startup.loga.client.Main</mainClass>
+                                </manifest>
+                            </archive>
                             <mainClass>startup.loga.client/startup.loga.client.Main</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
@@ -86,6 +91,9 @@
                                     <artifactId>lombok</artifactId>
                                 </exclude>
                             </excludes>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
                         </configuration>
                     </execution>
                 </executions>

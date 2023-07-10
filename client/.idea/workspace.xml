@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c8c6a4f-f30a-4310-8dde-920cd0febf4c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../authentication-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/controller/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/controller/RepairController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/controller/RepairController.java" afterDir="false" />
-    </list>
+    <list default="true" id="3c8c6a4f-f30a-4310-8dde-920cd0febf4c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,23 +34,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "/home/rochdane/IdeaProjects/WORKSHOP/Project/LOGA/client/src/main/java/startup/loga/client/controller/RepairController.java",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/rochdane/IdeaProjects/WORKSHOP/Project/LOGA/client/src/main/java/startup/loga/client/controller/RepairController.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon" />
@@ -83,7 +79,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Docker.client">
+  <component name="RunManager" selected="Maven.client [clean,install]">
     <configuration name="client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="startup.loga.client.Main" />
       <module name="client" />

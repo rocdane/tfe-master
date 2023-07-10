@@ -1,5 +1,5 @@
 # Sujet
-Système de gestion de la maintenance automobile et prototype d'un système d'aide au diagnostic automobile. [infos](https://github.com/rocdane/loga-project)
+Système de gestion de la maintenance automobile et prototype d'un système d'aide au diagnostic automobile. [infos](https://github.com/rocdane/tfe-master)
 
 ## Description
 La maintenance automobile est un domaine du secteur de l’automobile qui a pour but de gérer les services d’entretien et de réparation des véhicules automobile. Les garagistes, acteurs de ce domaine, font face à certaines difficultés liés à la gestion des maintenances.
@@ -88,8 +88,6 @@ Dans le cadre du travail de fin d'étude pour l'obtention du diplôme de Master 
 ### Interfaces
 #### Menu principal
 ![IHM ACCUEIL](media/ihm/ihm-accueil.png)
-#### Menu Atelier
-![IHM ACCUEIL ATELIER](media/ihm/ihm-accueil-atelier.png)
 #### Tableau de bord
 ![IHM DASHBOARD](media/ihm/ihm-dashboard.png)
 #### Interface de gestion des automobiles

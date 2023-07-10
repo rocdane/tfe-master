@@ -22,7 +22,7 @@ public abstract class HttpRequestHelper {
     private final Gson GSON;
 
     public HttpRequestHelper(){
-        this.BASE_URL = "http://localhost:8765/gateway-server";
+        this.BASE_URL = "http://localhost:8765";
         this.GSON = new Gson().newBuilder()
                 .setPrettyPrinting()
                 .create();
@@ -35,8 +35,8 @@ public abstract class HttpRequestHelper {
 
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod(method);
-            httpURLConnection.setRequestProperty("content-type", "application/json");
-            httpURLConnection.setRequestProperty("accept", "application/json");
+            httpURLConnection.setRequestProperty("Content-Type", "application/json");
+            httpURLConnection.setRequestProperty("Accept", "application/json");
             //httpURLConnection.setRequestProperty("partner-token", "37e1155b3299479a9865959887e9e848");
             //httpURLConnection.setRequestProperty("authorization", "Basic ZGI0YWVhZGQtNGI1NS00NjYwLWI1ZWUtMTk5MzI3NDRlOGNk");
             httpURLConnection.setConnectTimeout(5000);
