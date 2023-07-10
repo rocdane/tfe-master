@@ -11,12 +11,12 @@ public class ReportPortal extends HttpRequestHelper {
     private final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public void report(String src) throws IOException, InterruptedException {
-        byte[] doc = request("/loga/report/"+src);
+        byte[] doc = request("/report-service/"+src);
         writeOut(doc,src+sdf.format(new Date()));
     }
 
     public void reportById(String src, Long id) throws IOException, InterruptedException {
-        byte[] doc = request("/loga/report/"+src+"/"+id);
+        byte[] doc = request("/report-service/"+src+"/"+id);
         writeOut(doc,src+sdf.format(new Date()));
     }
 

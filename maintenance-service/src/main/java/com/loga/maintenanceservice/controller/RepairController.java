@@ -33,14 +33,9 @@ public class RepairController {
         return repairReparation.findRepair(id);
     }
 
-    @GetMapping(path = "/repairs/all", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/repairs", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Repair> read(){
         return repairReparation.listRepair();
-    }
-
-    @GetMapping(path = "/repairs/periods", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Repair> read(@RequestBody Date start, @RequestBody Date end){
-        return repairReparation.listRepair(start,end);
     }
 
     @GetMapping(path = "/repairs/reference/{reference}", produces = MediaType.APPLICATION_JSON_VALUE)

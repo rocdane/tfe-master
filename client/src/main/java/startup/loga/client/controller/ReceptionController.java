@@ -22,18 +22,14 @@ import startup.loga.client.view.AlertInfo;
 
 import java.io.IOException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import static java.lang.System.exit;
 
 public class ReceptionController implements Initializable
 {
     private static ReceptionController instance;
     private final DossierPortal dossierPortal;
     private final ReceptionPortal receptionPortal;
-    private final ResourcePortal resourcePortal;
     private final DiagnosticPortal diagnosticPortal;
     private final ReportPortal reportPortal;
     private static Set<String> dysfunctions, maintenances;
@@ -41,7 +37,6 @@ public class ReceptionController implements Initializable
     List<Notice> list_etat = new ArrayList<>();
     AtomicInteger rowNbr;
     List<Factor> list_factor = new ArrayList<>();
-    List<Profile> allProfile = new ArrayList<>();
     List allDossier = new ArrayList<>();
     long dossierID, receptionID;
 
@@ -476,9 +471,9 @@ public class ReceptionController implements Initializable
     @FXML
     private AnchorPane newTabContent;
     @FXML
-    private ComboBox<Profile> diagnostic_profile;
+    private TextField diagnostic_profile;
     @FXML
-    private ComboBox<Profile> reception_profile;
+    private TextField reception_profile;
     @FXML
     private ComboBox<Dossier> reception_dossier;
     @FXML
@@ -520,8 +515,8 @@ public class ReceptionController implements Initializable
             diagnosis.setMileage(Integer.parseInt(diagnostic_mileage.getText().trim()));
             diagnosis.setDossier(diagnostic_dossier.getValue());
 
-            if(!diagnostic_profile.getSelectionModel().isEmpty())
-                diagnosis.setProfile(diagnostic_profile.getValue());
+            if(!diagnostic_profile.getText().isEmpty())
+                diagnosis.setProfile(diagnostic_profile.getText().trim());
 
             diagnosis.setFactors(list_factor);
 
@@ -713,8 +708,8 @@ public class ReceptionController implements Initializable
         if(!etat8.getText().isEmpty())
             reception.setDescription(etat8.getText());
 
-        if(!reception_profile.getEditor().getText().isEmpty())
-            reception.setProfile(reception_profile.getValue());
+        if(!reception_profile.getText().isEmpty())
+            reception.setProfile(reception_profile.getText().trim());
 
         if(!reception_mileage.getText().isEmpty())
             reception.setMileage(Integer.parseInt(reception_mileage.getText().trim()));
@@ -734,7 +729,7 @@ public class ReceptionController implements Initializable
 
             if(AlertConfirm.getInstance().showAndWait().get().equals(ButtonType.OK)){
                 diagnostic_mileage.setText(String.valueOf(reception.getMileage()));
-                diagnostic_profile.setValue(reception.getProfile());
+                diagnostic_profile.setText(reception.getProfile());
                 diagnostic_dossier.setValue(reception.getDossier());
                 selectTab(2);
             }else {
@@ -779,36 +774,6 @@ public class ReceptionController implements Initializable
         });
         SortedList<Dossier> sorted = new SortedList<>(items);
         reception_dossier.setItems(FXCollections.observableArrayList(sorted));
-    }
-
-    @FXML
-    void search_profile_diagnostic(KeyEvent event){
-        FilteredList<Profile> items = new FilteredList<>(FXCollections.observableArrayList(allProfile));
-        items.setPredicate(item ->{
-            String lower = diagnostic_profile.getEditor().getText().toLowerCase();
-            String upper = diagnostic_profile.getEditor().getText().toUpperCase();
-            if(item.getSurname().contains(lower) || item.getName().contains(lower))
-                return true;
-            else
-                return item.getSurname().contains(upper) || item.getName().contains(upper);
-        });
-        SortedList<Profile> sorted = new SortedList<>(items);
-        diagnostic_profile.setItems(FXCollections.observableArrayList(sorted));
-    }
-
-    @FXML
-    void search_profile_reception(KeyEvent event){
-        FilteredList<Profile> items = new FilteredList<>(FXCollections.observableArrayList(allProfile));
-        items.setPredicate(item ->{
-            String lower = reception_profile.getEditor().getText().toLowerCase();
-            String upper = reception_profile.getEditor().getText().toUpperCase();
-            if(item.getSurname().contains(lower) || item.getName().contains(lower))
-                return true;
-            else
-                return item.getSurname().contains(upper) || item.getName().contains(upper);
-        });
-        SortedList<Profile> sorted = new SortedList<>(items);
-        reception_profile.setItems(FXCollections.observableArrayList(sorted));
     }
 
     @FXML
@@ -1929,7 +1894,6 @@ public class ReceptionController implements Initializable
         instance = this;
         this.dossierPortal = new DossierPortal();
         this.receptionPortal = new ReceptionPortal();
-        this.resourcePortal = new ResourcePortal();
         this.diagnosticPortal = new DiagnosticPortal();
         this.reportPortal = new ReportPortal();
         maintenances = new HashSet<>();
@@ -1945,8 +1909,6 @@ public class ReceptionController implements Initializable
 
         getDossiers();
 
-        getProfiles();
-
         factor_entity.setItems(FXCollections.observableArrayList(Entity.values()));
 
         column_factor_entity.setCellValueFactory((TableColumn.CellDataFeatures<Factor, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getEntity()));
@@ -1958,48 +1920,6 @@ public class ReceptionController implements Initializable
                 if (tab.getTabPane().getSelectionModel().getSelectedIndex() == 2) {
                     readAll();
                 }
-            }
-        });
-
-        diagnostic_profile.setConverter(new StringConverter<Profile>() {
-            @Override
-            public String toString(Profile object) {
-                if(object==null){
-                    return null;
-                }
-                return object.getName()+" "+object.getSurname();
-            }
-
-            @Override
-            public Profile fromString(String string) {
-                String[] data = string.split(" ");
-                String name = data[0].trim();
-                String surname = data[0].trim();
-                FilteredList<Profile> items = new FilteredList<>(FXCollections.observableArrayList(allProfile));
-                items.setPredicate(item -> item.getName().contains(name) && item.getSurname().contains(surname));
-                SortedList<Profile> sorted = new SortedList<>(items);
-                return sorted.get(0);
-            }
-        });
-
-        reception_profile.setConverter(new StringConverter<Profile>() {
-            @Override
-            public String toString(Profile object) {
-                if(object==null){
-                    return null;
-                }
-                return object.getName()+" "+object.getSurname();
-            }
-
-            @Override
-            public Profile fromString(String string) {
-                String[] data = string.split(" ");
-                String name = data[0].trim();
-                String surname = data[0].trim();
-                FilteredList<Profile> items = new FilteredList<>(FXCollections.observableArrayList(allProfile));
-                items.setPredicate(item -> item.getName().contains(name) && item.getSurname().contains(surname));
-                SortedList<Profile> sorted = new SortedList<>(items);
-                return sorted.get(0);
             }
         });
 
@@ -2096,16 +2016,6 @@ public class ReceptionController implements Initializable
         }
         diagnostic_dossier.setItems(FXCollections.observableArrayList(this.allDossier));
         reception_dossier.setItems(FXCollections.observableArrayList(this.allDossier));
-    }
-
-    public void getProfiles(){
-        try {
-            this.allProfile = resourcePortal.list();
-        } catch (IOException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        reception_profile.setItems(FXCollections.observableArrayList(allProfile));
-        diagnostic_profile.setItems(FXCollections.observableArrayList(allProfile));
     }
 
     public static void addDysfunction(String dysfunction){

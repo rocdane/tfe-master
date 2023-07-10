@@ -92,10 +92,11 @@
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </GridPane.margin>
                                     </TextField>
-                                    <ComboBox fx:id="reception_profile" editable="true" onKeyReleased="#search_profile_reception" prefHeight="40.0" prefWidth="1000.0" promptText="Technicien">
+                                    <TextField fx:id="reception_profile" prefHeight="40.0" promptText="Technicien">
                                        <GridPane.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                       </GridPane.margin></ComboBox>
+                                       </GridPane.margin>
+                                    </TextField>
                                  </children>
                               </GridPane>
                               <GridPane fx:id="reception_auto_form111" prefHeight="65.0" prefWidth="770.0">
@@ -1968,11 +1969,11 @@
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </GridPane.margin>
                                     </TextField>
-                                    <ComboBox fx:id="diagnostic_profile" editable="true" onKeyReleased="#search_profile_diagnostic" prefHeight="40.0" prefWidth="1000.0" promptText="Technicien">
+                                    <TextField fx:id="diagnostic_profile" prefHeight="40.0" promptText="Technicien">
                                        <GridPane.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </GridPane.margin>
-                                    </ComboBox>
+                                    </TextField>
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

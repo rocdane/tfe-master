@@ -17,7 +17,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.util.StringConverter;
 import startup.loga.client.app.api.DossierPortal;
 import startup.loga.client.app.api.RepairPortal;
-import startup.loga.client.app.api.ResourcePortal;
 import startup.loga.client.model.*;
 import startup.loga.client.vendor.io.Money;
 import startup.loga.client.vendor.io.NumberToWords;
@@ -33,15 +32,12 @@ import java.util.*;
 
 public class RepairController implements Initializable {
 
-    private final ResourcePortal resourcePortal;
     private final RepairPortal repairPortal;
     private final DossierPortal dossierPortal;
 
     Dossier currentDossier;
 
     Repair currentRepair;
-
-    List<Profile> allProfile = new ArrayList<>();
 
     List<Dossier> allDossier = new ArrayList<>();
 
@@ -54,8 +50,6 @@ public class RepairController implements Initializable {
     private List<Task> temp_tasks = new ArrayList<>();
 
     private List<Spare> spares = new ArrayList<>();
-
-    private List<Article> articles = new ArrayList<>();
 
     private List<Task> tasks = new ArrayList<>();
 
@@ -109,10 +103,10 @@ public class RepairController implements Initializable {
     private TextField new_repair_mileage;
 
     @FXML
-    private ComboBox<Article> new_spare_designation;
+    private ComboBox<Spare> new_spare_designation;
 
     @FXML
-    private ComboBox<Profile> new_repair_profile;
+    private TextField new_repair_profile;
 
     @FXML
     private TextField new_spare_price;
@@ -178,10 +172,10 @@ public class RepairController implements Initializable {
     private TextArea edit_repair_description;
 
     @FXML
-    private TextField repair_reference;
+    private ComboBox<Spare> edit_spare_designation;
 
-   @FXML
-    private ComboBox<Article> edit_spare_designation;
+    @FXML
+    private TextField repair_reference;
 
     @FXML
     private TextField edit_spare_price;
@@ -358,7 +352,7 @@ public class RepairController implements Initializable {
             repair.setDossier(new_repair_dossier.getValue());
             repair.setDescription(new_repair_description.getText().trim());
             repair.setMileage(Integer.parseInt(new_repair_mileage.getText().trim()));
-            repair.setProfile(new_repair_profile.getValue());
+            repair.setProfile(new_repair_profile.getText().trim());
 
             try {
                 repairPortal.create(repair);
@@ -503,7 +497,7 @@ public class RepairController implements Initializable {
 
     @FXML
     void new_search_article(KeyEvent event) {
-        FilteredList<Article> items = new FilteredList<>(FXCollections.observableArrayList(articles));
+        FilteredList<Spare> items = new FilteredList<>(FXCollections.observableArrayList(spares));
         items.setPredicate(item ->{
             String lower = new_spare_designation.getEditor().getText().toLowerCase();
             String upper = new_spare_designation.getEditor().getText().toUpperCase();
@@ -512,7 +506,7 @@ public class RepairController implements Initializable {
             else
                 return item.getDesignation().contains(upper);
         });
-        SortedList<Article> sorted = new SortedList<>(items);
+        SortedList<Spare> sorted = new SortedList<>(items);
         new_spare_designation.setItems(sorted);
     }
 
@@ -594,7 +588,7 @@ public class RepairController implements Initializable {
 
     @FXML
     void ordre_search_article(KeyEvent event) {
-        FilteredList<Article> items = new FilteredList<>(FXCollections.observableArrayList(articles));
+        FilteredList<Spare> items = new FilteredList<>(FXCollections.observableArrayList(spares));
         items.setPredicate(item ->{
             String lower = edit_spare_designation.getEditor().getText().toLowerCase();
             String upper = edit_spare_designation.getEditor().getText().toUpperCase();
@@ -603,7 +597,7 @@ public class RepairController implements Initializable {
             else
                 return item.getDesignation().contains(upper);
         });
-        SortedList<Article> sorted = new SortedList<>(items);
+        SortedList<Spare> sorted = new SortedList<>(items);
         edit_spare_designation.setItems(sorted);
     }
 
@@ -683,22 +677,6 @@ public class RepairController implements Initializable {
         });
         SortedList<Repair> sorted = new SortedList<>(items);
         edit_repair.setItems(sorted);
-    }
-
-    @FXML
-    void search_profile_new_reparation(KeyEvent event){
-        FilteredList<Profile> items = new FilteredList<>(FXCollections.observableArrayList(allProfile));
-        items.setPredicate(item ->{
-            String lower = new_repair_profile.getEditor().getText().toLowerCase();
-            String upper = new_repair_profile.getEditor().getText().toUpperCase();
-            if(item.getName().contains(lower) || item.getSurname().contains(lower)){
-                return true;
-            }else{
-                return item.getSurname().contains(upper) || item.getName().contains(upper);
-            }
-        });
-        SortedList<Profile> sorted = new SortedList<>(items);
-        new_repair_profile.setItems(sorted);
     }
 
     @FXML
@@ -829,7 +807,7 @@ public class RepairController implements Initializable {
     }
 
     void read_article(){
-        //todo:this.articles = marketStockService.listerArticle();
+        //todo:this.articles = marketStockService.listerSpare();
         //new_spare_designation.setItems(FXCollections.observableArrayList(articles));
         //edit_spare_designation.setItems(FXCollections.observableArrayList(articles));
     }
@@ -841,15 +819,6 @@ public class RepairController implements Initializable {
     void read_tache(){
         //todo:this.taches = tacheRepository.find();
         //new_task_description.setItems(FXCollections.observableArrayList(tasks));
-    }
-
-    void read_profile(){
-        try {
-            this.allProfile = resourcePortal.list();
-        } catch (IOException | InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        new_repair_profile.setItems(FXCollections.observableArrayList(allProfile));
     }
 
     void read_dossier() {
@@ -969,7 +938,6 @@ public class RepairController implements Initializable {
     public RepairController(){
         this.repairPortal = new RepairPortal();
         this.dossierPortal = new DossierPortal();
-        this.resourcePortal = new ResourcePortal();
     }
 
     @Override
@@ -980,8 +948,6 @@ public class RepairController implements Initializable {
         this.totalTask = 0.0;
 
         read_dossier();
-
-        read_profile();
 
         read_article();
 
@@ -1000,7 +966,7 @@ public class RepairController implements Initializable {
         column_repair_description.setCellValueFactory((TableColumn.CellDataFeatures<Repair, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getDescription()));
         column_repair_dossier.setCellValueFactory((TableColumn.CellDataFeatures<Repair, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getDossier().getAutomobile().getNumber()));
         column_repair_mileage.setCellValueFactory((TableColumn.CellDataFeatures<Repair, Integer> r)->new ReadOnlyObjectWrapper<>(r.getValue().getMileage()));
-        column_repair_profile.setCellValueFactory((TableColumn.CellDataFeatures<Repair, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getProfile().getSurname()+" "+r.getValue().getProfile().getName()));
+        column_repair_profile.setCellValueFactory((TableColumn.CellDataFeatures<Repair, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getProfile()));
 
         column_new_spare_designation.setCellValueFactory((TableColumn.CellDataFeatures<Spare, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getDesignation()));
         column_new_spare_price.setCellValueFactory((TableColumn.CellDataFeatures<Spare, Float> r)->new ReadOnlyObjectWrapper<>(r.getValue().getPrice()));
@@ -1023,27 +989,6 @@ public class RepairController implements Initializable {
         column_edit_task_hourly.setCellValueFactory((TableColumn.CellDataFeatures<Task, Float> r)->new ReadOnlyObjectWrapper<>(r.getValue().getHourly()));
         column_edit_task_rate.setCellValueFactory((TableColumn.CellDataFeatures<Task, Float> r)->new ReadOnlyObjectWrapper<>(r.getValue().getRate()));
         column_edit_task_cost.setCellValueFactory((TableColumn.CellDataFeatures<Task, Float> r)->new ReadOnlyObjectWrapper<>(r.getValue().getCost()));
-
-        new_repair_profile.setConverter(new StringConverter<Profile>() {
-            @Override
-            public String toString(Profile object) {
-                if(object==null){
-                    return null;
-                }
-                return object.getSurname()+" "+object.getName();
-            }
-
-            @Override
-            public Profile fromString(String string) {
-                String[] data = string.split("\\s");
-                String id = data[0].trim();
-                try {
-                   return resourcePortal.read(Long.parseLong(id));
-                } catch (IOException | InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
 
         new_repair_dossier.setConverter(new StringConverter<Dossier>() {
             @Override
@@ -1129,16 +1074,16 @@ public class RepairController implements Initializable {
             }
         });
 
-        new_spare_designation.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Article>() {
+        new_spare_designation.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Spare>() {
             @Override
-            public void changed(ObservableValue<? extends Article> observable, Article oldValue, Article newValue) {
+            public void changed(ObservableValue<? extends Spare> observable, Spare oldValue, Spare newValue) {
                 new_spare_price.setText(String.valueOf(newValue.getPrice()));
             }
         });
 
-        edit_spare_designation.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Article>() {
+        edit_spare_designation.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Spare>() {
             @Override
-            public void changed(ObservableValue<? extends Article> observable, Article oldValue, Article newValue) {
+            public void changed(ObservableValue<? extends Spare> observable, Spare oldValue, Spare newValue) {
                 edit_spare_price.setText(String.valueOf(newValue.getPrice()));
             }
         });

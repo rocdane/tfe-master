@@ -3,7 +3,6 @@ module startup.loga.client {
     requires javafx.fxml;
     requires java.net.http;
     requires com.google.gson;
-    requires unirest.java;
 
     opens startup.loga.client.controller to javafx.fxml;
     opens startup.loga.client.model to com.google.gson;

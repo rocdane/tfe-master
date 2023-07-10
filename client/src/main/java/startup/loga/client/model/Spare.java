@@ -11,10 +11,6 @@ public class Spare implements Serializable, Item
     private Float price;
     private Integer quantity;
     private Float amount;
-    private Boolean isOrdered = false;
-    private Boolean delivered = false;
-    private Order order;
-    private Delivery delivery;
     private Repair repair;
 
     public Spare() {
@@ -58,38 +54,6 @@ public class Spare implements Serializable, Item
 
     public void setAmount(Float amount) {
         this.amount = amount;
-    }
-
-    public Boolean getOrdered() {
-        return isOrdered;
-    }
-
-    public void setOrdered(Boolean ordered) {
-        isOrdered = ordered;
-    }
-
-    public Boolean getDelivered() {
-        return delivered;
-    }
-
-    public void setDelivered(Boolean delivered) {
-        this.delivered = delivered;
-    }
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
-    public Delivery getDelivery() {
-        return delivery;
-    }
-
-    public void setDelivery(Delivery delivery) {
-        this.delivery = delivery;
     }
 
     public Repair getRepair() {

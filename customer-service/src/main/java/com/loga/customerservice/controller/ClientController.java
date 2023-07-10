@@ -36,7 +36,7 @@ public class ClientController {
         }
     }
 
-    @GetMapping(path = "/clients/details/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/clients/name/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Client readByName(@PathVariable String name){
         Client client = manageClient.findClient(name);
         if(client==null){

@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
-<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -14,7 +13,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -202,7 +200,11 @@
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </GridPane.margin>
                                     </TextField>
-                                    <ComboBox fx:id="new_repair_profile" editable="true" onKeyReleased="#search_profile_new_reparation" prefHeight="40.0" prefWidth="1000.0" promptText="Technicien" />
+                                    <TextField fx:id="new_repair_profile" prefHeight="40.0" promptText="Technicien">
+                                       <GridPane.margin>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </GridPane.margin>
+                                    </TextField>
                                  </children>
                                  <VBox.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -779,108 +781,6 @@
                   </ImageView>
                </graphic>
                   </Tab>
-            <Tab fx:id="tab_controle_qualite" disable="true" text="Contrôle Qualité">
-              <content>
-                <AnchorPane>
-                     <children>
-                        <VBox fx:id="reception_form_content" spacing="25.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
-                           <children>
-                              <GridPane fx:id="reception_auto_form">
-                                 <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="786.0" minWidth="0.0" percentWidth="20.0" prefWidth="257.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="984.0" minWidth="10.0" percentWidth="50.0" prefWidth="522.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="984.0" minWidth="10.0" percentWidth="15.0" prefWidth="371.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="984.0" minWidth="10.0" percentWidth="15.0" prefWidth="371.0" />
-                                 </columnConstraints>
-                                 <rowConstraints>
-                                    <RowConstraints vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="213.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-                                 </rowConstraints>
-                                 <children>
-                                    <Label text="Sélectionner la réparation" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                                    <ComboBox fx:id="ordre_reparation" editable="true" onKeyReleased="#ordre_reparation" prefHeight="35.0" prefWidth="931.0" promptText="Entrer l'immatriculation pour trouver la réparation" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                                    <Button mnemonicParsing="false" onAction="#add_qualite" prefHeight="40.0" prefWidth="278.0" text="Enregistrer" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                       <GridPane.margin>
-                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                       </GridPane.margin>
-                                       <padding>
-                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                       </padding>
-                                       <graphic>
-                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../assets/img/icon/ico-save.PNG" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                    </Button>
-                                    <Button mnemonicParsing="false" onAction="#cancel_qualite" prefHeight="40.0" prefWidth="281.0" text="Annuler" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                       <GridPane.margin>
-                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                       </GridPane.margin>
-                                       <padding>
-                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                       </padding>
-                                       <graphic>
-                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../assets/img/icon/ico-cancel.PNG" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                    </Button>
-                                 </children>
-                              </GridPane>
-                              <Accordion>
-                                <panes>
-                                  <TitledPane animated="false" text="Véhicule au sol">
-                                    <content>
-                                      <AnchorPane />
-                                    </content>
-                                  </TitledPane>
-                                  <TitledPane animated="false" text="Compartiment moteur">
-                                    <content>
-                                      <AnchorPane />
-                                    </content>
-                                  </TitledPane>
-                                  <TitledPane animated="false" text="Véhicule complètement soulevé">
-                                    <content>
-                                      <AnchorPane />
-                                    </content>
-                                  </TitledPane>
-                                    <TitledPane animated="false" text="Véhicule à demi soulevé">
-                                      <content>
-                                        <AnchorPane />
-                                      </content>
-                                    </TitledPane>
-                                    <TitledPane animated="false" text="Vérifications finales">
-                                      <content>
-                                        <AnchorPane />
-                                      </content>
-                                    </TitledPane>
-                                    <TitledPane animated="false" text="Essai routier">
-                                      <content>
-                                        <AnchorPane />
-                                      </content>
-                                    </TitledPane>
-                                </panes>
-                                 <VBox.margin>
-                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                 </VBox.margin>
-                              </Accordion>
-                           </children>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
-              </content>
-               <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/img/icon/ico-quality.PNG" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Tab>
               </tabs>
               <opaqueInsets>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

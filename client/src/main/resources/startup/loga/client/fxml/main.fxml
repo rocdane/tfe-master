@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressIndicator?>
@@ -26,85 +25,6 @@
                <children>
                   <HBox alignment="CENTER" spacing="100.0">
                      <children>
-                        <VBox alignment="CENTER" styleClass="menu-atelier" stylesheets="@../assets/css/style.css">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ATELIER" textAlignment="CENTER">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                              </Text>
-                              <Button id="menu-atelier" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#menu_atelier" styleClass="btn-menu" stylesheets="@../assets/css/style.css">
-                                 <graphic>
-                                    <Label alignment="CENTER" contentDisplay="TOP" prefHeight="200.0" prefWidth="200.0">
-                                       <graphic>
-                                          <ImageView id="ico-atelier" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="ico">
-                                             <image>
-                                                <Image url="@../assets/img/icon/ico-home.PNG" />
-                                             </image>
-                                             <viewport>
-                                                <Rectangle2D />
-                                             </viewport>
-                                          </ImageView>
-                                       </graphic>
-                                    </Label>
-                                 </graphic>
-                              </Button>
-                           </children>
-                           <HBox.margin>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </HBox.margin>
-                        </VBox>
-                        <VBox alignment="CENTER" disable="true" prefHeight="270.0" prefWidth="215.0" styleClass="fx-tab-agenda" stylesheets="@../assets/css/style.css">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AGENDA" textAlignment="CENTER" wrappingWidth="204.13671875">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                              </Text>
-                              <Button id="menu-agenda" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#menu_atelier_agenda" prefHeight="200.0" prefWidth="200.0" styleClass="btn-menu" stylesheets="@../assets/css/style.css">
-                                 <graphic>
-                                    <Label contentDisplay="TOP">
-                                       <graphic>
-                                          <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../assets/img/main/agenda.PNG" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                    </Label>
-                                 </graphic>
-                              </Button>
-                           </children>
-                        </VBox>
-                        <VBox alignment="CENTER" prefHeight="270.0" prefWidth="215.0" styleClass="fx-tab-stock" stylesheets="@../assets/css/style.css">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="STOCK" textAlignment="CENTER" wrappingWidth="204.13671875">
-                                 <font>
-                                    <Font size="36.0" />
-                                 </font>
-                              </Text>
-                              <Button id="menu-stock" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#menu_atelier_stock" prefHeight="200.0" prefWidth="200.0" styleClass="btn-menu" stylesheets="@../assets/css/style.css">
-                                 <graphic>
-                                    <Label contentDisplay="TOP">
-                                       <graphic>
-                                          <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../assets/img/main/stock.PNG" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                    </Label>
-                                 </graphic>
-                              </Button>
-                           </children>
-                        </VBox>
-                     </children>
-                     <opaqueInsets>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </opaqueInsets>
-                  </HBox>
-                  <HBox alignment="CENTER" spacing="100.0">
-                     <children>
                         <VBox alignment="CENTER" prefHeight="220.0" prefWidth="215.0" styleClass="fx-tab-reception">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ADMIN">
@@ -127,20 +47,20 @@
                               </Button>
                            </children>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="270.0" prefWidth="215.0" styleClass="fx-tab-profil" stylesheets="@../assets/css/style.css">
+                        <VBox alignment="CENTER" styleClass="fx-tab-client" stylesheets="@../assets/css/style.css">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PROFIL" textAlignment="CENTER" wrappingWidth="204.13671875">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CLIENT">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
                               </Text>
-                              <Button id="menu-profil" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#menu_atelier_profil" prefHeight="200.0" prefWidth="200.0" styleClass="btn-menu" stylesheets="@../assets/css/style.css">
+                              <Button id="menu-client" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#menu_client" styleClass="btn-menu" stylesheets="@../assets/css/style.css">
                                  <graphic>
-                                    <Label contentDisplay="TOP">
+                                    <Label alignment="CENTER" contentDisplay="TOP" prefHeight="200.0" prefWidth="200.0">
                                        <graphic>
                                           <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../assets/img/main/profil.png" />
+                                                <Image url="@../assets/img/main/client.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -149,20 +69,93 @@
                               </Button>
                            </children>
                         </VBox>
-                        <VBox alignment="CENTER" prefHeight="270.0" prefWidth="215.0" styleClass="fx-tab-agenda" stylesheets="@../assets/css/style.css">
+                        <VBox alignment="CENTER" styleClass="fx-tab-reception" stylesheets="@../assets/css/style.css">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TRESOR" textAlignment="CENTER" wrappingWidth="204.13671875">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RECEPTION">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
                               </Text>
-                              <Button id="menu-finance" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#menu_atelier_tresor" prefHeight="200.0" prefWidth="200.0" styleClass="btn-menu" stylesheets="@../assets/css/style.css">
+                              <Button id="menu-reception" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#menu_reception" styleClass="btn-menu" stylesheets="@../assets/css/style.css">
+                                 <graphic>
+                                    <Label alignment="CENTER" contentDisplay="TOP" prefHeight="200.0" prefWidth="200.0">
+                                       <graphic>
+                                          <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/main/reception.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="100.0">
+                     <children>
+                        <VBox alignment="CENTER" styleClass="fx-tab-automobile" stylesheets="@../assets/css/style.css">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AUTOMOBILE" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Text>
+                              <Button id="menu-automobile" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#menu_automobile" styleClass="btn-menu" stylesheets="@../assets/css/style.css">
+                                 <graphic>
+                                    <Label alignment="CENTER" contentDisplay="TOP" prefHeight="200.0" prefWidth="200.0">
+                                       <graphic>
+                                          <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/main/automobile.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="270.0" prefWidth="215.0" styleClass="fx-tab-dossier" stylesheets="@../assets/css/style.css">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DOSSIER" textAlignment="CENTER" wrappingWidth="204.13671875">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Text>
+                              <Button id="menu-dossier" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#menu_atelier_dossier" prefHeight="200.0" prefWidth="200.0" styleClass="btn-menu" stylesheets="@../assets/css/style.css">
                                  <graphic>
                                     <Label contentDisplay="TOP">
                                        <graphic>
                                           <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../assets/img/main/tresor.png" />
+                                                <Image url="@../assets/img/main/dossier.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Label>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" styleClass="fx-tab-repair" stylesheets="@../assets/css/style.css">
+                           <children>
+                              <Text id="label-repair" strokeType="OUTSIDE" strokeWidth="0.0" text="REPARATION">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Text>
+                              <Button id="menu-repair" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#menu_reparation" styleClass="btn-menu" stylesheets="@../assets/css/style.css">
+                                 <graphic>
+                                    <Label alignment="CENTER" contentDisplay="TOP" prefHeight="200.0" prefWidth="200.0">
+                                       <graphic>
+                                          <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/main/reparation.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -187,80 +180,14 @@
    <top>
       <AnchorPane fx:id="topMenuBar" prefHeight="40.0" styleClass="main-menu" stylesheets="@../assets/css/style.css" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" spacing="100.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
-               <children>
-                  <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/img/logo.png" />
-                     </image>
-                  </ImageView>
-                  <Separator orientation="VERTICAL" prefHeight="200.0" />
-                  <HBox alignment="CENTER" prefHeight="48.0" prefWidth="677.0" spacing="100.0" HBox.hgrow="SOMETIMES">
-                     <children>
-                        <Button id="link-messagerie" fx:id="link_profil" mnemonicParsing="false" onAction="#versProfil" style="-fx-background-color: red;" wrapText="true" HBox.hgrow="SOMETIMES">
-                           <graphic>
-                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../assets/img/icon/ico-profil.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button id="link-messagerie" fx:id="link_messagerie" mnemonicParsing="false" onAction="#versMessagerie" HBox.hgrow="SOMETIMES">
-                           <graphic>
-                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../assets/img/icon/ico-messagerie.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button id="link-notification" fx:id="link_notification" mnemonicParsing="false" onAction="#versNotification" HBox.hgrow="SOMETIMES">
-                           <graphic>
-                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../assets/img/icon/ico-notification.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <Separator orientation="VERTICAL" prefHeight="200.0" />
-                  <HBox alignment="CENTER_RIGHT" spacing="50.0" HBox.hgrow="SOMETIMES">
-                     <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#help" styleClass="nav-menu-btn" stylesheets="@../assets/css/style.css" HBox.hgrow="SOMETIMES">
-                           <graphic>
-                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../assets/img/icon/ico-help.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#logout" styleClass="nav-menu-btn" stylesheets="@../assets/css/style.css" HBox.hgrow="SOMETIMES">
-                           <graphic>
-                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../assets/img/icon/ico-logout.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <ProgressIndicator fx:id="progress_indicator" prefHeight="50.0" prefWidth="50.0" visible="false" HBox.hgrow="SOMETIMES">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin></ProgressIndicator>
-               </children></HBox>
+            <ProgressIndicator fx:id="progress_indicator" prefHeight="50.0" prefWidth="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="956.0" AnchorPane.topAnchor="0.0" />
          </children>
       </AnchorPane>
    </top>
    <left>
       <AnchorPane fx:id="leftMenuBar" styleClass="nav-bar" BorderPane.alignment="CENTER">
          <children>
-            <VBox fx:id="leftMenuNav" alignment="CENTER" prefHeight="529.0" prefWidth="100.0" spacing="50.0" style="-fx-background-color: #fdb553;" styleClass="nav-menu" stylesheets="@../assets/css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <VBox fx:id="leftMenuNav" alignment="CENTER" prefHeight="529.0" prefWidth="100.0" spacing="20.0" style="-fx-background-color: #fdb553;" styleClass="nav-menu" stylesheets="@../assets/css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Button id="menu-atelier" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#versHome" styleClass="nav-menu-btn" stylesheets="@../assets/css/style.css" wrapText="true" VBox.vgrow="SOMETIMES">
                      <graphic>
@@ -291,6 +218,7 @@
                         </Label>
                      </graphic>
                   </Button>
+                  <Separator prefWidth="200.0" />
                   <Button id="menu-dossier" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="164.0" mnemonicParsing="false" onAction="#versDossier" styleClass="nav-menu-btn" stylesheets="@../assets/css/style.css" wrapText="true" VBox.vgrow="SOMETIMES">
                      <graphic>
                         <Label alignment="CENTER" contentDisplay="CENTER" wrapText="true">
@@ -343,6 +271,25 @@
                         </Label>
                      </graphic>
                   </Button>
+                  <Separator prefWidth="200.0" />
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#help" styleClass="nav-menu-btn" stylesheets="@../assets/css/style.css">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/icon/ico-help.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#logout" styleClass="nav-menu-btn" stylesheets="@../assets/css/style.css">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/img/icon/ico-logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -357,6 +304,11 @@
    <bottom>
       <AnchorPane fx:id="footerInfo" prefHeight="20.0" styleClass="footer-text" stylesheets="@../assets/css/style.css">
          <children>
+            <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/logo.png" />
+               </image>
+            </ImageView>
             <HBox alignment="BOTTOM_RIGHT" layoutX="20.0" layoutY="7.0" prefHeight="20.0" spacing="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="2.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LOGA 2.0.0 © N2A" textAlignment="RIGHT" textOrigin="BOTTOM" wrappingWidth="167.716796875" HBox.hgrow="SOMETIMES" />

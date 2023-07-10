@@ -22,7 +22,7 @@ public abstract class HttpRequestHelper {
     private final Gson GSON;
 
     public HttpRequestHelper(){
-        this.BASE_URL = "http://localhost:8765";
+        this.BASE_URL = "http://localhost:8765/gateway-server";
         this.GSON = new Gson().newBuilder()
                 .setPrettyPrinting()
                 .create();

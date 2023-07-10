@@ -249,7 +249,7 @@
                                           </Text>
                                           <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../assets/img/icon/ico-bill.png" />
+                                                <Image url="@../assets/img/icon/ico-billing.png" />
                                              </image>
                                           </ImageView>
                                           <Text fx:id="count_salaire" strokeType="OUTSIDE" strokeWidth="0.0">

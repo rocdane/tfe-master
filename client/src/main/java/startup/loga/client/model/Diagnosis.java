@@ -11,7 +11,7 @@ public class Diagnosis implements Serializable {
     private Integer mileage;
     private String description;
     private List<Factor> factors = new ArrayList<>();
-    private Profile profile;
+    private String profile;
     private Dossier dossier;
 
     public Diagnosis() {
@@ -57,11 +57,11 @@ public class Diagnosis implements Serializable {
         this.factors = factors;
     }
 
-    public Profile getProfile() {
+    public String getProfile() {
         return profile;
     }
 
-    public void setProfile(Profile profile) {
+    public void setProfile(String profile) {
         this.profile = profile;
     }
 

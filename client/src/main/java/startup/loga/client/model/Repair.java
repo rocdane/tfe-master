@@ -19,10 +19,9 @@ public class Repair implements Serializable
     private String totalLetter;
     private Boolean billed;
     private Dossier dossier;
-    private Profile profile;
+    private String profile;
     private List<Task> tasks = new ArrayList<>();
     private List<Spare> spares = new ArrayList<>();
-    private List<Bill> bills = new ArrayList<>();
     private Quality quality;
 
     public Repair() {
@@ -116,11 +115,11 @@ public class Repair implements Serializable
         this.dossier = dossier;
     }
 
-    public Profile getProfile() {
+    public String getProfile() {
         return profile;
     }
 
-    public void setProfile(Profile profile) {
+    public void setProfile(String profile) {
         this.profile = profile;
     }
 
@@ -138,14 +137,6 @@ public class Repair implements Serializable
 
     public void setSpares(List<Spare> spares) {
         this.spares = spares;
-    }
-
-    public List<Bill> getBills() {
-        return bills;
-    }
-
-    public void setBills(List<Bill> bills) {
-        this.bills = bills;
     }
 
     public Quality getQuality() {
@@ -179,11 +170,4 @@ public class Repair implements Serializable
         this.spares.add(spare);
     }
 
-    public Double getSolde(){
-        double solde = 0;
-        for (Bill bill : bills) {
-            solde+= bill.getAmount();
-        }
-        return solde;
-    }
 }

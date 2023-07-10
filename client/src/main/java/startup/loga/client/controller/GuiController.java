@@ -67,21 +67,6 @@ public class GuiController implements Initializable
     }
 
     @FXML
-    void menu_article(ActionEvent event) {
-        if ("UTILISATEUR".equals(session.getUser().getRole())) {
-            AlertError.getInstance().setContentText("Violation d'accès !!!");
-            AlertError.getInstance().showAndWait();
-        } else {
-            View.scene(FxmlView.FOURNITURE);
-        }
-    }
-    
-    @FXML
-    void menu_atelier(ActionEvent event) {
-        View.scene(FxmlView.ATELIER);
-    }
-    
-    @FXML
     void menu_automobile(ActionEvent event) {
         View.scene(FxmlView.AUTOMOBILE);
     }
@@ -105,48 +90,12 @@ public class GuiController implements Initializable
             View.scene(FxmlView.REPARATION);
         }
     }
-    
-    @FXML
-    void menu_atelier_agenda(ActionEvent event) {
-        View.scene(FxmlView.AGENDA);
-        AgendaController.getInstance().agenda_tab_content.getChildren().add(new FullCalendarView(YearMonth.now()).getView());
-    }
-    
+
     @FXML
     void menu_atelier_dossier(ActionEvent event) {
         View.scene(FxmlView.DOSSIER);
     }
-    
-    @FXML
-    void menu_atelier_profil(ActionEvent event) {
-        if ("UTILISATEUR".equals(session.getUser().getRole())) {
-            AlertError.getInstance().setContentText("Violation d'accès !!!");
-            AlertError.getInstance().showAndWait();
-        } else {
-            View.scene(FxmlView.PROFILE);
-        }
-    }
-    
-    @FXML
-    void menu_atelier_stock(ActionEvent event) {
-        if ("UTILISATEUR".equals(session.getUser().getRole())) {
-            AlertError.getInstance().setContentText("Violation d'accès !!!");
-            AlertError.getInstance().showAndWait();
-        } else {
-            View.scene(FxmlView.STOCK);
-        }
-    }
 
-    @FXML
-    void menu_atelier_tresor(ActionEvent event) {
-        if ("UTILISATEUR".equals(session.getUser().getRole())) {
-            AlertError.getInstance().setContentText("Violation d'accès !!!");
-            AlertError.getInstance().showAndWait();
-        } else {
-            View.scene(FxmlView.TRESOR);
-        }
-    }
-    
     @FXML
     void versHome(ActionEvent event) {
         View.scene(FxmlView.HOME);
@@ -188,21 +137,6 @@ public class GuiController implements Initializable
     }
 
     @FXML
-    void versProfil(ActionEvent event){
-        // TODO : afficher le profil de l'utilisateur
-    }
-
-    @FXML
-    void versMessagerie(ActionEvent event){
-        // TODO : afficher l'interface de messagerie
-    }
-
-    @FXML
-    void versNotification(ActionEvent event){
-        //TODO : afficher les notifications
-    }
-
-    @FXML
     void logout(ActionEvent event) {
         signout();
     }
@@ -226,8 +160,7 @@ public class GuiController implements Initializable
         try {
             AnchorPane fxml = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource(view)));
             fxml.setMinSize(content.getWidth(),content.getHeight());
-            fxml.setPrefSize(content.getWidth(),content.getHeight());
-            fxml.setMaxSize(content.getWidth(),content.getHeight());
+            fxml.setPrefSize(content.getWidth(),content.getHeight());            fxml.setMaxSize(content.getWidth(),content.getHeight());
             content.getChildren().add(fxml);
         }
         catch (IOException e) {

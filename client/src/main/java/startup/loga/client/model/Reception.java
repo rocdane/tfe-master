@@ -12,7 +12,7 @@ public class Reception implements Serializable
     private Integer mileage;
     private String description;
     private List<Notice> notices = new ArrayList<>();
-    private Profile profile;
+    private String profile;
     private Dossier dossier;
 
     public Reception() {
@@ -58,11 +58,11 @@ public class Reception implements Serializable
         this.notices = notices;
     }
 
-    public Profile getProfile() {
+    public String getProfile() {
         return profile;
     }
 
-    public void setProfile(Profile profile) {
+    public void setProfile(String profile) {
         this.profile = profile;
     }
 

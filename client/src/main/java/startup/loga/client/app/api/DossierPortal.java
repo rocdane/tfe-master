@@ -10,26 +10,26 @@ import java.util.List;
 
 public class DossierPortal extends HttpRequestHelper {
     public Dossier create(Dossier dossier) throws IOException, InterruptedException {
-        return (Dossier) request("/loga/v1/dossier/create","POST",dossier,Dossier.class);
+        return (Dossier) request("/customer-service/dossiers","POST",dossier,Dossier.class);
     }
 
     public Dossier read(Long id) throws IOException, InterruptedException {
-        return (Dossier) request("/loga/v1/dossier/find/"+id,"GET",null,Dossier.class);
+        return (Dossier) request("/customer-service/dossiers/"+id,"GET",null,Dossier.class);
     }
 
     public Dossier read(String reference) throws IOException, InterruptedException {
-        return (Dossier) request("/loga/v1/dossier/read/"+reference,"GET",null,Dossier.class);
+        return (Dossier) request("/customer-service/dossiers/reference/"+reference,"GET",null,Dossier.class);
     }
 
     public List read() throws IOException, InterruptedException {
-        return request("/loga/v1/dossier/list","GET",null,new TypeToken<ArrayList<Dossier>>(){}.getType());
+        return request("/customer-service/dossiers","GET",null,new TypeToken<ArrayList<Dossier>>(){}.getType());
     }
 
-    public Dossier edit(Dossier dossier, Long id) throws IOException, InterruptedException {
-        return (Dossier) request("/loga/v1/dossier/edit/"+id,"PUT",dossier, Dossier.class);
+    public void edit(Dossier dossier, Long id) throws IOException, InterruptedException {
+        request("/customer-service/dossiers/"+id,"PUT",dossier, Dossier.class);
     }
 
     public void delete(Long id) throws IOException, InterruptedException {
-        request("/loga/v1/dossier/delete/"+id,"POST",null);
+        request("/customer-service/dossiers/"+id,"POST",null);
     }
 }
