@@ -3,7 +3,9 @@ package com.loga.customerservice.vendor.config;
 import jakarta.persistence.EntityManagerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -20,14 +22,16 @@ public class App {
 
     private static final Logger log = LoggerFactory.getLogger(App.class);
 
+    @Autowired
+    private Environment env;
+
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:25432/loga");
-        dataSource.setUsername("loga");
-        dataSource.setPassword("Log@2020");
-        dataSource.setSchema("customer");
+        dataSource.setDriverClassName(env.getProperty("spring.datasource.driverClassName"));
+        dataSource.setUrl(env.getProperty("spring.datasource.url"));
+        dataSource.setUsername(env.getProperty("spring.datasource.username"));
+        dataSource.setPassword(env.getProperty("spring.datasource.password"));
         return dataSource;
     }
 
@@ -53,8 +57,8 @@ public class App {
 
     Properties additionalProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto", "update");
-        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL9Dialect");
+        properties.setProperty("hibernate.hbm2ddl.auto", env.getProperty("spring.jpa.hibernate.ddl-auto"));
+        properties.setProperty("hibernate.dialect", env.getProperty("spring.jpa.database-platform"));
         return properties;
     }
 }

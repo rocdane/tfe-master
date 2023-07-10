@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.loga.microservices</groupId>
-	<artifactId>maintenance-management-service</artifactId>
+	<artifactId>maintenance-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>maintenance-management-services</name>
-	<description>LoGA - Libreoffice Garage App - RMS microservices</description>
+	<name>maintenance-management-service</name>
+	<description>LoGA - Maintenance Service</description>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2022.0.2</spring-cloud.version>
@@ -102,17 +102,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<image>
-						<name>rocdanesabi/loga-master:${project.artifactId}-${project.version}</name>
-						<publish>true</publish>
-					</image>
-					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
-					<docker>
-						<publishRegistry>
-							<username>rocdanesabi</username>
-							<token>dckr_pat_VXkeoaEw_eOqGfiDH0nOnA_d-Yo</token>
-						</publishRegistry>
-					</docker>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>

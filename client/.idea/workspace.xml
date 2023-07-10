@@ -5,206 +5,307 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c8c6a4f-f30a-4310-8dde-920cd0febf4c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/api/AuthPortal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/api/AutomobilePortal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/api/ClientPortal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/api/DiagnosticPortal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/api/DossierPortal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/api/GaragePortal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/api/ReceptionPortal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/api/RepairPortal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/api/ReportPortal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/api/ResourcePortal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/Anomaly.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/Breakdown.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/Cashflow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/CashflowBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/Control.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/Defect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/DiagnosisBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/Dysfunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/Failure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/Hypothesis.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/ICashflow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/IDysfunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/IProcedure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/Invoice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/Procedure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/app/factory/Symptom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/controller/AgendaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/controller/AtelierController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/controller/AutomobileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/controller/ClientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/controller/DashboardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/controller/DossierController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/controller/FournitureController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/controller/GuiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/controller/ProfileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/controller/QualiteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/controller/ReceptionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/controller/RepairController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/controller/StockController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/controller/TresorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Article.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Atelier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/AuthSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Automobile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Bill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Calendar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Control.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Criteria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Delivery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Department.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Diagnosis.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Dossier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Evaluation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Factor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Finance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/FixedAssets.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Furnisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Mode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Notice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Profile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Purchase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Quality.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Reception.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Recipe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Repair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Salary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Sale.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Space.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Spare.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Spent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/Unit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/vendor/http/Adapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/vendor/http/HttpRequestHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/vendor/http/IHttpRequestHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/vendor/http/IRestRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/vendor/http/RestRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/vendor/io/Money.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/vendor/io/NumberToWords.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/vendor/io/Validation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/vendor/logging/ExceptionWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/vendor/logging/Logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/view/AlertConfirm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/view/AlertError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/view/AlertInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/view/AlertWarning.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/view/AnchorPaneNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/view/FullCalendarView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/view/FxmlView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/view/Popup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/view/StageManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/view/View.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/startup/loga/client/view/WebView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/font/GloriousFree-dBR6.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/bilan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/ico.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-accountant.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-achat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-add.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-apply.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-bilan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-billing.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-cancel.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-compte.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-danger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-dashboard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-delete.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-details.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-devis.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-edit.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-evaluation.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-facture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-fournisseur.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-home.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-info.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-list.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-logout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-messagerie.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-new.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-notification.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-ok.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-printer.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-profil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-quality.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-remove.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-sales.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-save.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-settings.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-solde.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-tresor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-user.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-vente.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/ico-warning.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon/kisspng-passive-income-revenue-passive-voice-passive-income-5b3e2e2eef0b78.8381856315308017109791.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/main/admin.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/main/agenda.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/main/article.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/main/automobile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/main/client.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/main/dossier.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/main/profil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/main/reception.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/main/reparation.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/main/stock.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/main/tresor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/admin.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/agenda.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/auth-signin.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/auth-signup.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/automobile.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/client.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/dashboard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/dossier.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/fourniture.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/home-atelier.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/home.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/main.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/popup.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/profile.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/reception.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/reparation.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/stock.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/support.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/startup/loga/client/fxml/tresor.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/startup/loga/client/app/api/DiagnosticPortalTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/startup/loga/client/app/api/DossierPortalTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/startup/loga/client/app/api/ReceptionPortalTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/startup/loga/client/app/api/RepairPortalTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/startup/loga/client/app/api/ResourcePortalTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/startup/loga/client/vendor/http/RestRequestTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../authentication-service/db.Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../monitoring-service/dwh.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/authentication-management-service-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/authentication-management-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/AuthenticationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/app/api/IntelligentServiceProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/controller/AuthenticationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/controller/IntelligentServiceProxyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/entity/AuthSession.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/entity/Log.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/repository/AuthSessionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/repository/LogRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/service/Authenticate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/service/Authentication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/service/IAuthenticate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/vendor/config/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/vendor/config/DateTimeConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/vendor/config/Loader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/vendor/io/Database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/vendor/io/FileUploadResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/vendor/logging/ExceptionWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/vendor/logging/Logger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/microservices/ams/vendor/security/Crypto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/surefire-reports/TEST-com.loga.microservices.ams.AuthenticationServiceTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/surefire-reports/com.loga.microservices.ams.AuthenticationServiceTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/test-classes/com/loga/microservices/ams/AuthenticationServiceTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cloud-native/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cloud-native/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/repository/DossierRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/repository/DossierRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/service/DossierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/service/DossierService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/vendor/config/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/vendor/config/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/vendor/config/DateTimeConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/vendor/config/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/vendor/config/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/vendor/io/Database.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/vendor/io/Money.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/vendor/io/NumberToWords.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/vendor/io/OntoDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/CustomerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/app/api/AuthenticationManagementServicesProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/app/factory/AuthSession.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/controller/AutomobileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/controller/ClientController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/controller/DossierController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/controller/ProxyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/entity/Automobile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/entity/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/entity/Dossier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/exception/ClientNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/exception/CustomizedResponseEntityExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/exception/DossierNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/exception/ErrorDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/repository/AutomobileRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/repository/ClientRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/repository/DossierRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/service/AutomobileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/service/ClientService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/service/DossierService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/service/IAutomobileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/service/IClientService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/service/IDossierService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/config/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/config/DateTimeConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/config/Loader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/io/Database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/io/Money.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/io/NumberToWords.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/io/OntoDB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/logging/ExceptionWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/logging/Logger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/security/Crypto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/customer-management-service-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/customer-management-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/customer-service-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/customer-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/surefire-reports/TEST-com.loga.customerservice.CustomerServiceTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/surefire-reports/com.loga.customerservice.CustomerServiceTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/test-classes/com/loga/customerservice/CustomerServiceTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway-server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/db.Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/db.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/db.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/dwh.Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/dwh.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../monitoring-service/dwh.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/app/api/JenaAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/app/api/JenaAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/service/IntelligenceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/service/IntelligenceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/vendor/config/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/vendor/config/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/vendor/config/DateTimeConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/vendor/io/OntoDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/automaintongologie.owl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/IntelligentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/app/api/JenaAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/app/factory/Diagnosis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/controller/IntelligenceController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/service/IIntelligenceService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/service/IntelligenceService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/vendor/config/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/vendor/config/DateTimeConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/vendor/io/ExceptionWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/vendor/io/Logger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/vendor/io/OntoDB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/vendor/security/Crypto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/intelligent-service-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/intelligent-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/surefire-reports/TEST-com.loga.intelligentservice.IntelligentServiceTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/surefire-reports/com.loga.intelligentservice.IntelligentServiceTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/test-classes/com/loga/intelligentservice/IntelligentServiceTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/MaintenanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/MaintenanceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/app/api/AuthenticationServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/app/api/AuthenticationServiceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/app/api/CustomerServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/app/api/CustomerServiceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/app/api/IntelligentServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/app/api/IntelligentServiceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/app/api/ReportServiceProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/app/api/ReportServiceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/app/factory/AuthSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/app/factory/AuthSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/app/factory/Dossier.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/app/factory/Dossier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/controller/DiagnosisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/controller/DiagnosisController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/controller/ReceptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/controller/ReceptionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/controller/RepairController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/controller/RepairController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/entity/Control.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Control.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/entity/Diagnosis.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Diagnosis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/entity/Factor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Factor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/entity/Notice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Notice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/entity/Quality.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Quality.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/entity/Reception.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Reception.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/entity/Repair.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Repair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/entity/Spare.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Spare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/entity/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/exception/CustomizedResponseEntityExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/exception/CustomizedResponseEntityExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/exception/ErrorDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/exception/ErrorDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/exception/RepairNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/exception/RepairNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/repository/ControlRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/repository/ControlRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/repository/DiagnosisRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/repository/DiagnosisRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/repository/FactorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/repository/FactorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/repository/NoticeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/repository/NoticeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/repository/QualityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/repository/QualityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/repository/ReceptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/repository/ReceptionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/repository/RepairRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/repository/RepairRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/repository/SpareRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/repository/SpareRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/repository/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/repository/TaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/service/DiagnosisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/service/DiagnosisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/service/IDiagnosisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/service/IDiagnosisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/service/IQualityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/service/IQualityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/service/IReceptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/service/IReceptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/service/IRepairService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/service/IRepairService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/service/QualityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/service/QualityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/service/ReceptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/service/ReceptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/service/RepairService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/service/RepairService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/vendor/config/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/vendor/config/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/vendor/config/DateTimeConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/vendor/config/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/vendor/config/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/vendor/io/Database.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/vendor/io/FileUploadResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/vendor/io/Money.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/vendor/io/NumberToWords.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/vendor/io/OntoDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/vendor/logging/ExceptionWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/vendor/io/ExceptionWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/vendor/logging/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/vendor/io/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/microservices/rms/vendor/security/Crypto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/vendor/security/Crypto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/test/java/com/loga/microservices/rms/MaintenanceServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/test/java/com/loga/maintenanceservice/MaintenanceServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/MaintenanceService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/app/api/AuthenticationServiceProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/app/api/CustomerServiceProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/app/api/IntelligentServiceProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/app/api/ReportServiceProxy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/app/factory/AuthSession.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/app/factory/Dossier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/controller/DiagnosisController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/controller/ReceptionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/controller/RepairController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/entity/Control.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/entity/Diagnosis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/entity/Factor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/entity/Notice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/entity/Quality.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/entity/Reception.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/entity/Repair.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/entity/Spare.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/entity/Task.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/exception/CustomizedResponseEntityExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/exception/ErrorDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/exception/RepairNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/repository/ControlRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/repository/DiagnosisRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/repository/FactorRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/repository/NoticeRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/repository/QualityRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/repository/ReceptionRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/repository/RepairRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/repository/SpareRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/repository/TaskRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/service/DiagnosisService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/service/IDiagnosisService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/service/IQualityService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/service/IReceptionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/service/IRepairService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/service/QualityService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/service/ReceptionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/service/RepairService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/vendor/config/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/vendor/config/DateTimeConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/vendor/config/Loader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/vendor/io/Database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/vendor/io/FileUploadResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/vendor/io/Money.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/vendor/io/NumberToWords.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/vendor/io/OntoDB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/vendor/logging/ExceptionWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/vendor/logging/Logger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/microservices/rms/vendor/security/Crypto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/maintenance-management-service-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/maintenance-management-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/surefire-reports/TEST-com.loga.microservices.rms.MaintenanceServiceTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/surefire-reports/com.loga.microservices.rms.MaintenanceServiceTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/test-classes/com/loga/microservices/rms/MaintenanceServiceTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../monitoring-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../monitoring-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../naming-server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../naming-server/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../naming-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../naming-server/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../naming-server/zipkin.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../naming-server/zipkin.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/controller/ReportingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/controller/ReportingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/exception/CustomizedResponseEntityExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/exception/CustomizedResponseEntityExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/exception/DataNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/exception/ReportingErrorException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/service/IReportingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/service/IReportingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/service/ReportingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/service/ReportingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/vendor/io/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/vendor/io/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/src/main/resources/jrxml/diagnosis.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/src/main/resources/jrxml/diagnosis.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/controller/ReportingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/controller/ReportingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/exception/CustomizedResponseEntityExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/exception/CustomizedResponseEntityExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/exception/DataNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/exception/ResourceNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/exception/ResourceNotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/service/IReportingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/service/IReportingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/service/ReportingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/service/ReportingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/vendor/io/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/vendor/io/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/classes/jrxml/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/achat.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/achat_periodique.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/bilan.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/commande.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/compte.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/devis.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/diagnosis.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/classes/jrxml/diagnosis.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/diagnostic.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/facture.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/livraison.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/ordre.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/reception.jrxml" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/classes/jrxml/reception.jrxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/reparation.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/tresor.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/vente.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/jrxml/vente_periodique.jrxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/report-service-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/report-service-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/report-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/report-service-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/surefire-reports/TEST-com.loga.reportservice.ReportServiceTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/surefire-reports/TEST-com.loga.reportservice.ReportServiceTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/surefire-reports/com.loga.reportservice.ReportServiceTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/surefire-reports/com.loga.reportservice.ReportServiceTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +323,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

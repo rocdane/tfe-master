@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.loga.microservices</groupId>
-	<artifactId>authentication-management-service</artifactId>
+	<artifactId>authentication-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>authentication-management-service</name>
+	<name>authentication-service</name>
 	<description>LoGA - Libreoffice Garage App - AMS microservices</description>
 	<properties>
 		<java.version>19</java.version>

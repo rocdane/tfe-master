@@ -1,11 +1,9 @@
 com/loga/intelligentservice/vendor/config/App.class
-com/loga/intelligentservice/vendor/io/OntoDB.class
+com/loga/intelligentservice/service/IntelligenceService.class
 com/loga/intelligentservice/app/factory/Diagnosis.class
 com/loga/intelligentservice/app/api/JenaAPI.class
-com/loga/intelligentservice/vendor/config/DateTimeConfig.class
 com/loga/intelligentservice/vendor/security/Crypto.class
 com/loga/intelligentservice/controller/IntelligenceController.class
-com/loga/intelligentservice/service/IntelligenceService.class
 com/loga/intelligentservice/IntelligentService.class
 com/loga/intelligentservice/service/IIntelligenceService.class
 com/loga/intelligentservice/vendor/io/Logger.class

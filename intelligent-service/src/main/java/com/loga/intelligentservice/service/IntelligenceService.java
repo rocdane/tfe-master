@@ -11,6 +11,6 @@ public class IntelligenceService implements IIntelligenceService {
 
     @Override
     public List<Diagnosis> resolve(String words) {
-        return JenaAPI.getInstance().query(words);
+        return JenaAPI.query(words);
     }
 }

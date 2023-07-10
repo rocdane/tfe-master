@@ -1,7 +1,10 @@
 package com.loga.customerservice.vendor.config;
 
+import com.loga.customerservice.entity.Automobile;
 import com.loga.customerservice.entity.Client;
+import com.loga.customerservice.entity.Dossier;
 import com.loga.customerservice.service.IClientService;
+import com.loga.customerservice.service.IDossierService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,15 +16,34 @@ import org.springframework.context.annotation.Configuration;
 public class Loader {
 
     @Autowired
-    private IClientService clientService;
+    private IDossierService dossierService;
 
     private static final Logger log = LoggerFactory.getLogger(Loader.class);
 
     @Bean
     CommandLineRunner init(){
 
-        if(clientService.createClient(new Client("Rochdane SABI", "HOMME",
-                        "rocdanesabi@n2a-consulting.com"))!=null)
+        Client client = new Client();
+        client.setAddress("Africa");
+        client.setContact("rocdanesabi@n2a.cc");
+        client.setType("HOMME");
+        client.setName("Rochdane SABI");
+        client.setLegalNotice("Freelance");
+
+        Automobile automobile = new Automobile();
+        automobile.setMake("TOYOTA");
+        automobile.setModel("Carina 3");
+        automobile.setUnit("KM");
+        automobile.setTrim(251233);
+        automobile.setVin("ABCDEFGHJKLMNPRST");
+        automobile.setNumber("AH2775RB");
+
+        Dossier dossier = new Dossier();
+        dossier.setReference("dossier");
+        dossier.setClient(client);
+        dossier.setAutomobile(automobile);
+
+        if(dossierService.createDossier(dossier)!=null)
             return args -> {
                 log.info("Customer Service Initialization ---");
             };

@@ -1,18 +1,23 @@
 package com.loga.reportservice.vendor.io;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class Database
-{
-    private static Database instance;
-    private Connection connection;
+@Component
+public class Database {
 
-    private Database() {
-        final String DRIVER = "org.postgresql.Driver";
-        final String JDBC_URL = "jdbc:postgresql://localhost:25432/loga";
-        final String USERNAME = "loga";
-        final String PASSWORD = "Log@2020";
+    private static Connection connection;
+
+    @Autowired
+    private Database(Environment env) {
+        final String DRIVER = env.getProperty("spring.datasource.driverClassName");
+        final String JDBC_URL = env.getProperty("spring.datasource.url");
+        final String USERNAME = env.getProperty("spring.datasource.username");
+        final String PASSWORD = env.getProperty("spring.datasource.password");
 
         try {
             Class.forName(DRIVER);
@@ -22,12 +27,8 @@ public class Database
             e.printStackTrace();
         }
     }
-    public static Database getInstance(){
-        if (instance == null)
-            instance = new Database();
-        return instance;
-    }
-    public Connection getConnection() {
+
+    public static Connection getConnection() {
         return connection;
     }
 }

@@ -103,17 +103,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<image>
-						<name>rocdanesabi/loga-master:${project.artifactId}-${project.version}</name>
-						<builder>paketobuildpacks/builder</builder>
-					</image>
-					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
-					<docker>
-						<publishRegistry>
-							<username>rocdanesabi</username>
-							<token>dckr_pat_VXkeoaEw_eOqGfiDH0nOnA_d-Yo</token>
-						</publishRegistry>
-					</docker>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.1.final using JasperReports Library version 6.20.1-7584acb244139816654f64e2fd57a00d3e31921e  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="diagnosis" language="javascript" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8169af5a-ff2b-4ade-a5b0-146fbbd38cce">
-	<property name="com.jaspersoft.studio.data.sql.tables">
-		<![CDATA[Y3VzdG9tZXIuYXV0b21vYmlsZSAsMzIxLDE1LDgxMjg3NDFkLTZmYWYtNDA0Yi05MjZhLTViNzkw
-MTg1ZTU1YjtjdXN0b21lci5kb3NzaWVyICwxNTgsMjksYTc1OGVmMjktMTM0Zi00M2M2LTg1YmMt
-YTlhNzQ4MGIxOGU2O3JlcGFpci5kaWFnbm9zaXMgLDE1LDE1LDVkMTVlMDhkLWNiM2MtNDUzOS1i
-MTRiLWFiYTUwOGY1MjZkODtjdXN0b21lci5jbGllbnQgLDQzOSwyOSwwNTBjZGZmOS1kYjk5LTQ0
-Y2QtYWQ5Ni02NTlmMDFmNjc1YWY7]]>
-	</property>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="diagnosis" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8169af5a-ff2b-4ade-a5b0-146fbbd38cce">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.jrdax"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
 	<style name="Table 1_TH" mode="Opaque" backcolor="#FFFFFF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -45,15 +40,15 @@ Y2QtYWQ5Ni02NTlmMDFmNjc1YWY7]]>
 		</parameter>
 		<queryString language="SQL">
 			<![CDATA[SELECT
-	repair.factor.dysfunction,
-	repair.factor.entity,
-	repair.factor.maintenance,
-	repair.factor.id
-FROM repair.factor,
-	repair.diagnosis
+	factor.dysfunction,
+	factor.entity,
+	factor.maintenance,
+	factor.id
+FROM factor,
+	diagnosis
 WHERE 
-	 repair.factor.diagnosis = repair.diagnosis.id 
-	 AND repair.diagnosis.id = $P{ID}]]>
+	 factor.diagnosis = diagnosis.id 
+	 AND diagnosis.id = $P{ID}]]>
 		</queryString>
 		<field name="dysfunction" class="java.lang.String">
 			<property name="com.jaspersoft.studio.field.name" value="dysfunction"/>
@@ -83,24 +78,26 @@ WHERE
 		<defaultValueExpression><![CDATA[$P{ID}]]></defaultValueExpression>
 	</parameter>
 	<queryString language="SQL">
-		<![CDATA[SELECT repair.diagnosis.created_at,
-	repair.diagnosis.mileage,
-	repair.diagnosis.description,
-	customer.automobile.vin,
-	customer.automobile.number,
-	customer.automobile.unit,
-	customer.automobile.make,
-	customer.automobile.model,
-	customer.client.name
-FROM repair.diagnosis,
-	customer.dossier,
-	customer.automobile,
-	customer.client
+		<![CDATA[SELECT diagnosis.created_at,
+	diagnosis.mileage,
+	diagnosis.description,
+	diagnosis.profile,
+	automobile.vin,
+	automobile.number,
+	automobile.unit,
+	automobile.make,
+	automobile.model,
+	client.name,
+	diagnosis.reference
+FROM diagnosis,
+	dossier,
+	automobile,
+	client
 WHERE 
-	 repair.diagnosis.id = $P{ID} 
-	 AND repair.diagnosis.dossier = customer.dossier.reference 
-	 AND customer.dossier.automobile = customer.automobile.id 
-	 AND customer.dossier.client = customer.client.id]]>
+	 diagnosis.id = $P{ID} 
+	 AND diagnosis.dossier = dossier.reference 
+	 AND dossier.automobile = automobile.id 
+	 AND dossier.client = client.id]]>
 	</queryString>
 	<field name="created_at" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.name" value="created_at"/>
@@ -115,6 +112,11 @@ WHERE
 	<field name="description" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="description"/>
 		<property name="com.jaspersoft.studio.field.label" value="description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="diagnosis"/>
+	</field>
+	<field name="profile" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="profile"/>
+		<property name="com.jaspersoft.studio.field.label" value="profile"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="diagnosis"/>
 	</field>
 	<field name="vin" class="java.lang.String">
@@ -147,6 +149,11 @@ WHERE
 		<property name="com.jaspersoft.studio.field.label" value="name"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="client"/>
 	</field>
+	<field name="reference" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="reference"/>
+		<property name="com.jaspersoft.studio.field.label" value="reference"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="diagnosis"/>
+	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -154,17 +161,22 @@ WHERE
 		<band height="54" splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="41" splitType="Stretch">
+		<band height="32" splitType="Stretch">
 			<staticText>
-				<reportElement x="81" y="6" width="229" height="30" uuid="1907af92-137d-4abf-ba0f-a9b0188c797e">
+				<reportElement x="80" y="0" width="163" height="30" uuid="1907af92-137d-4abf-ba0f-a9b0188c797e">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font size="16" isBold="true"/>
 				</textElement>
-				<text><![CDATA[CONTROLE DIAGNOSTIC N° :]]></text>
+				<text><![CDATA[DIAGNOSTIC N° :]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="250" y="1" width="300" height="29" uuid="19aae38c-e24e-4e7e-ae53-80b294e40265"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{reference}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageHeader>
 	<columnHeader>
@@ -532,12 +544,17 @@ WHERE
 					<text><![CDATA[Le technicien]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="70" y="19" width="120" height="20" uuid="fbbb93cd-8f46-48e2-92be-5628df91a6e0">
+					<reportElement x="70" y="25" width="120" height="20" uuid="fbbb93cd-8f46-48e2-92be-5628df91a6e0">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 					<text><![CDATA[(Nom et Signature)]]></text>
 				</staticText>
+				<textField>
+					<reportElement x="33" y="47" width="197" height="23" uuid="17e8259a-bb00-46af-afac-6e3f20368759"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{profile}]]></textFieldExpression>
+				</textField>
 			</frame>
 		</band>
 	</pageFooter>

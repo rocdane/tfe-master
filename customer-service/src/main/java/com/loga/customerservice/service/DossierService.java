@@ -25,9 +25,13 @@ public class DossierService implements IDossierService {
     @Override
     @Transactional
     public Dossier createDossier(Dossier dossier) {
-        dossier.setOpenAt(new Date());
-        dossier.setUpdatedAt(new Date());
-        return dossierRepository.save(dossier);
+        if(dossierRepository.findDossierByAutomobileNumber(dossier.getAutomobile().getNumber()).isEmpty() ||
+         dossierRepository.findByReference(dossier.getReference())==null){
+            dossier.setOpenAt(new Date());
+            dossier.setUpdatedAt(new Date());
+            return dossierRepository.save(dossier);
+        }else
+            return null;
     }
 
     /**
@@ -47,7 +51,7 @@ public class DossierService implements IDossierService {
      */
     @Override
     public List<Dossier> listDossier(String immatriculation) {
-        return dossierRepository.findDossierByAutomobile(immatriculation);
+        return dossierRepository.findDossierByAutomobileNumber(immatriculation);
     }
 
     /**

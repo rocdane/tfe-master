@@ -20,7 +20,7 @@ public class App {
     @Bean
     CommandLineRunner init(){
         return  args -> {
-            LOGGER.info("Ontology : "+ JenaAPI.getInstance().getURI());
+            LOGGER.info("Ontology : "+ JenaAPI.getURI());
         };
     }
 }

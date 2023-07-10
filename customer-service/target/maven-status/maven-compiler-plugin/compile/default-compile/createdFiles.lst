@@ -1,7 +1,5 @@
-com/loga/customerservice/vendor/io/Money.class
 com/loga/customerservice/service/IAutomobileService.class
 com/loga/customerservice/vendor/logging/ExceptionWriter.class
-com/loga/customerservice/vendor/io/Database.class
 com/loga/customerservice/service/ClientService.class
 com/loga/customerservice/controller/ProxyController.class
 com/loga/customerservice/service/IDossierService.class
@@ -11,11 +9,9 @@ com/loga/customerservice/exception/DossierNotFoundException.class
 com/loga/customerservice/app/api/AuthenticationManagementServicesProxy.class
 com/loga/customerservice/entity/Client.class
 com/loga/customerservice/app/factory/AuthSession.class
-com/loga/customerservice/vendor/io/NumberToWords.class
 com/loga/customerservice/entity/Dossier.class
 com/loga/customerservice/repository/DossierRepository.class
 com/loga/customerservice/exception/CustomizedResponseEntityExceptionHandler.class
-com/loga/customerservice/vendor/config/DateTimeConfig.class
 com/loga/customerservice/entity/Automobile.class
 com/loga/customerservice/vendor/config/Loader.class
 com/loga/customerservice/controller/ClientController.class
@@ -30,4 +26,3 @@ com/loga/customerservice/vendor/security/Crypto.class
 com/loga/customerservice/exception/ClientNotFoundException.class
 com/loga/customerservice/CustomerService.class
 com/loga/customerservice/controller/AutomobileController.class
-com/loga/customerservice/vendor/io/OntoDB.class

@@ -6,49 +6,44 @@ import org.apache.jena.ontology.impl.OntologyImpl;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.ModelFactory;
 import com.loga.intelligentservice.IntelligentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.stereotype.Component;
 
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.net.URL;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@Component
 public class JenaAPI {
-    private static JenaAPI jenaAPI;
-    private final OntModel ONTOLOGY;
 
-    private JenaAPI(){
-        this.ONTOLOGY = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+    private static OntModel ONTOLOGY;
 
-        URL resource = Objects.requireNonNull(getClass().getResource("/automaintongologie.owl"));
+    @Autowired
+    private JenaAPI(ResourceLoader resourceLoader){
+        ONTOLOGY = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
 
-        File file = new File(resource.getFile());
+        Resource resource = resourceLoader.getResource("classpath:/automaintongologie.owl");
 
         try {
-            ONTOLOGY.read(new FileInputStream(file.getPath()),null,null);
-        } catch (FileNotFoundException ex) {
+            ONTOLOGY.read(resource.getInputStream(),null,null);
+        } catch (IOException ex) {
             Logger.getLogger(IntelligentService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public static JenaAPI getInstance(){
-        if(jenaAPI == null)
-            jenaAPI = new JenaAPI();
-        return jenaAPI;
-    }
-
-    public String getURI(){
+    public static String getURI(){
         Iterator<Ontology> iter = ONTOLOGY.listOntologies();
         OntologyImpl onto = (OntologyImpl) iter.next();
         return (onto.getURI()+"#");
     }
 
-    public List<Diagnosis> query(String text){
+    public static List<Diagnosis> query(String text){
         String queryString = "PREFIX ontology: <"+getURI()+">\n" +
                 "SELECT ?Titre ?Action \n" +
                 "WHERE { \n" +
@@ -78,6 +73,7 @@ public class JenaAPI {
         return result;
     }
 
+    /*
     public Individual addDysfunction(String dys){
         OntClass dysfunction = ONTOLOGY.getOntClass( getURI()+"Dysfonctionnement" );
         DatatypeProperty symptome = ONTOLOGY.getDatatypeProperty(getURI()+"Symptome");
@@ -94,6 +90,6 @@ public class JenaAPI {
 
     public void update(Individual indiv1, Individual indiv2){
         ObjectProperty resoluPar = ONTOLOGY.getObjectProperty(getURI()+"resoluPar");
-    }
+    }*/
 }
 
