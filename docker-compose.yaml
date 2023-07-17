@@ -1,0 +1,135 @@
+version: '3.8'
+services:
+  client:
+    image: client-react
+    ports:
+      - '3000:3000'
+    networks:
+      - tfe-master
+    depends_on:
+      - gateway-server
+    
+  data-center:
+    image: datacenter
+    ports:
+      - '25432:5432'
+    networks:
+      - tfe-master
+    environment:
+      - POSTGRES_USER=loga
+      - POSTGRES_PASSWORD=Log@2020
+      - POSTGRES_DB=loga
+    restart: always
+
+  authentication-service:
+    image: authentication-service
+    ports:
+      - "8001:8001"
+    networks:
+      - tfe-master
+    depends_on:
+      - naming-server
+      - data-center
+    environment:
+      SPRING.DATASOURCE.URL: jdbc:postgresql://data-center:5432/loga
+      SPRING.DATASOURCE.USERNAME: loga
+      SPRING.DATASOURCE.PASSWORD: Log@2020
+      SPRING.JPA.HIBERNATE.DDL.AUTO: update
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+      MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
+
+  customer-service:
+    image: customer-service
+    ports:
+      - "8002:8002"
+    networks:
+      - tfe-master
+    depends_on:
+      - naming-server
+      - data-center
+    environment:
+      SPRING.DATASOURCE.URL: jdbc:postgresql://data-center:5432/loga
+      SPRING.DATASOURCE.USERNAME: loga
+      SPRING.DATASOURCE.PASSWORD: Log@2020
+      SPRING.JPA.HIBERNATE.DDL.AUTO: update
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+      MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
+
+  maintenance-service:
+    image: maintenance-service
+    ports:
+      - "8003:8003"
+    networks:
+      - tfe-master
+    depends_on:
+      - naming-server
+      - data-center
+      - intelligent-service
+      - report-service
+    environment:
+      SPRING.DATASOURCE.URL: jdbc:postgresql://data-center:5432/loga
+      SPRING.DATASOURCE.USERNAME: loga
+      SPRING.DATASOURCE.PASSWORD: Log@2020
+      SPRING.JPA.HIBERNATE.DDL.AUTO: update
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+      MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
+
+  intelligent-service:
+    image: intelligent-service
+    ports:
+      - "8005:8005"
+    networks:
+      - tfe-master
+    depends_on:
+      - naming-server
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+      MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
+    restart: always
+
+  report-service:
+    image: report-service
+    ports:
+      - "8006:8006"
+    networks:
+      - tfe-master
+    depends_on:
+      - naming-server
+      - data-center
+    environment:
+      SPRING.DATASOURCE.URL: jdbc:postgresql://data-center:5432/loga
+      SPRING.DATASOURCE.USERNAME: loga
+      SPRING.DATASOURCE.PASSWORD: Log@2020
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+      MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
+    restart: always
+        
+  gateway-server:
+    image: gateway-server
+    ports:
+      - "8765:8765"
+    networks:
+      - tfe-master
+    depends_on:
+      - naming-server
+    environment:
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+      MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
+  
+  naming-server:
+    image: naming-server
+    ports:
+      - "8761:8761"
+    networks:
+      - tfe-master
+    restart: always
+  
+  zipkin-server:
+    image: zipkin-server
+    ports:
+      - "9411:9411"
+    networks:
+      - tfe-master
+    restart: always
+networks:
+  tfe-master:

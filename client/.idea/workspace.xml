@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c8c6a4f-f30a-4310-8dde-920cd0febf4c" name="Changes" comment="" />
+    <list default="true" id="3c8c6a4f-f30a-4310-8dde-920cd0febf4c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../client-react/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/src/components/Header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/src/components/Hero.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/src/pages/NotFound.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/src/reportWebVitals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client-react/src/setupTests.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +63,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/rochdane/IdeaProjects/WORKSHOP/Project/LOGA/client/src/main/java/startup/loga/client/controller/RepairController.java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/rochdane/Documents/docker-compose.yaml&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -60,6 +80,9 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="startup.loga.client.vendor.http" />
@@ -79,7 +102,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.client [clean,install]">
+  <component name="RunManager" selected="Application.client">
     <configuration name="client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="startup.loga.client.Main" />
       <module name="client" />
@@ -192,6 +215,20 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration name="Documents/docker-compose.yaml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="../../../../../Documents/docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="client" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
@@ -205,6 +242,7 @@
     <list>
       <item itemvalue="Application.client" />
       <item itemvalue="Docker.client" />
+      <item itemvalue="Docker.Documents/docker-compose.yaml: Compose Deployment" />
       <item itemvalue="JUnit.DiagnosticPortalTest" />
       <item itemvalue="JUnit.DiagnosticPortalTest.create" />
       <item itemvalue="JUnit.DossierPortalTest.create" />
@@ -214,6 +252,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.Documents/docker-compose.yaml: Compose Deployment" />
         <item itemvalue="JUnit.ResourcePortalTest.create" />
         <item itemvalue="JUnit.DossierPortalTest.create" />
         <item itemvalue="JUnit.RestRequestTest.download" />

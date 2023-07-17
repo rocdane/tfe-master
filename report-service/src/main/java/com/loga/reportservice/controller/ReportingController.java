@@ -14,6 +14,7 @@ import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping(path = "/report-service")
 public class ReportingController {
@@ -23,6 +24,7 @@ public class ReportingController {
 
     private final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
+    @CrossOrigin
     @GetMapping(value = "/{src}", produces = MediaType.APPLICATION_PDF_VALUE)
     public void report(HttpServletResponse response,
                        @PathVariable("src") String src) throws ReportingErrorException {
@@ -38,6 +40,7 @@ public class ReportingController {
         }
     }
 
+    @CrossOrigin
     @GetMapping(value = "/{src}/{id}", produces = MediaType.APPLICATION_PDF_VALUE)
     public void reportById(HttpServletResponse response,
                            @PathVariable("src") String src,
@@ -56,6 +59,7 @@ public class ReportingController {
         }
     }
 
+    @CrossOrigin
     @GetMapping(value = "/{src}/date", produces = MediaType.APPLICATION_PDF_VALUE)
     public void reportByDate(HttpServletResponse response,
                              @PathVariable("src") String src,
@@ -71,6 +75,7 @@ public class ReportingController {
         }
     }
 
+    @CrossOrigin
     @GetMapping(value = "/{src}/period", produces = MediaType.APPLICATION_PDF_VALUE)
     public void reportBetweenDate(HttpServletResponse response,
                                   @PathVariable("src") String src,

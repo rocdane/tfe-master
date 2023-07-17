@@ -61,4 +61,9 @@ public class Dossier implements Serializable
     public void setAutomobile(Automobile automobile) {
         this.automobile = automobile;
     }
+
+    @Override
+    public String toString() {
+        return getAutomobile().getNumber();
+    }
 }

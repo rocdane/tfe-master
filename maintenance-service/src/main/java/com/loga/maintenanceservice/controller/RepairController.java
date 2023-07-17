@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/maintenance-service")
 public class RepairController {
@@ -39,7 +39,7 @@ public class RepairController {
     }
 
     @GetMapping(path = "/repairs/reference/{reference}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Repair>  read(@PathVariable("reference") String reference){
+    public List<Repair> read(@PathVariable("reference") String reference){
         return repairReparation.listRepair(reference);
     }
 

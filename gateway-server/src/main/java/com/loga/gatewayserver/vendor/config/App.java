@@ -6,8 +6,15 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.reactive.CorsWebFilter;
+import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
+
+import java.util.Arrays;
+import java.util.List;
+
 @Configuration
-public class App {
+public class App extends CorsConfiguration {
 
     private static final Logger log = LoggerFactory.getLogger(App.class);
 
@@ -46,5 +53,22 @@ public class App {
                         .path("/report-service/**")
                         .uri("lb://report-service"))
                 .build();
+    }
+
+    @Bean
+    public CorsWebFilter corsFilter() {
+        org.springframework.web.cors.CorsConfiguration corsConfiguration = new org.springframework.web.cors.CorsConfiguration();
+        corsConfiguration.setAllowCredentials(true);
+        corsConfiguration.addAllowedOrigin("*");
+        corsConfiguration.addAllowedOriginPattern("http://localhost:3000");
+        corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"));
+        corsConfiguration.addAllowedHeader("origin");
+        corsConfiguration.addAllowedHeader("content-type");
+        corsConfiguration.addAllowedHeader("accept");
+        corsConfiguration.addAllowedHeader("authorization");
+        corsConfiguration.addAllowedHeader("cookie");
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", corsConfiguration);
+        return new CorsWebFilter(source);
     }
 }

@@ -16,7 +16,7 @@ public class RepairPortal extends HttpRequestHelper {
     }
 
     public List list() throws IOException, InterruptedException {
-        return request("/maintenance-service/repairs","GET",null,new TypeToken<ArrayList<Repair>>(){}.getType());
+        return request("/maintenance-service/repairs/all","GET",null,new TypeToken<ArrayList<Repair>>(){}.getType());
     }
 
     public Repair read(Long id) throws IOException, InterruptedException {

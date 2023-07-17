@@ -35,15 +35,15 @@ public class RepairController implements Initializable {
     private final RepairPortal repairPortal;
     private final DossierPortal dossierPortal;
 
-    Dossier currentDossier;
+    private Dossier currentDossier;
 
-    Repair currentRepair;
+    private Repair currentRepair;
 
-    List<Dossier> allDossier = new ArrayList<>();
+    private List<Dossier> allDossier = new ArrayList<>();
 
-    List<Repair> allRepairs = new ArrayList<>();
+    private List<Repair> allRepairs = new ArrayList<>();
 
-    List<Repair> allOrderedTasks = new ArrayList<>();
+    private List<Repair> allOrderedTasks = new ArrayList<>();
 
     private List<Spare> temp_spares = new ArrayList<>();
 
@@ -163,9 +163,6 @@ public class RepairController implements Initializable {
     private Tab tab_ordre_reparation;
 
     @FXML
-    private Tab tab_controle_qualite;
-
-    @FXML
     private ComboBox<Repair> edit_repair;
 
     @FXML
@@ -239,9 +236,6 @@ public class RepairController implements Initializable {
 
     @FXML
     private TextArea total_task;
-
-    @FXML
-    private ComboBox<Repair> ordre_reparation;
 
     @FXML
     void add_spare(ActionEvent event) {
@@ -334,11 +328,6 @@ public class RepairController implements Initializable {
     }
 
     @FXML
-    void add_qualite(ActionEvent event) {
-
-    }
-
-    @FXML
     void submit(ActionEvent event) {
 
         if (this.temp_spares.isEmpty() || this.temp_tasks.isEmpty()) {
@@ -386,16 +375,6 @@ public class RepairController implements Initializable {
         new_task_cost.setText("");
         new_task_rate.setText("");
         new_task_description.getEditor().setText("");
-    }
-
-    @FXML
-    void cancel_ordre(ActionEvent event) {
-        reset_edit_repair_form();
-    }
-
-    @FXML
-    void cancel_qualite(ActionEvent event) {
-
     }
 
     @FXML
@@ -775,9 +754,6 @@ public class RepairController implements Initializable {
                 tab = tab_ordre_reparation;
                 break;
             }
-            case 4:{
-                tab=tab_controle_qualite;
-            }
         }
         return tab;
     }
@@ -916,10 +892,6 @@ public class RepairController implements Initializable {
         table_repair.refresh();
     }
 
-    void reset_qualite_reparation_form() {
-        currentRepair = null;
-    }
-
     void editRepair(Repair repair){
         Repair reparation;
         try {
@@ -993,7 +965,8 @@ public class RepairController implements Initializable {
         new_repair_dossier.setConverter(new StringConverter<Dossier>() {
             @Override
             public String toString(Dossier object) {
-                if(object==null) return null;
+                if(object==null)
+                    return null;
                 return object.toString();
             }
 
@@ -1030,27 +1003,6 @@ public class RepairController implements Initializable {
             }
         });
 
-        ordre_reparation.setConverter(new StringConverter<Repair>() {
-            @Override
-            public String toString(Repair object) {
-                if(object==null){
-                    return null;
-                }
-                return object.toString();
-            }
-
-            @Override
-            public Repair fromString(String string) {
-                String[] data = string.split("/");
-                String id = data[0].trim();
-                try {
-                    return repairPortal.read(Long.parseLong(id));
-                } catch (IOException | InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
-
         new_repair_dossier.addEventHandler(ActionEvent.ACTION, event -> {
             if (new_repair_dossier.getSelectionModel().getSelectedIndex() != -1) {
                 this.currentDossier = new_repair_dossier.getValue();
@@ -1065,12 +1017,6 @@ public class RepairController implements Initializable {
                 repair_reference.setText(currentRepair.getReference());
                 read_ordre_reparation_tache(currentRepair);
                 read_ordre_reparation_fourniture(currentRepair);
-            }
-        });
-
-        ordre_reparation.addEventHandler(ActionEvent.ACTION, event -> {
-            if (ordre_reparation.getSelectionModel().getSelectedIndex() != -1) {
-                this.currentRepair = ordre_reparation.getValue();
             }
         });
 
