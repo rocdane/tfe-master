@@ -11,10 +11,9 @@ import org.springframework.web.cors.reactive.CorsWebFilter;
 import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
-import java.util.List;
 
 @Configuration
-public class App extends CorsConfiguration {
+public class App {
 
     private static final Logger log = LoggerFactory.getLogger(App.class);
 
@@ -36,9 +35,15 @@ public class App extends CorsConfiguration {
                         .uri("http://httpbin.org:80"))
                 .route(p -> p
                         .path("/authentication-service/**")
+                        .filters(gatewayFilterSpec -> gatewayFilterSpec
+                                .addResponseHeader("Access-Control-Allow-Origin","*")
+                                .addResponseHeader("Access-Control-Allow-Headers","Accept, Content-Type"))
                         .uri("lb://authentication-service"))
                 .route(p -> p
                         .path("/customer-service/**")
+                        .filters(gatewayFilterSpec -> gatewayFilterSpec
+                                .addResponseHeader("Access-Control-Allow-Origin","*")
+                                .addResponseHeader("Access-Control-Allow-Headers","Accept, Content-Type"))
                         .uri("lb://customer-service"))
                 .route(p -> p
                         .path("/maintenance-service/**")
@@ -56,17 +61,12 @@ public class App extends CorsConfiguration {
     }
 
     @Bean
-    public CorsWebFilter corsFilter() {
-        org.springframework.web.cors.CorsConfiguration corsConfiguration = new org.springframework.web.cors.CorsConfiguration();
+    public CorsWebFilter corsFilter(){
+        CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowCredentials(true);
         corsConfiguration.addAllowedOrigin("*");
-        corsConfiguration.addAllowedOriginPattern("http://localhost:3000");
         corsConfiguration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"));
-        corsConfiguration.addAllowedHeader("origin");
-        corsConfiguration.addAllowedHeader("content-type");
-        corsConfiguration.addAllowedHeader("accept");
-        corsConfiguration.addAllowedHeader("authorization");
-        corsConfiguration.addAllowedHeader("cookie");
+        corsConfiguration.addAllowedHeader("Content-Type, Accept");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", corsConfiguration);
         return new CorsWebFilter(source);

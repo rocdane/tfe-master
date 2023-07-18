@@ -1,6 +1,7 @@
 com/loga/intelligentservice/vendor/config/App.class
 com/loga/intelligentservice/app/factory/Diagnosis.class
 com/loga/intelligentservice/app/api/JenaAPI.class
+com/loga/intelligentservice/vendor/config/App$1.class
 com/loga/intelligentservice/vendor/security/Crypto.class
 com/loga/intelligentservice/controller/IntelligenceController.class
 com/loga/intelligentservice/service/IntelligenceService.class

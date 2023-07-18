@@ -8,6 +8,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import com.loga.intelligentservice.app.api.JenaAPI;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class App {
@@ -21,6 +23,16 @@ public class App {
     CommandLineRunner init(){
         return  args -> {
             LOGGER.info("Ontology : "+ JenaAPI.getURI());
+        };
+    }
+
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/*").allowedOrigins("*");
+            }
         };
     }
 }

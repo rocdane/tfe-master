@@ -5,99 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e45b2ae2-dcf1-4e0e-b2e4-26fe16c029c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../client-react/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/src/components/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/src/components/Hero.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/src/pages/NotFound.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/src/reportWebVitals.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client-react/src/setupTests.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/AuthenticationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/app/api/IntelligentServiceProxy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/controller/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/controller/IntelligentServiceProxyController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/entity/AuthSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/entity/AuthSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/entity/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/entity/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/repository/AuthSessionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/repository/AuthSessionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/repository/LogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/repository/LogRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/service/Authenticate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/service/Authenticate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/service/Authentication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/service/IAuthenticate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/service/IAuthenticate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/vendor/config/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/vendor/config/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/vendor/config/DateTimeConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/vendor/config/DateTimeConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/vendor/config/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/vendor/config/Loader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/vendor/io/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/vendor/io/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/vendor/io/FileUploadResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/vendor/io/FileUploadResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/vendor/logging/ExceptionWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/vendor/logging/ExceptionWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/vendor/logging/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/vendor/logging/Logger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/microservices/ams/vendor/security/Crypto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/vendor/security/Crypto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/loga/microservices/ams/AuthenticationServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/loga/authenticationservice/AuthenticationServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/vendor/config/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loga/authenticationservice/vendor/config/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/authentication-service-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/authentication-service-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/authentication-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/authentication-service-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/AuthenticationService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/app/api/IntelligentServiceProxy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/controller/AuthenticationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/controller/IntelligentServiceProxyController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/entity/AuthSession.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/entity/Log.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/entity/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/repository/AuthSessionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/repository/LogRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/service/Authenticate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/service/Authentication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/service/IAuthenticate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/config/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/config/DateTimeConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/config/Loader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/io/Database.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/io/FileUploadResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/logging/ExceptionWriter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/logging/Logger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/microservices/ams/vendor/security/Crypto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/authenticationservice/controller/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/loga/authenticationservice/controller/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/loga/authenticationservice/vendor/config/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/loga/authenticationservice/vendor/config/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/loga/microservices/ams/AuthenticationServiceTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/startup/loga/client/app/api/RepairPortal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/startup/loga/client/app/api/RepairPortal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/startup/loga/client/controller/RepairController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/startup/loga/client/controller/RepairController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/startup/loga/client/model/Dossier.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/startup/loga/client/model/Dossier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/resources/startup/loga/client/fxml/reparation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/resources/startup/loga/client/fxml/reparation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.loga.authenticationservice.AuthenticationServiceTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.loga.authenticationservice.AuthenticationServiceTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.loga.authenticationservice.AuthenticationServiceTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.loga.authenticationservice.AuthenticationServiceTests.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/controller/AutomobileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/controller/AutomobileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/controller/ClientController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/controller/DossierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/controller/DossierController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/controller/ProxyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/controller/ProxyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/vendor/config/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/src/main/java/com/loga/customerservice/vendor/config/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/controller/AutomobileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/controller/AutomobileController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/controller/ClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/controller/ClientController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/controller/DossierController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/controller/DossierController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/controller/ProxyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/controller/ProxyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/config/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/target/classes/com/loga/customerservice/vendor/config/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../customer-service/target/customer-service-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/target/customer-service-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../customer-service/target/customer-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/target/customer-service-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../customer-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../customer-service/target/surefire-reports/TEST-com.loga.customerservice.CustomerServiceTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/target/surefire-reports/TEST-com.loga.customerservice.CustomerServiceTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../customer-service/target/surefire-reports/com.loga.customerservice.CustomerServiceTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../customer-service/target/surefire-reports/com.loga.customerservice.CustomerServiceTests.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway-server/src/main/java/com/loga/gatewayserver/vendor/config/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway-server/src/main/java/com/loga/gatewayserver/vendor/config/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../gateway-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway-server/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/controller/IntelligenceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/controller/IntelligenceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../intelligent-service/src/main/resources/automaintongologie.owl" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/src/main/resources/automaintongologie.owl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/automaintongologie.owl" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/target/classes/automaintongologie.owl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/vendor/config/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/vendor/config/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/controller/IntelligenceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/controller/IntelligenceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/vendor/config/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/vendor/config/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../intelligent-service/target/intelligent-service-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/target/intelligent-service-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../intelligent-service/target/intelligent-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/target/intelligent-service-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../intelligent-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
@@ -106,15 +44,21 @@
       <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/controller/DiagnosisController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/controller/DiagnosisController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/controller/ReceptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/controller/ReceptionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/controller/RepairController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/controller/RepairController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/vendor/config/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/vendor/config/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/maintenanceservice/controller/DiagnosisController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/maintenanceservice/controller/DiagnosisController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/maintenanceservice/controller/ReceptionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/maintenanceservice/controller/ReceptionController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/maintenanceservice/controller/RepairController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/maintenanceservice/controller/RepairController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/maintenanceservice/vendor/config/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/target/classes/com/loga/maintenanceservice/vendor/config/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../maintenance-service/target/maintenance-service-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/target/maintenance-service-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../maintenance-service/target/maintenance-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/target/maintenance-service-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../maintenance-service/target/surefire-reports/TEST-com.loga.maintenanceservice.MaintenanceServiceTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/target/surefire-reports/TEST-com.loga.maintenanceservice.MaintenanceServiceTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../maintenance-service/target/surefire-reports/com.loga.maintenanceservice.MaintenanceServiceTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/target/surefire-reports/com.loga.maintenanceservice.MaintenanceServiceTests.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/controller/ReportingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/controller/ReportingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/vendor/config/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/src/main/java/com/loga/reportservice/vendor/config/Loader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/controller/ReportingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/controller/ReportingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/vendor/config/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/classes/com/loga/reportservice/vendor/config/Loader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../report-service/target/report-service-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/report-service-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../report-service/target/report-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/report-service-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../report-service/target/surefire-reports/TEST-com.loga.reportservice.ReportServiceTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../report-service/target/surefire-reports/TEST-com.loga.reportservice.ReportServiceTests.xml" afterDir="false" />
@@ -201,7 +145,7 @@
       <command value="mvn clean -DSkipTests" />
     </option>
   </component>
-  <component name="RunManager" selected="Docker.authentication-service">
+  <component name="RunManager" selected="Application.authentication-service">
     <configuration name="authentication-service" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.loga.authenticationservice.AuthenticationService" />
       <module name="authentication-service" />

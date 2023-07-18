@@ -7,6 +7,7 @@ com/loga/reportservice/ReportService.class
 com/loga/reportservice/vendor/config/Loader.class
 com/loga/reportservice/service/ReportingService.class
 com/loga/reportservice/exception/ReportingErrorException.class
+com/loga/reportservice/vendor/config/Loader$1.class
 com/loga/reportservice/exception/ResourceNotFoundException.class
 com/loga/reportservice/service/IReportingService.class
 com/loga/reportservice/vendor/io/Database.class

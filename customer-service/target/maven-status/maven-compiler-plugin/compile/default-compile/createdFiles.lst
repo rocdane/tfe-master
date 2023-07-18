@@ -9,6 +9,7 @@ com/loga/customerservice/exception/DossierNotFoundException.class
 com/loga/customerservice/app/api/AuthenticationManagementServicesProxy.class
 com/loga/customerservice/entity/Client.class
 com/loga/customerservice/app/factory/AuthSession.class
+com/loga/customerservice/vendor/config/App$1.class
 com/loga/customerservice/entity/Dossier.class
 com/loga/customerservice/repository/DossierRepository.class
 com/loga/customerservice/exception/CustomizedResponseEntityExceptionHandler.class

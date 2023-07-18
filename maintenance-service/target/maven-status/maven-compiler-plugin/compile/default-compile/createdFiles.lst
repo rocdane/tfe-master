@@ -36,6 +36,7 @@ com/loga/maintenanceservice/service/QualityService.class
 com/loga/maintenanceservice/entity/Notice.class
 com/loga/maintenanceservice/entity/Spare.class
 com/loga/maintenanceservice/repository/QualityRepository.class
+com/loga/maintenanceservice/vendor/config/App$1.class
 com/loga/maintenanceservice/repository/SpareRepository.class
 com/loga/maintenanceservice/MaintenanceService.class
 com/loga/maintenanceservice/app/api/IntelligentServiceProxy.class
