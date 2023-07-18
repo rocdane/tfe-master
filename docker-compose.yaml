@@ -1,14 +1,5 @@
 version: '3.8'
-services:
-  client:
-    image: client
-    ports:
-      - '12735:12735'
-    networks:
-      - tfe-master
-    depends_on:
-      - gateway-server
-    
+services:    
   data-center:
     image: datacenter
     ports:

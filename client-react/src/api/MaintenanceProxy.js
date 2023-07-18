@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const MAINTENANCE_API_BASE_URL = "http://localhost:8765/maintenance-service";
 
-export class AuthenticationProxy {
+export class MaintenanceProxy {
 
     processDiagnosis(words){
         return axios.get(MAINTENANCE_API_BASE_URL+'/resolve/'+words);
@@ -10,6 +10,10 @@ export class AuthenticationProxy {
 
     registrateDiagnosis(diagnosis){
         return axios.post(MAINTENANCE_API_BASE_URL+'/diagnosis',diagnosis);
+    }
+
+    getDiagnosis(){
+        return axios.get(MAINTENANCE_API_BASE_URL+'/diagnosis');
     }
 
     getDiagnosis(id){
@@ -22,6 +26,10 @@ export class AuthenticationProxy {
 
     registrateRepair(repair){
         return axios.post(MAINTENANCE_API_BASE_URL+'/repairs',repair);
+    }
+
+    getRepairs(){
+        return axios.get(MAINTENANCE_API_BASE_URL+'/repairs');
     }
 
     getRepair(id){
