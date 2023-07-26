@@ -1,21 +1,21 @@
 import { Component } from "react";
-import { CustomerProxy } from "../api/CustomerProxy";
+import CustomerProxy from "../api/CustomerProxy";
 
 export class AutomobileList extends Component{
-
-    customerProxy = new CustomerProxy();
 
     constructor(props){
         super(props);
         this.state = {
-            automobiles:[]
+            automobiles : []
         }
     }
 
     componentDidMount(){
-        const response = this.customerProxy.getAutomobiles();
-        this.state.automobiles = response.data;
-        console.log(this.state.automobiles);
+        CustomerProxy.getAutomobiles().then((res) => {
+            this.setState({ automobiles : res.data});
+        }).catch((error) => {
+            console.error("Failed to get automobile list : ",error);
+        });
     }
 
     render() {
@@ -33,15 +33,19 @@ export class AutomobileList extends Component{
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>AH2775RB</td>
-                        <td>ABCDEFGHJKLMNPRST</td>
-                        <td>Toyota</td>
-                        <td>Carina 3</td>
-                        <td>255366</td>
-                        <td>Km</td>
-                    </tr>
+                    {
+                        this.state.automobiles.map((auto,index) => 
+                            <tr>
+                                <td>{index+1}</td>
+                                <td>{auto.number}</td>
+                                <td>{auto.vin}</td>
+                                <td>{auto.make}</td>
+                                <td>{auto.model}</td>
+                                <td>{auto.trim}</td>
+                                <td>{auto.unit}</td>
+                            </tr>
+                        )
+                    }
                 </tbody>
             </table>
         );

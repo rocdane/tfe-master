@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -43,10 +44,9 @@ public class RepairService implements IRepairService {
     @Override
     @Transactional
     public Repair createRepair(Repair repair) {
-
-        Calendar.getInstance().getTime();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         repair.setCreatedAt(new Date());
-
+        repair.setReference(sdf.format(repair.getCreatedAt())+" - "+repair.getDossier());
         return repairRepository.save(repair);
     }
 

@@ -5,6 +5,7 @@ import com.loga.maintenanceservice.app.api.IntelligentServiceProxy;
 import com.loga.maintenanceservice.app.api.ReportServiceProxy;
 import com.loga.maintenanceservice.app.factory.Dossier;
 import com.loga.maintenanceservice.entity.Diagnosis;
+import com.loga.maintenanceservice.exception.RegistrationFailedException;
 import com.loga.maintenanceservice.service.IDiagnosisService;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import jakarta.servlet.http.HttpServletResponse;
@@ -44,7 +45,16 @@ public class DiagnosisController {
     @PostMapping(path = "/diagnosis", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Diagnosis> create(@RequestBody Diagnosis diagnosis) {
         Diagnosis created = repairDiagnostic.create(diagnosis);
-        return ResponseEntity.ok(created);
+        if(created!=null){
+            return ResponseEntity.ok(created);
+        }else {
+            throw new RegistrationFailedException("Failed to registrate diagnosis.");
+        }
+    }
+
+    @GetMapping(path = "/diagnosis", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Diagnosis> read() {
+        return repairDiagnostic.readAll();
     }
 
     @GetMapping(path = "/diagnosis/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -54,7 +64,7 @@ public class DiagnosisController {
 
     @GetMapping(path = "/report/diagnosis/{id}", produces = MediaType.APPLICATION_PDF_VALUE)
     public void report(HttpServletResponse response, @PathVariable Long id) {
-        reportService.produceReportById(response, "diagnosis", id).getBody();
+        reportService.produceReportById(response, "diagnosis", id);
     }
 
     @GetMapping(path = "/diagnosis/dossiers/{id}", produces = MediaType.APPLICATION_JSON_VALUE)

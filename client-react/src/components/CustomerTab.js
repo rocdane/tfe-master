@@ -1,5 +1,5 @@
 import { Component } from "react";
-import CustomerForm from "./CustomerForm";
+import {CustomerForm} from "./CustomerForm";
 import {CustomerList} from "./CustomerList";
 
 export class CustomerTab extends Component{

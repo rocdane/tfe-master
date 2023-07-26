@@ -1,22 +1,23 @@
 import { Component } from "react";
-import { CustomerProxy } from "../api/CustomerProxy";
+import CustomerProxy from "../api/CustomerProxy";
 
 export class CustomerList extends Component{
-    customerProxy = new CustomerProxy();
 
     constructor(props){
         super(props);
         this.state = {
-            client:{},
-            dossier:{},
-            clients:[]
+            client : {},
+            dossier : {},
+            clients : []
         }
     }
 
     componentDidMount(){
-        const response = this.customerProxy.getClient();
-        this.state.clients = response.data;
-        console.log(this.state.clients);
+        CustomerProxy.getClients().then((res) => {
+            this.setState({ clients : res.data});
+        }).catch((error) => {
+            console.error("Failed to get customer list : ",error);
+        });
     }
 
     render() {
@@ -33,14 +34,18 @@ export class CustomerList extends Component{
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>S. Rochdane</td>
-                        <td>Homme</td>
-                        <td>Freelance IT</td>
-                        <td>rocdanesabi@n2a.cc</td>
-                        <td>Afrique</td>
-                    </tr>
+                    {
+                        this.state.clients.map((client,index) => 
+                            <tr>
+                                <td>{index+1}</td>
+                                <td>{client.name}</td>
+                                <td>{client.type}</td>
+                                <td>{client.legalNotice}</td>
+                                <td>{client.contact}</td>
+                                <td>{client.address}</td>
+                            </tr>
+                        )
+                    }
                 </tbody>
             </table>
         );

@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @ControllerAdvice
 public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(Exception.class)
+    @ExceptionHandler({Exception.class,RegistrationFailedException.class})
     public final ResponseEntity<ErrorDetails> handleAllExceptions(Exception ex, WebRequest request) {
         ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(),
                 ex.getMessage(), request.getDescription(false));

@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const AUTHENTICATION_API_BASE_URL = "http://localhost:8765/authentication-service";
+const AUTHENTICATION_API_BASE_URL = "http://localhost:8001/authentication-service";
 
-export class AuthenticationProxy {
+class AuthenticationProxy {
 
     signin(user){
         return axios.post(AUTHENTICATION_API_BASE_URL+'/signin',user);
@@ -20,3 +20,5 @@ export class AuthenticationProxy {
         return axios.get(AUTHENTICATION_API_BASE_URL+'/session/'+token);
     }
 }
+
+export default new AuthenticationProxy();

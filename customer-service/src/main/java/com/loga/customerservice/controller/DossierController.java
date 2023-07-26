@@ -1,6 +1,7 @@
 package com.loga.customerservice.controller;
 
 import com.loga.customerservice.entity.Dossier;
+import com.loga.customerservice.exception.RegistrationFailedException;
 import com.loga.customerservice.service.IDossierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -19,7 +20,13 @@ public class DossierController {
 
     @PostMapping(path = "/dossiers", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Dossier> create(@RequestBody Dossier dossier){
-        return ResponseEntity.ok(manageDossierService.createDossier(dossier));
+        dossier.setReference(dossier.getAutomobile().getNumber()+"-"+dossier.getAutomobile().getVin());
+        Dossier created = manageDossierService.createDossier(dossier);
+        if(created!=null){
+            return ResponseEntity.ok(created);
+        }else {
+            throw new RegistrationFailedException("Failed to registrate dossier");
+        }
     }
 
     @GetMapping(path = "/dossiers", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -30,6 +37,11 @@ public class DossierController {
     @GetMapping(path = "/dossiers/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Dossier read(@PathVariable Long id){
         return manageDossierService.findDossier(id);
+    }
+
+    @GetMapping(path = "/dossiers/number/{number}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Dossier readByAutomobile(@PathVariable String number){
+        return manageDossierService.findDossierByAutomobile(number);
     }
 
     @GetMapping(path = "/dossiers/reference/{reference}", produces = MediaType.APPLICATION_JSON_VALUE)

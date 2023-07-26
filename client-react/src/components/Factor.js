@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-export class Factor extends Component{
+class Factor extends Component{
     
     constructor(props){
         super(props);
@@ -9,12 +9,12 @@ export class Factor extends Component{
     }
 
     removeFactor(){
-
+        
     }
 
     render() {
         return (
-            <div className="row mt-2 mb-2 factor-added">
+            <div className="row mt-2 mb-2" key={this.props.key}>
                 <div className="col-md-2 col-sm-2">
                     <input name="entity" type="text" value={this.props.entity} className="form-control"/>
                 </div>
@@ -25,16 +25,18 @@ export class Factor extends Component{
                     <input name="maintenance" type="text" value={this.props.maintenance} className="form-control"/>
                 </div>
                 <div className="col-md-2 col-sm-2">
-                    <button className="btn btn-sm" onClick={this.removeFactor}>
+                    <button className="btn btn-sm" onClick={() => this.removeFactor(this.props.key)}>
                         <img 
                         className="img-fluid"
                         width="32"
                         height="32"
                         src="/assets/icon/ico-remove.PNG"
                         />
-                    </button> 
+                    </button>
                 </div>
             </div>
         );
     }
 }
+
+export default new Factor();

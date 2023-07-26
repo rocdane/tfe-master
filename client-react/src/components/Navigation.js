@@ -1,24 +1,23 @@
 import { useNavigate } from "react-router-dom";
 import { ReactDOM } from "react";
-import { AuthenticationProxy } from "../api/AuthenticationProxy";
+import AuthenticationProxy from "../api/AuthenticationProxy";
 
 function Navigation(){
 
     const navigate = useNavigate();
-    const authenticationProxy = new AuthenticationProxy();
-
+    
     const logout = async (e) => {
         e.preventDefault();
         let token = localStorage.getItem("token");
         console.info(token);
-        await authenticationProxy
+        AuthenticationProxy
             .signout(token)
-                .then(res => {
-                    console.log(res.status);
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
+            .then(res => {
+                console.log(res.status);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
         localStorage.removeItem("authenticated");
         localStorage.removeItem("token");
         navigate("/authenticate");

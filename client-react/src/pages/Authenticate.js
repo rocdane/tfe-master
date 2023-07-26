@@ -1,38 +1,46 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
-import { AuthenticationProxy } from '../api/AuthenticationProxy';
+import AuthenticationProxy from '../api/AuthenticationProxy';
 
 function Authenticate() {
-  const URL = "http://localhost:8001/authentication-service/signin";
-  const authenticationProxy = new AuthenticationProxy();
   const navigate = useNavigate();
-  let [username, setusername] = useState("");
-  let [password, setpassword] = useState("");
-  let [authenticated, setauthenticated] = useState(localStorage.getItem("authenticated") || false);
+  const [username, setusername] = useState("");
+  const [password, setpassword] = useState("");
+  const [session,setsession] = useState({});
+  const [error,seterror] = useState({});
+  const [authenticated, setauthenticated] = useState(localStorage.getItem("authenticated") || false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
-    const spinner = document.getElementById("login-spinner"), 
-    error = document.getElementById("login-failed");
+    const spinner = document.getElementById("login-spinner");
 
     spinner.style.display = "inline-block";
-    error.style.display = "none";
 
-    const response = await authenticationProxy
-      .signin({username:username, password:password});
-
-    const session = response.data;
+    const response = {};
     
-    if(session.closed===false){
-      setauthenticated(true);
+    AuthenticationProxy
+      .signin({username:username, password:password})
+      .then((res)=>{
+        response = res.data
+      })
+      .catch((err)=>{
+        seterror({sessionError:"Echec lors de l'ouverture de la session."})
+        console.log(error,err);
+      });
+    
+    setsession({session:response.data});
+    
+    setauthenticated(!session.closed);
+    
+    if(authenticated){
       localStorage.setItem("authenticated",authenticated);
       localStorage.setItem("token",session.token);
       navigate("/workspace");
     }else{
+      seterror({sessionError:"Echec d'authentification !!! Utilisateur ou mot de passe erronée."});
       spinner.style.display = "none";
-      error.style.display = "block";
     }
   };
   
@@ -61,9 +69,9 @@ function Authenticate() {
             </div>
             <div className="col-md-6 d-flex align-items-stretch align-middle bg-body-tertiary" id="authenticate-form">
               <div className="container-fluid mt-4">
-                <div className="alert alert-danger" role="alert" id="login-failed">
-                  Echec d'authentification !!! Utilisateur ou mot de passe erronée.
-                </div>
+                {error.sessionError ?
+                  <div className="alert alert-danger" role="alert">{error.sessionError}</div>
+                :null}
                 <form onSubmit={(e) => handleSubmit(e)}>
                   <div className="form-floating mb-3">
                       <input type="text" className="form-control" id="floatingInput" placeholder="Utilisateur" value={username} onChange={(e)=> setusername(e.target.value)}/>

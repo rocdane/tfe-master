@@ -24,6 +24,7 @@ com/loga/customerservice/vendor/logging/Logger.class
 com/loga/customerservice/exception/ErrorDetails.class
 com/loga/customerservice/service/AutomobileService.class
 com/loga/customerservice/vendor/security/Crypto.class
+com/loga/customerservice/exception/RegistrationFailedException.class
 com/loga/customerservice/exception/ClientNotFoundException.class
 com/loga/customerservice/CustomerService.class
 com/loga/customerservice/controller/AutomobileController.class

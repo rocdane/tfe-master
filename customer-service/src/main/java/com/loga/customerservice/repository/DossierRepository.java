@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface DossierRepository extends JpaRepository<Dossier,Long> {
-    List<Dossier> findDossierByAutomobileNumber(String immatriculation);
+    Dossier findDossierByAutomobileNumber(String immatriculation);
     Dossier findByReference(String reference);
 }
 

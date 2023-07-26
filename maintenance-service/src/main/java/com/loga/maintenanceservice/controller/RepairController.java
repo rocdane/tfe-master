@@ -4,12 +4,12 @@ import com.loga.maintenanceservice.app.api.ReportServiceProxy;
 import com.loga.maintenanceservice.entity.Spare;
 import com.loga.maintenanceservice.entity.Task;
 import com.loga.maintenanceservice.entity.Repair;
+import com.loga.maintenanceservice.exception.RegistrationFailedException;
 import com.loga.maintenanceservice.service.IRepairService;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @CrossOrigin(origins = "*")
@@ -25,7 +25,12 @@ public class RepairController {
 
     @PostMapping(path = "/repairs", produces = MediaType.APPLICATION_JSON_VALUE)
     public Repair create(@RequestBody Repair repair){
-        return repairReparation.createRepair(repair);
+        Repair created = repairReparation.createRepair(repair);
+        if(created != null){
+            return created;
+        }else{
+            throw new RegistrationFailedException("Failed to registrate repair.");
+        }
     }
 
     @GetMapping(path = "/repairs/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -80,6 +85,6 @@ public class RepairController {
 
     @GetMapping(path = "/report/repair/{id}", produces = MediaType.APPLICATION_PDF_VALUE)
     public void report(HttpServletResponse response, @PathVariable Long id) {
-        reportServiceProxy.produceReportById(response, "repair", id).getBody();
+        reportServiceProxy.produceReportById(response, "repair", id);
     }
 }

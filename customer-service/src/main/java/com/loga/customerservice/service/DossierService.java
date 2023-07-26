@@ -1,8 +1,9 @@
 package com.loga.customerservice.service;
 
+import com.loga.customerservice.entity.Client;
 import com.loga.customerservice.entity.Dossier;
+import com.loga.customerservice.repository.ClientRepository;
 import com.loga.customerservice.repository.DossierRepository;
-import com.loga.customerservice.entity.Automobile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,49 +17,45 @@ public class DossierService implements IDossierService {
     @Autowired
     private DossierRepository dossierRepository;
 
-    /**
-     * TODO:Cette méthode permet d'enregistrer un objet Dossier dans la base de données.
-     * @param dossier
-     * @return Dossier
-     * @see Automobile , Client
-     */
+    @Autowired
+    private ClientRepository clientRepository;
+
     @Override
     @Transactional
     public Dossier createDossier(Dossier dossier) {
-        if(dossierRepository.findDossierByAutomobileNumber(dossier.getAutomobile().getNumber()).isEmpty() ||
-         dossierRepository.findByReference(dossier.getReference())==null){
+        Client client = null;
+
+        if(clientRepository.findByName(dossier.getClient().getName()).isPresent()) {
+            client = clientRepository.findByName(dossier.getClient().getName()).get();
+        }
+
+        if (client!=null) {
+            System.out.println(client);
+            dossier.setClient(client);
+        }
+
+        Boolean notExistAutomobile = dossierRepository.findDossierByAutomobileNumber(dossier.getAutomobile().getNumber()) == null;
+        Boolean notExistReference = dossierRepository.findByReference(dossier.getReference()) == null;
+
+        if(notExistAutomobile && notExistReference){
             dossier.setOpenAt(new Date());
             dossier.setUpdatedAt(new Date());
             return dossierRepository.save(dossier);
-        }else
+        }else{
             return null;
+        }
     }
 
-    /**
-     * Cette méthode permet de sélectionner tous les objets Dossier de la base de données.
-     *
-     * @return List
-     */
     @Override
     public List<Dossier> listDossier() {
         return dossierRepository.findAll();
     }
 
-    /**
-     * Cette méthode permet de sélectionner tous les objets Dossier de la base de données.
-     * @param immatriculation
-     * @return List
-     */
     @Override
-    public List<Dossier> listDossier(String immatriculation) {
-        return dossierRepository.findDossierByAutomobileNumber(immatriculation);
+    public Dossier findDossierByAutomobile(String number) {
+        return dossierRepository.findDossierByAutomobileNumber(number);
     }
 
-    /**
-     * Cette méthode permet de sélectionner un objet Dossier de la base de données.
-     * @param id
-     * @return Dossier
-     */
     @Override
     public Dossier findDossier(Long id) {
         return dossierRepository.findById(id).isPresent() ? dossierRepository.findById(id).get() : null;
@@ -81,10 +78,6 @@ public class DossierService implements IDossierService {
                 });
     }
 
-    /**
-     * Cette méthode permet de supprimer un objet Dossier de la base de données.
-     * @param dossier
-     */
     @Override
     public void deleteDossier(Long dossier) {
         dossierRepository.deleteById(dossier);

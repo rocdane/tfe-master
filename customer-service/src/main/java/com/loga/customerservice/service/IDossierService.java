@@ -14,7 +14,7 @@ public interface IDossierService {
 
     List<Dossier> listDossier();
 
-    List<Dossier> listDossier(String reference);
+    Dossier findDossierByAutomobile(String number);
 
     void editDossier(Dossier dossier, Long id);
 

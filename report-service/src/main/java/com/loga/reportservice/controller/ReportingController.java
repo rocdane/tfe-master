@@ -48,8 +48,8 @@ public class ReportingController {
 
         String path = "report_"+src+"_"+id;
 
-        response.setContentType("application/x-download");
-        response.addHeader("Content-Disposition", "inline; filename="+path+".pdf");
+        response.setContentType("application/pdf");
+        response.addHeader("Content-Disposition", "attachment; filename="+path+".pdf");
 
         try {
             OutputStream outputStream = response.getOutputStream();

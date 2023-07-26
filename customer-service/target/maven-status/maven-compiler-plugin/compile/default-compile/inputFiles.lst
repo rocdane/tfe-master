@@ -1,4 +1,5 @@
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/customer-service/src/main/java/com/loga/customerservice/service/AutomobileService.java
+/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/customer-service/src/main/java/com/loga/customerservice/exception/RegistrationFailedException.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/customer-service/src/main/java/com/loga/customerservice/controller/ClientController.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/customer-service/src/main/java/com/loga/customerservice/exception/DossierNotFoundException.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/customer-service/src/main/java/com/loga/customerservice/vendor/logging/ExceptionWriter.java

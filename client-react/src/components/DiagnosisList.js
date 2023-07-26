@@ -1,13 +1,13 @@
 import { Component } from "react";
-import {MaintenanceProxy} from "../api/MaintenanceProxy";
+import MaintenanceProxy from "../api/MaintenanceProxy";
+import ReportProxy from "../api/ReportProxy";
 
 export class DiagnosisList extends Component{
-    maintenanceProxy = new MaintenanceProxy()
 
     constructor(props){
         super(props);
         this.state = {
-            diagnosis : []
+            diagnoses : []
         }
 
         this.printDiagnosis = this.printDiagnosis.bind(this);
@@ -15,23 +15,31 @@ export class DiagnosisList extends Component{
     }
 
     componentDidMount(){
-        const response = this.maintenanceProxy.getDiagnosis();
-        this.state.diagnosis = response.data;
-    }
-
-    componentDidUpdate(){
-        const response = this.maintenanceProxy.getDiagnosis();
-        this.state.diagnosis = response.data;
+        MaintenanceProxy.getDiagnoses().then((res) => {
+            this.setState({ diagnoses : res.data});
+        }).catch((error) => {
+            console.error("Failed to get diagnosis list : ",error);
+        });
     }
 
     printDiagnosis(id){
-        const response = this.maintenanceProxy.reportDiagnosis(id);
-        console.log(response.data);
+        ReportProxy.reportDiagnosis(id).then((res) => {
+            const link = document.createElement('a');
+            const url = window.URL.createObjectURL(new Blob([res.data]));
+            link.href = url;
+            link.download = 'report_diagnosis_'+id+'.pdf';
+            link.click();
+        }).catch((error)=>{
+            console.error("Failed to download report : ",error);
+        });
     }
 
     archiveDiagnosis(id){
-        const response = this.maintenanceProxy.getDiagnosis(id);
-        console.log(response.data);
+        MaintenanceProxy.getDiagnosis(id).then((res) => {
+            console.info(res.data);
+        }).catch((error) => {
+            console.error("Failed to archive diagnosis : ",error);
+        });
     }
 
     render() {
@@ -39,6 +47,7 @@ export class DiagnosisList extends Component{
             <table className="table">
                 <thead>
                     <tr>
+                        <th scope="col">#</th>
                         <th scope="col">Dossier</th>
                         <th scope="col">Référence</th>
                         <th scope="col">Description</th>
@@ -49,16 +58,16 @@ export class DiagnosisList extends Component{
                 </thead>
                 <tbody>
                     {
-                        this.state.diagnosis.map(
-                            diag => 
-                            <tr key = {diag.id}>
+                        this.state.diagnoses.map((diag, index) => 
+                            <tr key = {index}>
+                                <td>{index+1}</td>
                                 <td>{diag.dossier}</td>
                                 <td>{diag.reference}</td>
                                 <td>{diag.description}</td>
                                 <td>{diag.mileage}</td>
                                 <td>{diag.profile}</td>
                                 <td className="d-flex justify-content-center">
-                                    <button className="btn btn-sm bg-transparent" onClick={ () => {}}>
+                                    <button className="btn btn-sm bg-transparent" onClick={ () => {this.printDiagnosis(diag.id)}}>
                                         <img 
                                         class="img-fluid"
                                         width="24"
@@ -66,7 +75,7 @@ export class DiagnosisList extends Component{
                                         src="/assets/icon/ico-printer.PNG"
                                         />
                                     </button>
-                                    <button className="btn btn-sm bg-transparent" onClick={ () => {}}>
+                                    <button className="btn btn-sm bg-transparent" onClick={ () => {this.archiveDiagnosis(diag.id)}}>
                                         <img 
                                         class="img-fluid"
                                         width="24 em"

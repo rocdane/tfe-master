@@ -32,6 +32,6 @@ public class ReceptionController {
 
     @GetMapping(path = "/report/reception/{id}", produces = MediaType.APPLICATION_PDF_VALUE)
     public void report(HttpServletResponse response, @PathVariable Long id) {
-        reportServiceProxy.produceReportById(response, "reception", id).getBody();
+        reportServiceProxy.produceReportById(response, "reception", id);
     }
 }

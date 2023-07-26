@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const CUSTOMER_API_BASE_URL = "http://localhost:8765/customer-service";
+const CUSTOMER_API_BASE_URL = "http://localhost:8002/customer-service";
 
-export class CustomerProxy {
+class CustomerProxy {
 
     registrate(dossier){
         return axios.post(CUSTOMER_API_BASE_URL+'/dossiers',dossier);
@@ -44,3 +44,5 @@ export class CustomerProxy {
         return axios.get(CUSTOMER_API_BASE_URL+'/automobiles/number/'+number);
     }
 }
+
+export default new CustomerProxy();

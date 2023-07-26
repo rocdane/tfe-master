@@ -1,10 +1,15 @@
 package com.loga.maintenanceservice.vendor.config;
 
+import com.loga.maintenanceservice.entity.Diagnosis;
+import com.loga.maintenanceservice.entity.Factor;
+import com.loga.maintenanceservice.service.IDiagnosisService;
 import jakarta.persistence.EntityManagerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -17,6 +22,8 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.sql.DataSource;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 
 @EnableTransactionManagement
@@ -61,15 +68,5 @@ public class App {
         properties.setProperty("hibernate.hbm2ddl.auto", env.getProperty("spring.jpa.hibernate.ddl-auto"));
         properties.setProperty("hibernate.dialect", env.getProperty("spring.jpa.database-platform"));
         return properties;
-    }
-
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/*").allowedOrigins("*");
-            }
-        };
     }
 }

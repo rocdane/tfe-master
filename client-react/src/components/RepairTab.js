@@ -1,6 +1,6 @@
 import { Component } from "react";
 import {RepairForm} from "./RepairForm";
-import RepairList from "./RepairList";
+import {RepairList} from "./RepairList";
 
 export class RepairTab extends Component{
 

@@ -25,7 +25,7 @@ public class Loader {
 
         Client client = new Client();
         client.setAddress("Africa");
-        client.setContact("rocdanesabi@n2a.cc");
+        client.setContact("rochdanesabi@n2a.cc");
         client.setType("HOMME");
         client.setName("Rochdane SABI");
         client.setLegalNotice("Freelance");
@@ -39,11 +39,13 @@ public class Loader {
         automobile.setNumber("AH2775RB");
 
         Dossier dossier = new Dossier();
-        dossier.setReference("dossier");
+        dossier.setReference(automobile.getNumber()+"-"+automobile.getVin());
         dossier.setClient(client);
         dossier.setAutomobile(automobile);
 
-        if(dossierService.createDossier(dossier)!=null)
+        Dossier created = dossierService.createDossier(dossier);
+
+        if(created!=null)
             return args -> {
                 log.info("Customer Service Initialization ---");
             };

@@ -7,7 +7,6 @@
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Diagnosis.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/service/ReceptionService.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/app/api/IntelligentServiceProxy.java
-/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/exception/RepairNotFoundException.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/controller/ReceptionController.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/repository/ControlRepository.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Quality.java
@@ -25,6 +24,7 @@
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Control.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/service/IQualityService.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/controller/RepairController.java
+/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/exception/RegistrationFailedException.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/service/IDiagnosisService.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/repository/NoticeRepository.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/service/DiagnosisService.java
@@ -41,4 +41,5 @@
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/vendor/config/App.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Reception.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/repository/QualityRepository.java
+/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/exception/ResourceNotFoundException.java
 /home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/maintenance-service/src/main/java/com/loga/maintenanceservice/controller/DiagnosisController.java

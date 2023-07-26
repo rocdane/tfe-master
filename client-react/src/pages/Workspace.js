@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navigation from '../components/Navigation';
-import Dashboard from "../components/Dashboard";
+import {Dashboard} from "../components/Dashboard";
 
 function Workspace(){
   

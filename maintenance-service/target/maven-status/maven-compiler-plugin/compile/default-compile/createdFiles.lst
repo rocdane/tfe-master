@@ -5,7 +5,6 @@ com/loga/maintenanceservice/entity/Diagnosis.class
 com/loga/maintenanceservice/service/IDiagnosisService.class
 com/loga/maintenanceservice/entity/Quality.class
 com/loga/maintenanceservice/entity/Repair.class
-com/loga/maintenanceservice/exception/RepairNotFoundException.class
 com/loga/maintenanceservice/repository/DiagnosisRepository.class
 com/loga/maintenanceservice/entity/Control.class
 com/loga/maintenanceservice/exception/ErrorDetails.class
@@ -14,6 +13,7 @@ com/loga/maintenanceservice/repository/RepairRepository.class
 com/loga/maintenanceservice/app/factory/Dossier.class
 com/loga/maintenanceservice/service/RepairService.class
 com/loga/maintenanceservice/entity/Factor.class
+com/loga/maintenanceservice/vendor/config/Loader$1.class
 com/loga/maintenanceservice/app/factory/AuthSession.class
 com/loga/maintenanceservice/vendor/io/ExceptionWriter.class
 com/loga/maintenanceservice/repository/TaskRepository.class
@@ -33,10 +33,11 @@ com/loga/maintenanceservice/entity/Reception.class
 com/loga/maintenanceservice/service/ReceptionService.class
 com/loga/maintenanceservice/repository/ReceptionRepository.class
 com/loga/maintenanceservice/service/QualityService.class
+com/loga/maintenanceservice/exception/RegistrationFailedException.class
 com/loga/maintenanceservice/entity/Notice.class
 com/loga/maintenanceservice/entity/Spare.class
 com/loga/maintenanceservice/repository/QualityRepository.class
-com/loga/maintenanceservice/vendor/config/App$1.class
+com/loga/maintenanceservice/exception/ResourceNotFoundException.class
 com/loga/maintenanceservice/repository/SpareRepository.class
 com/loga/maintenanceservice/MaintenanceService.class
 com/loga/maintenanceservice/app/api/IntelligentServiceProxy.class
