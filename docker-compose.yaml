@@ -1,26 +1,40 @@
 version: '3.8'
-services:    
-  client-react:
+services:
+ client-react:
     image: rocdanesabi/tfe-master:client-react
     ports:
       - '3000:3000'
     networks:
-      - tfe-master
+      tfe-master:
+        ipv4_address: 172.19.0.2
     depends_on:
       - gateway-server
-      - authentication-service
-      - customer-service
-      - maintenance-service
+
   data-center:
     image: rocdanesabi/tfe-master:datacenter
     ports:
       - '25432:5432'
     networks:
-      - tfe-master
+      tfe-master:
+        ipv4_address: 172.19.0.5
     environment:
       - POSTGRES_USER=loga
       - POSTGRES_PASSWORD=Log@2020
       - POSTGRES_DB=loga
+    restart: always
+
+  data-warehouse:
+    image: rocdanesabi/tfe-master:datawarehouse
+    ports:
+      - '35432:5432'
+    networks:
+      tfe-master:
+        ipv4_address: 172.19.0.3
+    environment:
+      - POSTGRES_USER=loga
+      - POSTGRES_PASSWORD=Log@2020
+      - POSTGRES_DB=loga
+    
     restart: always
 
   authentication-service:
@@ -28,7 +42,8 @@ services:
     ports:
       - "8001:8001"
     networks:
-      - tfe-master
+      tfe-master:
+        ipv4_address: 172.19.0.4
     depends_on:
       - naming-server
       - data-center
@@ -45,7 +60,8 @@ services:
     ports:
       - "8002:8002"
     networks:
-      - tfe-master
+      tfe-master:
+        ipv4_address: 172.19.0.6
     depends_on:
       - naming-server
       - data-center
@@ -62,7 +78,8 @@ services:
     ports:
       - "8003:8003"
     networks:
-      - tfe-master
+      tfe-master:
+        ipv4_address: 172.19.0.7
     depends_on:
       - naming-server
       - data-center
@@ -75,13 +92,33 @@ services:
       SPRING.JPA.HIBERNATE.DDL.AUTO: update
       EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
       MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
+  
+  monitoring-service:
+    image: rocdanesabi/tfe-master:monitoring-service
+    ports:
+      - "8004:8004"
+    networks:
+      tfe-master:
+        ipv4_address: 172.19.0.8
+    depends_on:
+      - naming-server
+      - data-warehouse
+      - report-service
+    environment:
+      SPRING.DATASOURCE.URL: jdbc:postgresql://data-warehouse:5432/loga
+      SPRING.DATASOURCE.USERNAME: loga
+      SPRING.DATASOURCE.PASSWORD: Log@2020
+      SPRING.JPA.HIBERNATE.DDL.AUTO: none
+      EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+      MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
 
   intelligent-service:
     image: rocdanesabi/tfe-master:intelligent-service
     ports:
       - "8005:8005"
     networks:
-      - tfe-master
+      tfe-master:
+        ipv4_address: 172.19.0.9
     depends_on:
       - naming-server
     environment:
@@ -94,7 +131,8 @@ services:
     ports:
       - "8006:8006"
     networks:
-      - tfe-master
+      tfe-master:
+        ipv4_address: 172.19.0.10
     depends_on:
       - naming-server
       - data-center
@@ -111,7 +149,8 @@ services:
     ports:
       - "8765:8765"
     networks:
-      - tfe-master
+      tfe-master:
+        ipv4_address: 172.19.0.13
     depends_on:
       - naming-server
     environment:
@@ -123,7 +162,8 @@ services:
     ports:
       - "8761:8761"
     networks:
-      - tfe-master
+      tfe-master:
+        ipv4_address: 172.19.0.12
     restart: always
   
   zipkin-server:
@@ -131,8 +171,14 @@ services:
     ports:
       - "9411:9411"
     networks:
-      - tfe-master
+      tfe-master:
+        ipv4_address: 172.19.0.11
     restart: always
     
 networks:
   tfe-master:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.19.0.0/16
+          gateway: 172.19.0.1
