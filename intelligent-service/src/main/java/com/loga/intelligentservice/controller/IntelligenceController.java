@@ -20,4 +20,9 @@ public class IntelligenceController {
     public List<Diagnosis> resolve(@PathVariable String words){
         return intelligenceService.resolve(words);
     }
+
+    @PutMapping(path = "/update")
+    public void update(){
+        intelligenceService.update();
+    }
 }

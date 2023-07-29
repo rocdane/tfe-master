@@ -6,6 +6,7 @@ import org.apache.jena.ontology.impl.OntologyImpl;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.ModelFactory;
 import com.loga.intelligentservice.IntelligentService;
+import org.apache.jena.rdf.model.RDFNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
@@ -36,6 +37,7 @@ public class JenaAPI {
             Logger.getLogger(IntelligentService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
 
     public static String getURI(){
         Iterator<Ontology> iter = ONTOLOGY.listOntologies();
@@ -73,23 +75,30 @@ public class JenaAPI {
         return result;
     }
 
-    /*
-    public Individual addDysfunction(String dys){
-        OntClass dysfunction = ONTOLOGY.getOntClass( getURI()+"Dysfonctionnement" );
-        DatatypeProperty symptome = ONTOLOGY.getDatatypeProperty(getURI()+"Symptome");
-        return dysfunction.createIndividual(getURI()+dys);
+    public static void updateOntology(List<Diagnosis> diagnoses ){
+        ObjectProperty resoluPar = ONTOLOGY.getObjectProperty( getURI() + "resoluPar" );
+
+        for (Diagnosis diagnosis:diagnoses) {
+            Individual maint = addMaintenance(diagnosis.getMaintenance());
+            Individual dysfun = addDysfunction(diagnosis.getDysfunction());
+            dysfun.addProperty(resoluPar,diagnosis.getMaintenance());
+        }
     }
 
-    public Individual addMaintenance(String maint){
-        OntClass maintenance = ONTOLOGY.getOntClass( getURI()+"Maintenance");
-        DatatypeProperty action = ONTOLOGY.getDatatypeProperty(getURI()+"Action");
-        Individual individual = maintenance.createIndividual(getURI()+maint);
-        individual.addLiteral(action,maint);
+    public static Individual addDysfunction(String dysf){
+        OntClass dysfunction = ONTOLOGY.getOntClass( getURI()+"Dysfonctionnement" );
+        DatatypeProperty titre = ONTOLOGY.getDatatypeProperty(getURI()+"Titre");
+        Individual individual = dysfunction.createIndividual(getURI()+dysf);
+        individual.addProperty(titre,dysf);
         return individual;
     }
 
-    public void update(Individual indiv1, Individual indiv2){
-        ObjectProperty resoluPar = ONTOLOGY.getObjectProperty(getURI()+"resoluPar");
-    }*/
+    public static Individual addMaintenance(String maint){
+        OntClass maintenance = ONTOLOGY.getOntClass( getURI()+"Maintenance");
+        DatatypeProperty action = ONTOLOGY.getDatatypeProperty(getURI()+"Action");
+        Individual individual = maintenance.createIndividual(getURI()+maint);
+        individual.addProperty(action,maint);
+        return individual;
+    }
 }
 

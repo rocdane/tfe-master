@@ -3,6 +3,7 @@ package com.loga.monitoringservice.service;
 import com.loga.monitoringservice.app.factory.*;
 import com.loga.monitoringservice.repository.DashboardDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -34,7 +35,8 @@ public class Monitoring implements IMonitoring {
     }
 
     @Override
-    public String etl() throws InterruptedException, IOException{
+    @Scheduled(fixedRate = 5000)
+    public void etl() throws InterruptedException, IOException{
 
         boolean isWindows = System.getProperty("os.name")
                 .toLowerCase().startsWith("windows");
@@ -59,9 +61,9 @@ public class Monitoring implements IMonitoring {
         int exitCode = process.waitFor();
 
         if (exitCode == 0) {
-            return "ETL Success !";
+            System.out.println("ETL Success !");
         } else {
-            return "ETL Failed !";
+            System.out.println("ETL Failed !");
         }
     }
 
@@ -71,5 +73,10 @@ public class Monitoring implements IMonitoring {
         List<Spares> spares = dashboardDao.getSpares();
         List<Tasks> tasks = dashboardDao.getTasks();
         return new Dashboard(stats,diagnoses,tasks,spares);
+    }
+
+    @Override
+    public List<Diagnoses> diagnose() throws SQLException {
+        return dashboardDao.getDiagnoses();
     }
 }

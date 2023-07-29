@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IIntelligenceService {
     List<Diagnosis> resolve(String words);
+    void update();
 }

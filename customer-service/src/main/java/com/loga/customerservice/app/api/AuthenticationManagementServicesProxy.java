@@ -10,5 +10,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface AuthenticationManagementServicesProxy {
 
     @GetMapping(path = "/authentication-service/session/{token}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public AuthSession fetchSession(@PathVariable String token);
+    AuthSession fetchSession(@PathVariable String token);
 }

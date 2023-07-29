@@ -1,14 +1,12 @@
 package com.loga.monitoringservice.repository;
 
-import com.loga.monitoringservice.app.factory.Diagnosis;
-import com.loga.monitoringservice.app.factory.Spares;
-import com.loga.monitoringservice.app.factory.Stats;
-import com.loga.monitoringservice.app.factory.Tasks;
+import com.loga.monitoringservice.app.factory.*;
 import com.loga.monitoringservice.vendor.io.Database;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import javax.tools.Diagnostic;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -87,5 +85,20 @@ public class DashboardDao {
         }
 
         return tasks;
+    }
+
+    public List<Diagnoses> getDiagnoses() throws SQLException {
+        StringBuilder stmt = new StringBuilder();
+        stmt.append("select distinct dysfunction, maintenance from fact_diagnosis;");
+
+        ResultSet rs = Database.getConnection().createStatement().executeQuery(stmt.toString());
+
+        List<Diagnoses> diagnoses = new ArrayList<>();
+
+        while (rs.next()){
+            diagnoses.add(new Diagnoses(rs.getString("dysfunction"),rs.getString("maintenance")));
+        }
+
+        return diagnoses;
     }
 }
