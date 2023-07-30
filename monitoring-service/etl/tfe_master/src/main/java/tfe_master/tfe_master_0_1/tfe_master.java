@@ -2051,7 +2051,7 @@ String dbUser_tDBOutput_1 = null;
         String url_tDBOutput_1 = "jdbc:postgresql://"+"172.19.0.3"+":"+"5432"+"/"+"loga";
     dbUser_tDBOutput_1 = "loga";
  
-	final String decryptedPassword_tDBOutput_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:LbEocPq408ERdYYIajUsSdypt2cvJgKIvV6lrOxJL0efCBN+");
+	final String decryptedPassword_tDBOutput_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:gYkz4IS2S2++cu9fRns9zNluOc8PDY6jN14xxWEyHWpT8uKw");
 
     String dbPwd_tDBOutput_1 = decryptedPassword_tDBOutput_1;
 
@@ -2227,7 +2227,7 @@ load_dossierStruct load_dossier_tmp = new load_dossierStruct();
 				String dbUser_tDBInput_1 = "loga";
 				
 				 
-	final String decryptedPassword_tDBInput_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:EHti8w/Vywx9OclgP/MBnpIi8Ckyd4DL2urha4zvnchvR0E7");
+	final String decryptedPassword_tDBInput_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:fFJC94msggeI4EdmCdx6mf089f8l4vPP697yVZEESa6Pr4+R");
 				
 				String dbPwd_tDBInput_1 = decryptedPassword_tDBInput_1;
 				
@@ -3857,7 +3857,7 @@ public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) thr
 				String dbUser_tDBInput_2 = "loga";
 				
 				 
-	final String decryptedPassword_tDBInput_2 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:iJzUveMQEJOaUF+Smenkc9c3Pl0trdJY7q/Cc2j7+9gK4wWX");
+	final String decryptedPassword_tDBInput_2 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:/yr5yyEiSQ/rkDxNhNfUoevtPkGvXQ86p/i5JkmxJrMfIGiq");
 				
 				String dbPwd_tDBInput_2 = decryptedPassword_tDBInput_2;
 				
@@ -4785,7 +4785,7 @@ public void tDBInput_3Process(final java.util.Map<String, Object> globalMap) thr
 				String dbUser_tDBInput_3 = "loga";
 				
 				 
-	final String decryptedPassword_tDBInput_3 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:N1+N3K08VYHirHi7BQH7P+0UKHG990VE3YVYEAmSPXIfSgN1");
+	final String decryptedPassword_tDBInput_3 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:HQ8OzoX6sldozfkr2KxiPkDxlq5ICMqaaXaW419JWImFyBQE");
 				
 				String dbPwd_tDBInput_3 = decryptedPassword_tDBInput_3;
 				
@@ -6551,7 +6551,7 @@ String dbUser_tDBOutput_2 = null;
         String url_tDBOutput_2 = "jdbc:postgresql://"+"172.19.0.3"+":"+"5432"+"/"+"loga";
     dbUser_tDBOutput_2 = "loga";
  
-	final String decryptedPassword_tDBOutput_2 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:Ir/ruHfFKQBF9f/QifW3zNcMYe7JUtUXz/e2pYggrKzJRqD+");
+	final String decryptedPassword_tDBOutput_2 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:u3IU+gsnio3s1+uc3CVEMjSS1Cti2K60TqJcP3qqN0+m+PXp");
 
     String dbPwd_tDBOutput_2 = decryptedPassword_tDBOutput_2;
 
@@ -6717,7 +6717,7 @@ load_diagnosisStruct load_diagnosis_tmp = new load_diagnosisStruct();
 				String dbUser_tDBInput_4 = "loga";
 				
 				 
-	final String decryptedPassword_tDBInput_4 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:Ie3+Px5x9mDAdxX8Vx19sAX1Ohgr06tASrT26zlMZyxT7J0s");
+	final String decryptedPassword_tDBInput_4 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:Ae6QaTvPujSimousmcZIGjh2zVKnogMG6oqpgPBQ7qr2iasZ");
 				
 				String dbPwd_tDBInput_4 = decryptedPassword_tDBInput_4;
 				
@@ -8170,7 +8170,7 @@ public void tDBInput_5Process(final java.util.Map<String, Object> globalMap) thr
 				String dbUser_tDBInput_5 = "loga";
 				
 				 
-	final String decryptedPassword_tDBInput_5 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:ix3v+6+VGYErDGFsU/cLt4vfbdqSwaFeXTnM5ipSkKmWhwNL");
+	final String decryptedPassword_tDBInput_5 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:0oYa/bf2WQrPMPZSC9d3eidAXN757k4rsykdaYaCkIyELGO4");
 				
 				String dbPwd_tDBInput_5 = decryptedPassword_tDBInput_5;
 				
@@ -8627,9 +8627,9 @@ public static class load_spareStruct implements routines.system.IPersistableRow<
 					return this.spare;
 				}
 				
-			    public Float price;
+			    public Integer price;
 
-				public Float getPrice () {
+				public Integer getPrice () {
 					return this.price;
 				}
 				
@@ -8639,9 +8639,9 @@ public static class load_spareStruct implements routines.system.IPersistableRow<
 					return this.quantity;
 				}
 				
-			    public Float amount;
+			    public Integer amount;
 
-				public Float getAmount () {
+				public Integer getAmount () {
 					return this.amount;
 				}
 				
@@ -8877,21 +8877,11 @@ public static class load_spareStruct implements routines.system.IPersistableRow<
 					
 					this.spare = readString(dis);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.price = null;
-           				} else {
-           			    	this.price = dis.readFloat();
-           				}
+						this.price = readInteger(dis);
 					
 						this.quantity = readInteger(dis);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.amount = null;
-           				} else {
-           			    	this.amount = dis.readFloat();
-           				}
+						this.amount = readInteger(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -8936,21 +8926,11 @@ public static class load_spareStruct implements routines.system.IPersistableRow<
 					
 					this.spare = readString(dis);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.price = null;
-           				} else {
-           			    	this.price = dis.readFloat();
-           				}
+						this.price = readInteger(dis);
 					
 						this.quantity = readInteger(dis);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.amount = null;
-           				} else {
-           			    	this.amount = dis.readFloat();
-           				}
+						this.amount = readInteger(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -9007,27 +8987,17 @@ public static class load_spareStruct implements routines.system.IPersistableRow<
 				
 						writeString(this.spare,dos);
 					
-					// Float
+					// Integer
 				
-						if(this.price == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeFloat(this.price);
-		            	}
+						writeInteger(this.price,dos);
 					
 					// Integer
 				
 						writeInteger(this.quantity,dos);
 					
-					// Float
+					// Integer
 				
-						if(this.amount == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeFloat(this.amount);
-		            	}
+						writeInteger(this.amount,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -9077,27 +9047,17 @@ public static class load_spareStruct implements routines.system.IPersistableRow<
 				
 						writeString(this.spare,dos);
 					
-					// Float
+					// Integer
 				
-						if(this.price == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeFloat(this.price);
-		            	}
+						writeInteger(this.price,dos);
 					
 					// Integer
 				
 						writeInteger(this.quantity,dos);
 					
-					// Float
+					// Integer
 				
-						if(this.amount == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeFloat(this.amount);
-		            	}
+						writeInteger(this.amount,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -10139,7 +10099,7 @@ String dbUser_tDBOutput_3 = null;
         String url_tDBOutput_3 = "jdbc:postgresql://"+"172.19.0.3"+":"+"5432"+"/"+"loga";
     dbUser_tDBOutput_3 = "loga";
  
-	final String decryptedPassword_tDBOutput_3 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:/LHvc4+UaMu9+TJhXCw41GTizbC4TKoVFzmRvKFTzTeoUX4b");
+	final String decryptedPassword_tDBOutput_3 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:p0ZudaIqYcviDHCbui+AH0pRCnwupKtytfgNmzXI6VA53/Uw");
 
     String dbPwd_tDBOutput_3 = decryptedPassword_tDBOutput_3;
 
@@ -10177,7 +10137,7 @@ int count_tDBOutput_3=0;
                                 }
                                 if(!whetherExist_tDBOutput_3) {
                                     try (java.sql.Statement stmtCreate_tDBOutput_3 = conn_tDBOutput_3.createStatement()) {
-                                        stmtCreate_tDBOutput_3.execute("CREATE TABLE \"" + tableName_tDBOutput_3 + "\"(\"pk_spare\" INT4 ,\"period\" TIMESTAMP ,\"description\" VARCHAR ,\"dossier\" VARCHAR ,\"is_approved\" BOOL ,\"mileage\" INT4 ,\"reference\" VARCHAR ,\"spare\" VARCHAR ,\"price\" FLOAT4 ,\"quantity\" INT4 ,\"amount\" FLOAT4 ,primary key(\"pk_spare\"))");
+                                        stmtCreate_tDBOutput_3.execute("CREATE TABLE \"" + tableName_tDBOutput_3 + "\"(\"pk_spare\" INT4 ,\"period\" TIMESTAMP ,\"description\" VARCHAR ,\"dossier\" VARCHAR ,\"is_approved\" BOOL ,\"mileage\" INT4 ,\"reference\" VARCHAR ,\"spare\" VARCHAR ,\"price\" INT4 ,\"quantity\" INT4 ,\"amount\" INT4 ,primary key(\"pk_spare\"))");
                                     }
                                 }
 	    java.sql.PreparedStatement pstmt_tDBOutput_3 = conn_tDBOutput_3.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_3 + "\" WHERE \"pk_spare\" = ?");
@@ -10305,7 +10265,7 @@ load_spareStruct load_spare_tmp = new load_spareStruct();
 				String dbUser_tDBInput_6 = "loga";
 				
 				 
-	final String decryptedPassword_tDBInput_6 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:xLpUoHPngjmbeoJn+RTqnMmidw4sCwukpGSqNwbLxlx0WNBm");
+	final String decryptedPassword_tDBInput_6 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:0lV6NLzCb/bIrWe2Ev5IH+c90GWWGYMRLinveN63QS+sCuJ6");
 				
 				String dbPwd_tDBInput_6 = decryptedPassword_tDBInput_6;
 				
@@ -10730,8 +10690,8 @@ pstmtUpdate_tDBOutput_3.setNull(7, java.sql.Types.VARCHAR);
 }
 
                         if(load_spare.price == null) {
-pstmtUpdate_tDBOutput_3.setNull(8, java.sql.Types.FLOAT);
-} else {pstmtUpdate_tDBOutput_3.setFloat(8, load_spare.price);
+pstmtUpdate_tDBOutput_3.setNull(8, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_3.setInt(8, load_spare.price);
 }
 
                         if(load_spare.quantity == null) {
@@ -10740,8 +10700,8 @@ pstmtUpdate_tDBOutput_3.setNull(9, java.sql.Types.INTEGER);
 }
 
                         if(load_spare.amount == null) {
-pstmtUpdate_tDBOutput_3.setNull(10, java.sql.Types.FLOAT);
-} else {pstmtUpdate_tDBOutput_3.setFloat(10, load_spare.amount);
+pstmtUpdate_tDBOutput_3.setNull(10, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_3.setInt(10, load_spare.amount);
 }
 
                         if(load_spare.pk_spare == null) {
@@ -10806,8 +10766,8 @@ pstmtInsert_tDBOutput_3.setNull(8, java.sql.Types.VARCHAR);
 }
 
                         if(load_spare.price == null) {
-pstmtInsert_tDBOutput_3.setNull(9, java.sql.Types.FLOAT);
-} else {pstmtInsert_tDBOutput_3.setFloat(9, load_spare.price);
+pstmtInsert_tDBOutput_3.setNull(9, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_3.setInt(9, load_spare.price);
 }
 
                         if(load_spare.quantity == null) {
@@ -10816,8 +10776,8 @@ pstmtInsert_tDBOutput_3.setNull(10, java.sql.Types.INTEGER);
 }
 
                         if(load_spare.amount == null) {
-pstmtInsert_tDBOutput_3.setNull(11, java.sql.Types.FLOAT);
-} else {pstmtInsert_tDBOutput_3.setFloat(11, load_spare.amount);
+pstmtInsert_tDBOutput_3.setNull(11, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_3.setInt(11, load_spare.amount);
 }
 
                 try {
@@ -11283,9 +11243,9 @@ public static class join_spareStruct implements routines.system.IPersistableComp
 					return this.designation;
 				}
 				
-			    public Float price;
+			    public Integer price;
 
-				public Float getPrice () {
+				public Integer getPrice () {
 					return this.price;
 				}
 				
@@ -11295,9 +11255,9 @@ public static class join_spareStruct implements routines.system.IPersistableComp
 					return this.quantity;
 				}
 				
-			    public Float amount;
+			    public Integer amount;
 
-				public Float getAmount () {
+				public Integer getAmount () {
 					return this.amount;
 				}
 				
@@ -11568,21 +11528,11 @@ public static class join_spareStruct implements routines.system.IPersistableComp
 					
 						this.designation = readString(dis,ois);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.price = null;
-           				} else {
-           			    	this.price = dis.readFloat();
-           				}
+						this.price = readInteger(dis,ois);
 					
 						this.quantity = readInteger(dis,ois);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.amount = null;
-           				} else {
-           			    	this.amount = dis.readFloat();
-           				}
+						this.amount = readInteger(dis,ois);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -11608,21 +11558,11 @@ public static class join_spareStruct implements routines.system.IPersistableComp
 					
 						this.designation = readString(dis,objectIn);
 					
-			            length = objectIn.readByte();
-           				if (length == -1) {
-           	    			this.price = null;
-           				} else {
-           			    	this.price = objectIn.readFloat();
-           				}
+						this.price = readInteger(dis,objectIn);
 					
 						this.quantity = readInteger(dis,objectIn);
 					
-			            length = objectIn.readByte();
-           				if (length == -1) {
-           	    			this.amount = null;
-           				} else {
-           			    	this.amount = objectIn.readFloat();
-           				}
+						this.amount = readInteger(dis,objectIn);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -11651,21 +11591,11 @@ public static class join_spareStruct implements routines.system.IPersistableComp
 					
 						writeString(this.designation, dos, oos);
 					
-						if(this.price == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeFloat(this.price);
-		            	}
+					writeInteger(this.price, dos, oos);
 					
 					writeInteger(this.quantity, dos, oos);
 					
-						if(this.amount == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeFloat(this.amount);
-		            	}
+					writeInteger(this.amount, dos, oos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -11686,21 +11616,11 @@ public static class join_spareStruct implements routines.system.IPersistableComp
 					
 						writeString(this.designation, dos, objectOut);
 					
-						if(this.price == null) {
-							objectOut.writeByte(-1);
-						} else {
-							objectOut.writeByte(0);
-							objectOut.writeFloat(this.price);
-		            	}
+					writeInteger(this.price, dos, objectOut);
 					
 					writeInteger(this.quantity, dos, objectOut);
 					
-						if(this.amount == null) {
-							objectOut.writeByte(-1);
-						} else {
-							objectOut.writeByte(0);
-							objectOut.writeFloat(this.amount);
-		            	}
+					writeInteger(this.amount, dos, objectOut);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -11875,7 +11795,7 @@ public void tDBInput_7Process(final java.util.Map<String, Object> globalMap) thr
 				String dbUser_tDBInput_7 = "loga";
 				
 				 
-	final String decryptedPassword_tDBInput_7 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:3JIrFCyWU7HV571JkTvRrD09w0qzNOnvuQryUZBxjI9jDzNI");
+	final String decryptedPassword_tDBInput_7 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:5yRbthWb2hCFw/n1tM8KMMY/RfImUhuHbpFiLClOtJkaaFKd");
 				
 				String dbPwd_tDBInput_7 = decryptedPassword_tDBInput_7;
 				
@@ -11924,7 +11844,7 @@ public void tDBInput_7Process(final java.util.Map<String, Object> globalMap) thr
 								join_spare.price = null;
 							} else {
 		                          
-            join_spare.price = rs_tDBInput_7.getFloat(3);
+            join_spare.price = rs_tDBInput_7.getInt(3);
             if(rs_tDBInput_7.wasNull()){
                     join_spare.price = null;
             }
@@ -11942,7 +11862,7 @@ public void tDBInput_7Process(final java.util.Map<String, Object> globalMap) thr
 								join_spare.amount = null;
 							} else {
 		                          
-            join_spare.amount = rs_tDBInput_7.getFloat(5);
+            join_spare.amount = rs_tDBInput_7.getInt(5);
             if(rs_tDBInput_7.wasNull()){
                     join_spare.amount = null;
             }
@@ -12355,9 +12275,9 @@ public static class copyOfload_repairStruct implements routines.system.IPersista
 					return this.duration;
 				}
 				
-			    public Float cost;
+			    public Integer cost;
 
-				public Float getCost () {
+				public Integer getCost () {
 					return this.cost;
 				}
 				
@@ -12594,12 +12514,7 @@ public static class copyOfload_repairStruct implements routines.system.IPersista
 					
 						this.duration = readInteger(dis);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.cost = null;
-           				} else {
-           			    	this.cost = dis.readFloat();
-           				}
+						this.cost = readInteger(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -12646,12 +12561,7 @@ public static class copyOfload_repairStruct implements routines.system.IPersista
 					
 						this.duration = readInteger(dis);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.cost = null;
-           				} else {
-           			    	this.cost = dis.readFloat();
-           				}
+						this.cost = readInteger(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -12712,14 +12622,9 @@ public static class copyOfload_repairStruct implements routines.system.IPersista
 				
 						writeInteger(this.duration,dos);
 					
-					// Float
+					// Integer
 				
-						if(this.cost == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeFloat(this.cost);
-		            	}
+						writeInteger(this.cost,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -12773,14 +12678,9 @@ public static class copyOfload_repairStruct implements routines.system.IPersista
 				
 						writeInteger(this.duration,dos);
 					
-					// Float
+					// Integer
 				
-						if(this.cost == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeFloat(this.cost);
-		            	}
+						writeInteger(this.cost,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -13821,7 +13721,7 @@ String dbUser_tDBOutput_4 = null;
         String url_tDBOutput_4 = "jdbc:postgresql://"+"172.19.0.3"+":"+"5432"+"/"+"loga";
     dbUser_tDBOutput_4 = "loga";
  
-	final String decryptedPassword_tDBOutput_4 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:MlSdvhVV31ABDufCbg26CuB0+bwccwaO23aM7+KJuxHLi2as");
+	final String decryptedPassword_tDBOutput_4 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:9uKZ33EqhDHCD2yZ9AcDlH/a6I1OPwAlwpaVkqjs8KQLTsc6");
 
     String dbPwd_tDBOutput_4 = decryptedPassword_tDBOutput_4;
 
@@ -13859,7 +13759,7 @@ int count_tDBOutput_4=0;
                                 }
                                 if(!whetherExist_tDBOutput_4) {
                                     try (java.sql.Statement stmtCreate_tDBOutput_4 = conn_tDBOutput_4.createStatement()) {
-                                        stmtCreate_tDBOutput_4.execute("CREATE TABLE \"" + tableName_tDBOutput_4 + "\"(\"pk_task\" INT4 ,\"period\" TIMESTAMP ,\"description\" VARCHAR ,\"dossier\" VARCHAR ,\"is_approved\" BOOL ,\"mileage\" INT4 ,\"reference\" VARCHAR ,\"task\" VARCHAR ,\"duration\" INT4 ,\"cost\" FLOAT4 ,primary key(\"pk_task\"))");
+                                        stmtCreate_tDBOutput_4.execute("CREATE TABLE \"" + tableName_tDBOutput_4 + "\"(\"pk_task\" INT4 ,\"period\" TIMESTAMP ,\"description\" VARCHAR ,\"dossier\" VARCHAR ,\"is_approved\" BOOL ,\"mileage\" INT4 ,\"reference\" VARCHAR ,\"task\" VARCHAR ,\"duration\" INT4 ,\"cost\" INT4 ,primary key(\"pk_task\"))");
                                     }
                                 }
 	    java.sql.PreparedStatement pstmt_tDBOutput_4 = conn_tDBOutput_4.prepareStatement("SELECT COUNT(1) FROM \"" + tableName_tDBOutput_4 + "\" WHERE \"pk_task\" = ?");
@@ -13987,7 +13887,7 @@ copyOfload_repairStruct copyOfload_repair_tmp = new copyOfload_repairStruct();
 				String dbUser_tDBInput_8 = "loga";
 				
 				 
-	final String decryptedPassword_tDBInput_8 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:OmZ/9caFON/tz83fdiF0X/zzLrya9NLbsIA9Y29vk6WGQkuB");
+	final String decryptedPassword_tDBInput_8 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:7wOFI5xffGtXJ34i39pU/JtkecTN7NK88YtnanLb7DLhRR2O");
 				
 				String dbPwd_tDBInput_8 = decryptedPassword_tDBInput_8;
 				
@@ -14416,8 +14316,8 @@ pstmtUpdate_tDBOutput_4.setNull(8, java.sql.Types.INTEGER);
 }
 
                         if(copyOfload_repair.cost == null) {
-pstmtUpdate_tDBOutput_4.setNull(9, java.sql.Types.FLOAT);
-} else {pstmtUpdate_tDBOutput_4.setFloat(9, copyOfload_repair.cost);
+pstmtUpdate_tDBOutput_4.setNull(9, java.sql.Types.INTEGER);
+} else {pstmtUpdate_tDBOutput_4.setInt(9, copyOfload_repair.cost);
 }
 
                         if(copyOfload_repair.pk_task == null) {
@@ -14487,8 +14387,8 @@ pstmtInsert_tDBOutput_4.setNull(9, java.sql.Types.INTEGER);
 }
 
                         if(copyOfload_repair.cost == null) {
-pstmtInsert_tDBOutput_4.setNull(10, java.sql.Types.FLOAT);
-} else {pstmtInsert_tDBOutput_4.setFloat(10, copyOfload_repair.cost);
+pstmtInsert_tDBOutput_4.setNull(10, java.sql.Types.INTEGER);
+} else {pstmtInsert_tDBOutput_4.setInt(10, copyOfload_repair.cost);
 }
 
                 try {
@@ -14960,9 +14860,9 @@ public static class join_taskStruct implements routines.system.IPersistableCompa
 					return this.duration;
 				}
 				
-			    public Float cost;
+			    public Integer cost;
 
-				public Float getCost () {
+				public Integer getCost () {
 					return this.cost;
 				}
 				
@@ -15234,12 +15134,7 @@ public static class join_taskStruct implements routines.system.IPersistableCompa
 					
 						this.duration = readInteger(dis,ois);
 					
-			            length = dis.readByte();
-           				if (length == -1) {
-           	    			this.cost = null;
-           				} else {
-           			    	this.cost = dis.readFloat();
-           				}
+						this.cost = readInteger(dis,ois);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -15267,12 +15162,7 @@ public static class join_taskStruct implements routines.system.IPersistableCompa
 					
 						this.duration = readInteger(dis,objectIn);
 					
-			            length = objectIn.readByte();
-           				if (length == -1) {
-           	    			this.cost = null;
-           				} else {
-           			    	this.cost = objectIn.readFloat();
-           				}
+						this.cost = readInteger(dis,objectIn);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -15303,12 +15193,7 @@ public static class join_taskStruct implements routines.system.IPersistableCompa
 					
 					writeInteger(this.duration, dos, oos);
 					
-						if(this.cost == null) {
-			                dos.writeByte(-1);
-						} else {
-               				dos.writeByte(0);
-           			    	dos.writeFloat(this.cost);
-		            	}
+					writeInteger(this.cost, dos, oos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -15331,12 +15216,7 @@ public static class join_taskStruct implements routines.system.IPersistableCompa
 					
 					writeInteger(this.duration, dos, objectOut);
 					
-						if(this.cost == null) {
-							objectOut.writeByte(-1);
-						} else {
-							objectOut.writeByte(0);
-							objectOut.writeFloat(this.cost);
-		            	}
+					writeInteger(this.cost, dos, objectOut);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -15510,7 +15390,7 @@ public void tDBInput_9Process(final java.util.Map<String, Object> globalMap) thr
 				String dbUser_tDBInput_9 = "loga";
 				
 				 
-	final String decryptedPassword_tDBInput_9 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:LNkZJHzeNBIqlsKE6Hx27VA7i9Yf65G9dnsGBGKkFHUZhyb+");
+	final String decryptedPassword_tDBInput_9 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:BIMlwRvPecxT960kxBVpwEz6NZqdltekXtJS1/+tcCDjFsk/");
 				
 				String dbPwd_tDBInput_9 = decryptedPassword_tDBInput_9;
 				
@@ -15568,7 +15448,7 @@ public void tDBInput_9Process(final java.util.Map<String, Object> globalMap) thr
 								join_task.cost = null;
 							} else {
 		                          
-            join_task.cost = rs_tDBInput_9.getFloat(4);
+            join_task.cost = rs_tDBInput_9.getInt(4);
             if(rs_tDBInput_9.wasNull()){
                     join_task.cost = null;
             }
@@ -16334,6 +16214,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     384322 characters generated by Talend Open Studio for Data Integration 
- *     on the 29 juillet 2023 à 03:05:17 WAT
+ *     380677 characters generated by Talend Open Studio for Data Integration 
+ *     on the 30 juillet 2023 à 20:20:56 WAT
  ************************************************************************************************/

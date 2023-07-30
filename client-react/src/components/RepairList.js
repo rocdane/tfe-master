@@ -49,7 +49,6 @@ export class RepairList extends Component{
                         <th scope="col">#</th>
                         <th scope="col">Dossier</th>
                         <th scope="col">Référence</th>
-                        <th scope="col">Description</th>
                         <th scope="col">Odomètre</th>
                         <th scope="col">Technicien</th>
                         <th scope="col">Action</th>
@@ -62,7 +61,6 @@ export class RepairList extends Component{
                                 <td>{index+1}</td>
                                 <td>{repair.dossier}</td>
                                 <td>{repair.reference}</td>
-                                <td>{repair.description}</td>
                                 <td>{repair.mileage}</td>
                                 <td>{repair.profile}</td>
                                 <td className="d-flex justify-content-center" onClick={ () => {this.printRepair(repair.id)}}>

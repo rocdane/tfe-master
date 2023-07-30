@@ -1,6 +1,8 @@
 import { Component } from 'react';
-import {Chart} from './Chart';
 import MonitoringProxy from '../api/MonitoringProxy';
+import { ChartDiagnosis } from './ChartDiagnosis';
+import { ChartRepair } from './ChartRepair';
+import { Chart } from './Chart';
 
 export class Dashboard extends Component{
 
@@ -15,28 +17,36 @@ export class Dashboard extends Component{
       diagnoses:[],
       tasks:[],
       spares:[]
-    }
+    },
+    errors:{}
   }
 
   componentDidMount(){
-    MonitoringProxy.etl().then((res)=>{
-      console.log(res.data);
-    });
-    
+    this.load();
+  }
+
+  componentDidUpdate(){
+    this.load();
+  }
+
+  load(){
     setTimeout(() => {
       MonitoringProxy.load().then((res)=>{
         this.setState({dashboard:res.data});
       }).catch((err)=>{
-        console.error("Failed to load data.",err);
+        let errors = {loadError:"Failed to load data !!!"};
+        this.setState({errors});
+        console.error(errors.loadError,err);
       });
     }, 3000);
   }
 
   render() {
-    const {dashboard} = this.state;
+    const {dashboard,errors} = this.state;
 
     return(
       <div className="container-fluid">
+        {errors.loadError? <div className="container-fluid alert alert-warning" role="alert">{errors.loadError}</div> :null}
         <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 className="h2">Tableau de bord</h1>
         </div>
@@ -58,7 +68,9 @@ export class Dashboard extends Component{
             <span className="badge text-bg-danger">{dashboard.stats.spares||0}</span>
           </button>
         </div>
-        <Chart />
+        <ChartDiagnosis diagnoses={dashboard.diagnoses}/>
+        <ChartRepair spares={dashboard.spares} tasks={dashboard.tasks}/>
+        <Chart spares={dashboard.spares} tasks={dashboard.tasks}/>
       </div>
     );
   }

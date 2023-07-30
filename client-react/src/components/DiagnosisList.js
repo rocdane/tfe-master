@@ -50,7 +50,6 @@ export class DiagnosisList extends Component{
                         <th scope="col">#</th>
                         <th scope="col">Dossier</th>
                         <th scope="col">Référence</th>
-                        <th scope="col">Description</th>
                         <th scope="col">Odomètre</th>
                         <th scope="col">Technicien</th>
                         <th scope="col">Action</th>
@@ -63,7 +62,6 @@ export class DiagnosisList extends Component{
                                 <td>{index+1}</td>
                                 <td>{diag.dossier}</td>
                                 <td>{diag.reference}</td>
-                                <td>{diag.description}</td>
                                 <td>{diag.mileage}</td>
                                 <td>{diag.profile}</td>
                                 <td className="d-flex justify-content-center">

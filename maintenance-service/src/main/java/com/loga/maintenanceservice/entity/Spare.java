@@ -24,11 +24,11 @@ public class Spare implements Serializable
     private String designation;
 
     @Column(name = "price")
-    private Double price;
+    private Integer price;
 
     @Column(name = "quantity")
     private Integer quantity;
 
     @Column(name = "amount")
-    private Double amount;
+    private Integer amount;
 }

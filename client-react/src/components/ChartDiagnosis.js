@@ -1,27 +1,25 @@
 import { Component } from "react";
 import ReactApexChart from "react-apexcharts";
 
-export class Chart extends Component{
+export class ChartDiagnosis extends Component{
 
     constructor(props) {
         super(props);
 
         this.state = {
             series: [],
-            options: {},
+            options: {
+            },
         };
     }
 
     componentWillReceiveProps(props){
         this.setState({
             series: [{
-                name: 'Tâches facturées (Cfa)',
-                data: props.tasks.map((row)=>row.amount)
-            }, {
-                name: 'Pièces facturées (Cfa)',
-                data: props.spares.map((row)=>row.amount)
-            }],
-            options: {
+                name: 'Diagnostics',
+                data: props.diagnoses.map((row)=>row.count)
+            },],
+            options:{
                 chart: {
                     height: 350,
                     type: 'area'
@@ -34,15 +32,16 @@ export class Chart extends Component{
                 },
                 xaxis: {
                     type: 'datetime',
-                    categories: props.tasks.map((row)=>row.period)
+                    categories: props.diagnoses.map((row)=>row.period)
                 },
                 tooltip: {
                     x: {
                         format: 'dd/MM/yy HH:mm'
                     },
                 },
-            },
-        });
+            }
+        })
+       
     }
 
     render() {

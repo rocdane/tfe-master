@@ -24,12 +24,12 @@ public class Task implements Serializable
     private String description;
 
     @Column(name = "cost")
-    private Float cost;
+    private Integer cost;
 
     @Column(name = "duration")
     private Integer duration;
 
-    public Task(String description, Float cost) {
+    public Task(String description, Integer cost) {
         this.description = description;
         this.cost = cost;
     }

@@ -7,10 +7,8 @@ function Authenticate() {
   const navigate = useNavigate();
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
-  const [session,setsession] = useState({});
   const [error,seterror] = useState({});
-  const [authenticated, setauthenticated] = useState(localStorage.getItem("authenticated") || false);
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     
@@ -18,30 +16,19 @@ function Authenticate() {
 
     spinner.style.display = "inline-block";
 
-    const response = {};
-    
     AuthenticationProxy
       .signin({username:username, password:password})
       .then((res)=>{
-        response = res.data
+        const session = res.data;
+        localStorage.setItem("authenticated",!session.closed);
+        localStorage.setItem("token",session.token);
+        navigate("/workspace");
       })
       .catch((err)=>{
-        seterror({sessionError:"Echec lors de l'ouverture de la session."})
+        seterror({sessionError:"Echec lors de l'ouverture de la session."});
+        spinner.style.display = "none";
         console.log(error,err);
       });
-    
-    setsession({session:response.data});
-    
-    setauthenticated(!session.closed);
-    
-    if(authenticated){
-      localStorage.setItem("authenticated",authenticated);
-      localStorage.setItem("token",session.token);
-      navigate("/workspace");
-    }else{
-      seterror({sessionError:"Echec d'authentification !!! Utilisateur ou mot de passe erronée."});
-      spinner.style.display = "none";
-    }
   };
   
   useEffect(() => {

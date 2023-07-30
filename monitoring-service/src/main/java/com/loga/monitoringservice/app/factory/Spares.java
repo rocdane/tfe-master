@@ -12,6 +12,6 @@ import java.util.Date;
 @AllArgsConstructor
 public class Spares {
     private Integer count;
-    private Float amount;
+    private Integer amount;
     private Date period;
 }

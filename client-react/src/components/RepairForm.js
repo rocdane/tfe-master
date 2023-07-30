@@ -1,6 +1,7 @@
 import { Component } from "react";
 import CustomerProxy from "../api/CustomerProxy";
 import MaintenanceProxy from "../api/MaintenanceProxy";
+import ReportProxy from "../api/ReportProxy";
 
 const temp_tasks=[], temp_spares=[];
 
@@ -111,12 +112,12 @@ class Task extends Component{
                             </div>
                             <div className="form-floating col-md-2 col-sm-2">
                                 <input name="duration" type="text" className="form-control" id="duration" placeholder="Durée" value={duration} onChange={(e)=>this.change(e)} required/>
-                                <label htmlFor="duration">Durée</label>
+                                <label htmlFor="duration">Durée(Minute)</label>
                                 { errors.durationError ? <div className="text-danger">{errors.durationError}</div> : null}
                             </div>
                             <div className="form-floating col-md-2 col-sm-2">
                                 <input name="cost" type="text" className="form-control" id="cost" placeholder="Coût" value={cost} onChange={(e)=>this.change(e)} required/>
-                                <label htmlFor="cost">Coût</label>
+                                <label htmlFor="cost">Coût(Cfa)</label>
                                 { errors.costError ? <div className="text-danger">{errors.costError}</div> : null}
                             </div>
                             <div className="col-md-1 col-sm-1 justify-content-center d-flex">
@@ -259,12 +260,12 @@ class Spare extends Component{
                             </div>
                             <div className="form-floating col-md-2 col-sm-2">
                                 <input name="price" type="text" className="form-control" id="price" placeholder="Prix" value={price} onChange={(e)=>this.change(e)} required/>
-                                <label htmlFor="price">Prix</label>
+                                <label htmlFor="price">Prix(Cfa)</label>
                                 { errors.priceError ? <div className="text-danger">{errors.priceError}</div> : null}
                             </div>
                             <div className="form-floating col-md-2 col-sm-2">
                                 <input name="amount" type="text" className="form-control" id="amount" placeholder="Montant" value={amount} onChange={(e)=>this.change(e)} required/>
-                                <label htmlFor="amount">Montant</label>
+                                <label htmlFor="amount">Montant(Cfa)</label>
                                 { errors.amountError ? <div className="text-danger">{errors.amountError}</div> : null}
                             </div>
                             <div className="col-md-1 col-sm-1 justify-content-center d-flex">
@@ -292,8 +293,8 @@ export class RepairForm extends Component{
         dossier:"",
         mileage:0,
         description:"",
-        spares:[],
-        tasks:[],
+        spares:temp_spares,
+        tasks:temp_tasks,
         dossiers:[],
         repair:null,
         errors:{}
@@ -310,20 +311,6 @@ export class RepairForm extends Component{
                 console.error(errors.repairError,error);
             });
     }
-
-    /*componentWillUnmount(){
-        this.setState({
-            profile:"",
-            dossier:"",
-            mileage:0,
-            description:"",
-            spares:[],
-            tasks:[],
-            dossiers:[],
-            repair:null,
-            errors:{}
-        });
-    }*/
 
     changeValue(e){
         this.setState({[e.target.name] : e.target.value});
@@ -389,22 +376,35 @@ export class RepairForm extends Component{
                 let repair = res.data;
                 this.setState({repair});
             }).catch((error)=>{
-                errors.diagnosisError = "Echec de la sauvegarde du diagnostic";
+                errors.repairError = "Echec de la sauvegarde de la réparation";
                 this.setState({errors});
-                console.error(errors.diagnosisError,error);
+                console.error(errors.repairError,error);
             });
         }else{
-            errors.diagnosisError = "Les données sont corrompues. Veuillez recommencer.";
+            errors.repairError = "Les données sont corrompues. Veuillez recommencer.";
             this.setState({errors});
             e.stopPropagation();
         }
+    }
+
+    printRepair(e,id){
+        e.preventDefault();
+        ReportProxy.reportRepair(id).then((res) => {
+            const link = document.createElement('a');
+            const url = window.URL.createObjectURL(new Blob([res.data]));
+            link.href = url;
+            link.download = 'report_repair_'+id+'.pdf';
+            link.click();
+        }).catch((error)=>{
+            console.error("Failed to download report : ",error);
+        });
     }
 
     render() {
         const {profile,dossier,mileage,description,dossiers,repair,errors} = this.state;
 
         return (
-            <form className="row g-3 needs-validation">
+            <form className="row g-3 needs-validation was-validated">
                  {repair ? 
                     <div class="container-fluid alert alert-success" role="alert">Succès de la sauvegarde de la réparation. 
                         <button className="btn btn-sm bg-transparent" onClick={ (e) => this.printRepair(e,repair.id)}>

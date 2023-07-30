@@ -203,19 +203,6 @@ export class DiagnosisForm extends Component{
             });
     }
 
-    /*componentWillUnmount(){
-        this.setState({
-            profile:"",
-            dossier:"",
-            mileage:0,
-            description:"",
-            factors:temp_factors,
-            dossiers:[],
-            errors:{},
-            diagnosis:null
-        });
-    }*/
-
     changeValue(e){
         this.setState({[e.target.name] : e.target.value});
         this.validateForm();

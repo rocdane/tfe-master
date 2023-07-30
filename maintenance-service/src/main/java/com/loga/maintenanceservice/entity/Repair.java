@@ -44,13 +44,13 @@ public class Repair implements Serializable
     private Boolean isApproved;
 
     @Column(name = "total_spare")
-    private Double totalSpare;
+    private Integer totalSpare;
 
     @Column(name = "total_task")
-    private Double totalTask;
+    private Integer totalTask;
 
     @Column(name = "total")
-    private Double total;
+    private Integer total;
 
     @Column(name = "total_letter")
     private String totalLetter;

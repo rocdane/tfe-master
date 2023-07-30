@@ -1,7 +1,7 @@
 import { Component } from "react";
 import ReactApexChart from "react-apexcharts";
 
-export class Chart extends Component{
+export class ChartRepair extends Component{
 
     constructor(props) {
         super(props);
@@ -15,11 +15,11 @@ export class Chart extends Component{
     componentWillReceiveProps(props){
         this.setState({
             series: [{
-                name: 'Tâches facturées (Cfa)',
-                data: props.tasks.map((row)=>row.amount)
+                name: 'Tâches effectués',
+                data: props.tasks.map((row)=>row.count)
             }, {
-                name: 'Pièces facturées (Cfa)',
-                data: props.spares.map((row)=>row.amount)
+                name: 'Pièces remplacées',
+                data: props.spares.map((row)=>row.count)
             }],
             options: {
                 chart: {
