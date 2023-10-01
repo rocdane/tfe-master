@@ -8,15 +8,14 @@ public class Task implements Serializable, Item
 {
     private Long id;
     private String description;
-    private Float cost;
-    private Float hourly;
-    private Float rate;
+    private Integer cost;
+    private Integer duration;
     private Repair repair;
 
     public Task() {
     }
 
-    public Task(String description, Float cost) {
+    public Task(String description, Integer cost) {
         this.description = description;
         this.cost = cost;
     }
@@ -37,28 +36,20 @@ public class Task implements Serializable, Item
         this.description = description;
     }
 
-    public Float getCost() {
+    public Integer getCost() {
         return cost;
     }
 
-    public void setCost(Float cost) {
+    public void setCost(Integer cost) {
         this.cost = cost;
     }
 
-    public Float getHourly() {
-        return hourly;
+    public Integer getDuration() {
+        return duration;
     }
 
-    public void setHourly(Float hourly) {
-        this.hourly = hourly;
-    }
-
-    public Float getRate() {
-        return rate;
-    }
-
-    public void setRate(Float rate) {
-        this.rate = rate;
+    public void setDuration(Integer duration) {
+        this.duration = duration;
     }
 
     public Repair getRepair() {
@@ -75,7 +66,7 @@ public class Task implements Serializable, Item
     }
 
     @Override
-    public Float cost() {
+    public Integer cost() {
         return cost;
     }
 }

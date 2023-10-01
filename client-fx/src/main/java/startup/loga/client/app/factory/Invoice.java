@@ -10,9 +10,9 @@ public class Invoice {
         this.items.add(item);
     }
 
-    public Float calculateCost(){
+    public Integer calculateCost(){
 
-        float total = 0;
+        int total = 0;
 
         for (Item item:items) {
             total += item.cost();

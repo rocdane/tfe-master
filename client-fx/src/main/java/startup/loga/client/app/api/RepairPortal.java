@@ -6,7 +6,6 @@ import startup.loga.client.vendor.http.HttpRequestHelper;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class RepairPortal extends HttpRequestHelper {
@@ -16,7 +15,7 @@ public class RepairPortal extends HttpRequestHelper {
     }
 
     public List list() throws IOException, InterruptedException {
-        return request("/maintenance-service/repairs/all","GET",null,new TypeToken<ArrayList<Repair>>(){}.getType());
+        return request("/maintenance-service/repairs","GET",null,new TypeToken<ArrayList<Repair>>(){}.getType());
     }
 
     public Repair read(Long id) throws IOException, InterruptedException {
@@ -24,30 +23,30 @@ public class RepairPortal extends HttpRequestHelper {
     }
 
     public List read(String ref) throws IOException, InterruptedException {
-        return request("/maintenance-service/repairs/read/"+ref,"GET",null,new TypeToken<ArrayList<Repair>>(){}.getType());
+        return request("/maintenance-service/repairs/reference/"+ref,"GET",null,new TypeToken<ArrayList<Repair>>(){}.getType());
     }
 
     public void edit(Repair repair, Long id) throws IOException, InterruptedException {
-        request("/loga/v1/repair/read/"+id,"PUT",repair);
+        request("/maintenance-service/repairs/"+id,"PUT",repair);
     }
 
     public void delete(Long id) throws IOException, InterruptedException {
-        request("/loga/v1/repair/delete/"+id,"PUT",null);
+        request("/maintenance-service/repairs/"+id,"DELETE",null);
     }
 
     public void editTask(Task task, Long id) throws IOException, InterruptedException {
-        request("/loga/v1/repair/edit/task/"+id,"PUT",task);
+        request("/maintenance-service/repairs/task/"+id,"PUT",task);
     }
 
     public void editSpare(Spare spare, Long id) throws IOException, InterruptedException {
-        request("/loga/v1/repair/edit/spare/"+id,"PUT",spare);
+        request("/maintenance-service/repairs/spare/"+id,"PUT",spare);
     }
 
     public void deleteTask(Long id) throws IOException, InterruptedException {
-        request("/loga/v1/repair/delete/task/"+id,"PUT",null);
+        request("/maintenance-service/repairs/delete/task/"+id,"DELETE",null);
     }
 
     public void deleteSpare(Long id) throws IOException, InterruptedException {
-        request("/loga/v1/repair/edit/spare/"+id,"PUT",null);
+        request("/maintenance-service/repairs/spare/"+id,"DELETE",null);
     }
 }

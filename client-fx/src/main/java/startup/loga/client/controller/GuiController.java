@@ -13,6 +13,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import lombok.Getter;
 import startup.loga.client.Main;
 import startup.loga.client.app.api.AuthPortal;
 import startup.loga.client.model.AuthSession;
@@ -27,16 +28,9 @@ import java.util.ResourceBundle;
 public class GuiController implements Initializable
 {
     private static AuthPortal authPortal;
+    @Getter
     private static GuiController instance;
     private static AuthSession session;
-
-    public static GuiController getInstance() {
-        return instance;
-    }
-
-    public static AuthSession getSession() {
-        return session;
-    }
 
     public static void setSession(AuthSession session) {
         GuiController.session = session;
@@ -49,9 +43,6 @@ public class GuiController implements Initializable
 
     @FXML
     private AnchorPane content;
-
-    @FXML
-    private ProgressIndicator progress_indicator;
 
     @FXML
     void menu_admin(ActionEvent event) {
@@ -157,16 +148,13 @@ public class GuiController implements Initializable
         try {
             AnchorPane fxml = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource(view)));
             fxml.setMinSize(content.getWidth(),content.getHeight());
-            fxml.setPrefSize(content.getWidth(),content.getHeight());            fxml.setMaxSize(content.getWidth(),content.getHeight());
+            fxml.setPrefSize(content.getWidth(),content.getHeight());
+            fxml.setMaxSize(content.getWidth(),content.getHeight());
             content.getChildren().add(fxml);
         }
         catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void setProgress(Boolean visible){
-        progress_indicator.setVisible(visible);
     }
 
     public void signout(){

@@ -223,7 +223,7 @@
                                                 <RowConstraints percentHeight="100.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <TextField fx:id="new_spare_price" onKeyReleased="#new_prix" prefHeight="40.0" promptText="Prix" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <TextField fx:id="new_spare_price" onKeyReleased="#new_prix" prefHeight="40.0" promptText=" Prix (F CFA)" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <GridPane.margin>
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </GridPane.margin>
@@ -233,7 +233,7 @@
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="new_spare_amount" onKeyReleased="#new_montant" prefHeight="40.0" promptText="Montant" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                                <TextField fx:id="new_spare_amount" onKeyReleased="#new_montant" prefHeight="40.0" promptText="Montant (F CFA)" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                                    <GridPane.margin>
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </GridPane.margin></TextField>
@@ -266,7 +266,7 @@
                                                       <TableColumn fx:id="column_new_spare_designation" maxWidth="7500.0" prefWidth="550.0" text="Désignation" />
                                                       <TableColumn fx:id="column_new_spare_price" maxWidth="2500.0" minWidth="0.0" prefWidth="150.0" text="Prix (FCFA)" />
                                                       <TableColumn fx:id="column_new_spare_quantity" maxWidth="2500.0" prefWidth="150.0" text="Quantité" />
-                                                      <TableColumn fx:id="column_new_spare_amount" maxWidth="2500.0" prefWidth="150.0" text="Montant (FCFA)" />
+                                                      <TableColumn fx:id="column_new_spare_amount" maxWidth="2500.0" prefWidth="150.0" text="Montant (F CFA)" />
                                                    </columns>
                                                    <columnResizePolicy>
                                                       <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -307,9 +307,8 @@
                                           </Label>
                                           <GridPane fx:id="new_tache_form">
                                              <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="658.0" minWidth="10.0" percentWidth="45.0" prefWidth="600.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="658.0" minWidth="10.0" percentWidth="60.0" prefWidth="600.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="461.0" minWidth="10.0" percentWidth="15.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="371.0" minWidth="10.0" percentWidth="15.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0" percentWidth="15.0" />
                                                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="121.0" minWidth="10.0" percentWidth="10.0" />
                                              </columnConstraints>
@@ -317,22 +316,17 @@
                                                 <RowConstraints percentHeight="100.0" />
                                              </rowConstraints>
                                              <children>
-                                                <TextField fx:id="new_task_hourly" onKeyReleased="#new_temps" prefHeight="40.0" prefWidth="200.0" promptText="Temps d'exécution(heure)" GridPane.columnIndex="1">
+                                                <TextField fx:id="new_task_hourly" onKeyReleased="#new_temps" prefHeight="40.0" prefWidth="200.0" promptText="Temps d'exécution(minute)" GridPane.columnIndex="1">
                                                    <GridPane.margin>
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="new_task_rate" onKeyReleased="#new_taux" prefHeight="40.0" prefWidth="200.0" promptText="Taux horaire(FCFA/par heure)" GridPane.columnIndex="2">
+                                                <TextField fx:id="new_task_cost" onKeyReleased="#new_cout" prefHeight="40.0" prefWidth="200.0" promptText="Coût(F CFA)" GridPane.columnIndex="2">
                                                    <GridPane.margin>
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="new_task_cost" onKeyReleased="#new_cout" prefHeight="40.0" prefWidth="200.0" promptText="Coût(FCFA)" GridPane.columnIndex="3">
-                                                   <GridPane.margin>
-                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                                   </GridPane.margin>
-                                                </TextField>
-                                                <Button mnemonicParsing="false" onAction="#add_task" prefHeight="40.0" prefWidth="150.0" text="Ajouter" GridPane.columnIndex="4" GridPane.hgrow="SOMETIMES" GridPane.vgrow="SOMETIMES">
+                                                <Button mnemonicParsing="false" onAction="#add_task" prefHeight="40.0" prefWidth="150.0" text="Ajouter" GridPane.columnIndex="3" GridPane.hgrow="SOMETIMES" GridPane.vgrow="SOMETIMES">
                                                    <GridPane.margin>
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </GridPane.margin>
@@ -359,9 +353,8 @@
                                                 <TableView fx:id="table_new_task" HBox.hgrow="SOMETIMES">
                                                    <columns>
                                                       <TableColumn fx:id="column_new_task_description" prefWidth="600.0" text="Description" />
-                                                      <TableColumn fx:id="column_new_task_hourly" maxWidth="2500.0" minWidth="0.0" prefWidth="150.0" text="Temps d'exécution (H)" />
-                                                      <TableColumn fx:id="column_new_task_rate" maxWidth="2500.0" prefWidth="150.0" text="Taux horaire (FCFA / H)" />
-                                                      <TableColumn fx:id="column_new_task_cost" maxWidth="2500.0" prefWidth="150.0" text="Coût (FCFA)" />
+                                                      <TableColumn fx:id="column_new_task_hourly" maxWidth="2500.0" minWidth="0.0" prefWidth="150.0" text="Temps d'exécution (Minute)" />
+                                                      <TableColumn fx:id="column_new_task_cost" maxWidth="2500.0" prefWidth="150.0" text="Coût (F CFA)" />
                                                    </columns>
                                                    <columnResizePolicy>
                                                       <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -550,7 +543,7 @@
                                                 <RowConstraints percentHeight="100.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <TextField fx:id="edit_spare_price" onKeyReleased="#ordre_prix" prefHeight="40.0" prefWidth="117.0" promptText="Prix(FCFA)" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                <TextField fx:id="edit_spare_price" onKeyReleased="#ordre_prix" prefHeight="40.0" prefWidth="117.0" promptText="Prix(F CFA)" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                                    <GridPane.margin>
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </GridPane.margin>
@@ -560,7 +553,7 @@
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="edit_spare_amount" onKeyReleased="#ordre_montant" prefHeight="40.0" prefWidth="128.0" promptText="Montant(FCFA)" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                <TextField fx:id="edit_spare_amount" onKeyReleased="#ordre_montant" prefHeight="40.0" prefWidth="128.0" promptText="Montant(F CFA)" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                                    <GridPane.margin>
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </GridPane.margin></TextField>
@@ -653,9 +646,8 @@
                                           </Label>
                                           <GridPane fx:id="sub_tache_form" VBox.vgrow="SOMETIMES">
                                              <columnConstraints>
-                                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="45.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="60.0" />
                                                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="15.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="15.0" />
                                                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="15.0" />
                                                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="10.0" />
                                              </columnConstraints>
@@ -663,22 +655,17 @@
                                                 <RowConstraints percentHeight="100.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <TextField fx:id="edit_task_hourly" onKeyReleased="#ordre_temps" prefHeight="40.0" promptText="Temps d'exécution(heure)" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                <TextField fx:id="edit_task_hourly" onKeyReleased="#ordre_temps" prefHeight="40.0" promptText="Temps d'exécution(Minute)" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                                    <GridPane.margin>
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="edit_task_rate" onKeyReleased="#ordre_taux_horaire" prefHeight="40.0" promptText="Taux horaire(FCFA/par heure)" GridPane.columnIndex="2">
+                                                <TextField fx:id="edit_task_cost" onKeyReleased="#ordre_cout" prefHeight="40.0" promptText="Coût(FCFA)" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                                    <GridPane.margin>
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </GridPane.margin>
                                                 </TextField>
-                                                <TextField fx:id="edit_task_cost" onKeyReleased="#ordre_cout" prefHeight="40.0" promptText="Coût(FCFA)" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                                                   <GridPane.margin>
-                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                                   </GridPane.margin>
-                                                </TextField>
-                                                <Button mnemonicParsing="false" onAction="#apply_task" prefHeight="40.0" prefWidth="125.0" text="Ajouter" GridPane.columnIndex="4">
+                                                <Button mnemonicParsing="false" onAction="#apply_task" prefHeight="40.0" prefWidth="125.0" text="Ajouter" GridPane.columnIndex="3">
                                                    <graphic>
                                                       <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                                          <image>
@@ -706,9 +693,8 @@
                                                    <columns>
                                                       <TableColumn fx:id="column_edit_task_id" prefWidth="75.0" text="Column X" visible="false" />
                                                       <TableColumn fx:id="column_edit_task_description" maxWidth="7500.0" prefWidth="497.0" text="Description" />
-                                                      <TableColumn fx:id="column_edit_task_hourly" maxWidth="2500.0" minWidth="0.0" prefWidth="150.0" text="Temps d'exécution (H)" />
-                                                      <TableColumn fx:id="column_edit_task_rate" maxWidth="2500.0" prefWidth="150.0" text="Taux horaire (FCFA / H)" />
-                                                      <TableColumn fx:id="column_edit_task_cost" maxWidth="2500.0" prefWidth="150.0" text="Coût (FCFA)" />
+                                                      <TableColumn fx:id="column_edit_task_hourly" maxWidth="2500.0" minWidth="0.0" prefWidth="150.0" text="Temps d'exécution (Minute)" />
+                                                      <TableColumn fx:id="column_edit_task_cost" maxWidth="2500.0" prefWidth="150.0" text="Coût (F CFA)" />
                                                    </columns>
                                                    <columnResizePolicy>
                                                       <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

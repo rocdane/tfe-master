@@ -5,33 +5,35 @@ import javafx.concurrent.Task;
 import javafx.concurrent.Worker;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.AreaChart;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.*;
 import javafx.scene.text.Text;
+import lombok.Getter;
+import startup.loga.client.app.api.MonitoringPortal;
+import startup.loga.client.app.factory.*;
 import startup.loga.client.view.Popup;
 
+import java.io.IOException;
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable{
 
-    DateFormat df = new SimpleDateFormat("MM-yyyy");
+    private final MonitoringPortal monitoringPortal;
+
+    private Dashboard dashboard;
 
     @FXML
-    private Text count_profil;
+    private Text count_dossier;
 
     @FXML
-    private Text count_client;
+    private Text count_diagnosis;
 
     @FXML
-    private Text count_automobile;
+    private Text count_repair;
 
     @FXML
-    private Text count_reparation;
+    private Text count_spare;
 
     @FXML
     private Text count_article;
@@ -51,8 +53,9 @@ public class DashboardController implements Initializable{
     @FXML
     private Text count_depense;
 
+    @Getter
     @FXML
-    private BarChart<String, Double> chart_reparation;
+    private BarChart<Date, Integer> chart_reparation;
 
     @FXML
     private CategoryAxis chart_reparation_x;
@@ -60,8 +63,9 @@ public class DashboardController implements Initializable{
     @FXML
     private NumberAxis chart_reparation_y;
 
+    @Getter
     @FXML
-    private BarChart<String, Double> chart_vente;
+    private BarChart<Date, Integer> chart_vente;
 
     @FXML
     private CategoryAxis chart_vente_x;
@@ -78,157 +82,70 @@ public class DashboardController implements Initializable{
     @FXML
     private NumberAxis chart_cashflow_y;
 
-    public void setCount_profil(Text count_profil) {
-        this.count_profil=count_profil;
+    public DashboardController() {
+        this.monitoringPortal = new MonitoringPortal();
     }
 
-    public void setCount_client(Text count_client) {
-        this.count_client=count_client;
+    public void setCount_profil(Text count_dossier) {
+        this.count_dossier=count_dossier;
     }
 
-    public void setCount_automobile(Text count_automobile) {
-        this.count_automobile=count_automobile;
+    public void setCount_dossier(Text count_dossier) {
+        this.count_dossier = count_dossier;
     }
 
-    public void setCount_reparation(Text count_reparation) {
-        this.count_reparation=count_reparation;
+    public void setCount_diagnosis(Text count_diagnosis) {
+        this.count_diagnosis = count_diagnosis;
+    }
+
+    public void setCount_repair(Text count_repair) {
+        this.count_repair = count_repair;
     }
 
     public void setCount_article(Text count_article) {
         this.count_article=count_article;
     }
 
-    public BarChart<String, Double> getChart_reparation() {
-        return chart_reparation;
-    }
-
-    public BarChart<String, Double> getChart_vente() {
-        return chart_vente;
-    }
-
-    public AreaChart<String, Double> getChart_cashflow() {
-        return chart_cashflow;
+    public void loadDashboard(){
+        try {
+            this.dashboard = monitoringPortal.load();
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void processStatistic(){
-        /*List<Profile> profiles = manageResourceService.listProfile();
-        count_profil.setText(String.valueOf(profiles.size()));
+        count_dossier.setText(String.valueOf(dashboard.getStats().getDossiers()));
 
-        List<Client> clients = manageClientService.listClient();
-        count_client.setText(String.valueOf(clients.size()));
+        count_diagnosis.setText(String.valueOf(dashboard.getStats().getDiagnosis()));
 
-        List<Automobile> automobiles = manageAutomobileService.listAutomobile();
-        count_automobile.setText(String.valueOf(automobiles.size()));
+        count_repair.setText(String.valueOf(dashboard.getStats().getTasks()));
 
-        List<Repair> reparations = repairReparationService.listRepair();
-        count_reparation.setText(String.valueOf(reparations.size()));
-
-        List<Article> articles = marketStockService.listerArticle();
-        count_article.setText(String.valueOf(articles.size()));
-
-        List<Billing> versements = manageCashflowService.listBilling();
-        count_versement.setText(String.valueOf(versements.size()));*/
+        count_spare.setText(String.valueOf(dashboard.getStats().getSpares()));
     }
 
-   /* public void processReparationParPeriode(){
+    public void processReparationParPeriode(){
 
-        List<String> periodes = new ArrayList<>();
-
-        List<Repair> reparations = new SortedList<Repair>(FXCollections.observableArrayList(repairReparationService.listRepair()), new Comparator<Repair>() {
-            @Override
-            public int compare(Repair r1, Repair r2) {
-                return r1.getDateCreation().compareTo(r2.getDateCreation());
-            }
-        });
-
-        //Séries des prestations
-        XYChart.Series<String,Double> tacheParPeriode = new XYChart.Series<>();
+        XYChart.Series<Date,Integer> tacheParPeriode = new XYChart.Series<>();
         tacheParPeriode.setName("Prestations");
 
-        //Séries des fournitures
-        XYChart.Series<String,Double> fournitureParPeriode = new XYChart.Series<>();
-        fournitureParPeriode.setName("Fournitures");
-
-        for (Repair reparation : reparations) {
-            do {
-                periodes.add(df.format(reparation.getDateCreation()));
-            }while(!periodes.contains(df.format(reparation.getDateCreation())));
+        for (Tasks tasks:dashboard.getTasks()){
+            tacheParPeriode.getData().add(new XYChart.Data<>(tasks.getPeriod(), tasks.getAmount()));
         }
 
-        for (String periode:periodes) {
-            double montantTache = 0;
-            double montantFourniture = 0;
-            for (Repair reparation : reparations) {
-                montantFourniture+=reparation.getTotalFourniture();
-                montantTache+=reparation.getTotalTache();
-            }
-            tacheParPeriode.getData().add(new XYChart.Data<String,Double>(periode,montantTache));
-            fournitureParPeriode.getData().add(new XYChart.Data<String,Double>(periode,montantFourniture));
+        XYChart.Series<Date,Integer> fournitureParPeriode = new XYChart.Series<>();
+        fournitureParPeriode.setName("Fournitures");
+
+        for (Spares spares:dashboard.getSpares()){
+            fournitureParPeriode.getData().add(new XYChart.Data<>(spares.getPeriod(),spares.getAmount()));
         }
 
         getChart_reparation().getData().add(fournitureParPeriode);
         getChart_reparation().getData().add(tacheParPeriode);
     }
 
-    public void processVenteParPeriode(){
-
-        List<String> periodes = new ArrayList<>();
-
-        List<Sale> ventes = new SortedList<Sale>(FXCollections.observableArrayList(marketSaleService.listerVente()), new Comparator<Sale>() {
-            @Override
-            public int compare(Sale o1, Sale o2) {
-                return o1.getDate().compareTo(o2.getDate());
-            }
-        });
-
-        List<Purchase> achats = new SortedList<Purchase>(FXCollections.observableArrayList(marketPurchaseService.listerAchat()), new Comparator<Purchase>() {
-            @Override
-            public int compare(Purchase o1, Purchase o2) {
-                return o1.getDate().compareTo(o2.getDate());
-            }
-        });
-
-        //Séries des prestations
-        XYChart.Series<String,Double> venteParPeriode = new XYChart.Series<>();
-        venteParPeriode.setName("Ventes");
-
-        //Séries des fournitures
-        XYChart.Series<String,Double> achatParPeriode = new XYChart.Series<>();
-        achatParPeriode.setName("Achats");
-
-        for (Purchase achat : achats) {
-            do {
-                periodes.add(df.format(achat.getDate()));
-            }while(!periodes.contains(df.format(achat.getDate())));
-        }
-
-        for (Sale vente : ventes) {
-            do {
-                periodes.add(df.format(vente.getDate()));
-            }while(!periodes.contains(df.format(vente.getDate())));
-        }
-
-        for (String periode:periodes) {
-            double montantAchat = 0;
-            double montantVente = 0;
-            for (Purchase achat : achats) {
-                montantAchat+=achat.getMontant();
-            }
-            for (Sale vente : ventes) {
-                montantVente+=vente.getMontant();
-            }
-            venteParPeriode.getData().add(new XYChart.Data<String,Double>(periode,montantVente));
-            achatParPeriode.getData().add(new XYChart.Data<String,Double>(periode,montantAchat));
-        }
-
-        getChart_vente().getData().add(venteParPeriode);
-        getChart_vente().getData().add(achatParPeriode);
-    }*/
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        //GuiController.getInstance().setProgress(true);
         Popup.getInstance().show();
 
         javafx.concurrent.Service<Void> load = new javafx.concurrent.Service<Void>() {
@@ -237,13 +154,11 @@ public class DashboardController implements Initializable{
                 return new Task<Void>() {
                     @Override
                     protected Void call() throws Exception {
+                        loadDashboard();
+
                         processStatistic();
 
-                        /**
-                         * todo
-                         * processVenteParPeriode();
-                         * processReparationParPeriode();
-                         */
+                        processReparationParPeriode();
 
                         return null;
                     }
@@ -254,8 +169,6 @@ public class DashboardController implements Initializable{
         load.stateProperty().addListener((ObservableValue<? extends Worker.State> observableValue, Worker.State oldValue, Worker.State newValue) -> {
             switch (newValue) {
                 case FAILED, CANCELLED, SUCCEEDED -> Popup.getInstance().hide();
-
-                //GuiController.getInstance().setProgress(false);
             }
         });
 

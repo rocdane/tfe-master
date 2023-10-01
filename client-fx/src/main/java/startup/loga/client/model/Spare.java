@@ -8,9 +8,9 @@ public class Spare implements Serializable, Item
 {
     private Long id;
     private String designation;
-    private Float price;
+    private Integer price;
     private Integer quantity;
-    private Float amount;
+    private Integer amount;
     private Repair repair;
 
     public Spare() {
@@ -32,11 +32,11 @@ public class Spare implements Serializable, Item
         this.designation = designation;
     }
 
-    public Float getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
@@ -48,11 +48,11 @@ public class Spare implements Serializable, Item
         this.quantity = quantity;
     }
 
-    public Float getAmount() {
+    public Integer getAmount() {
         return amount;
     }
 
-    public void setAmount(Float amount) {
+    public void setAmount(Integer amount) {
         this.amount = amount;
     }
 
@@ -70,7 +70,7 @@ public class Spare implements Serializable, Item
     }
 
     @Override
-    public Float cost() {
+    public Integer cost() {
         return amount;
     }
 }

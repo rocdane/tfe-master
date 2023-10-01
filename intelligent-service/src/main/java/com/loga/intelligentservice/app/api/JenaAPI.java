@@ -6,13 +6,11 @@ import org.apache.jena.ontology.impl.OntologyImpl;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.ModelFactory;
 import com.loga.intelligentservice.IntelligentService;
-import org.apache.jena.rdf.model.RDFNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -37,7 +35,6 @@ public class JenaAPI {
             Logger.getLogger(IntelligentService.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
 
     public static String getURI(){
         Iterator<Ontology> iter = ONTOLOGY.listOntologies();
@@ -79,9 +76,9 @@ public class JenaAPI {
         ObjectProperty resoluPar = ONTOLOGY.getObjectProperty( getURI() + "resoluPar" );
 
         for (Diagnosis diagnosis:diagnoses) {
-            Individual maint = addMaintenance(diagnosis.getMaintenance());
             Individual dysfun = addDysfunction(diagnosis.getDysfunction());
-            dysfun.addProperty(resoluPar,diagnosis.getMaintenance());
+            Individual maint = addMaintenance(diagnosis.getMaintenance());
+            dysfun.addProperty(resoluPar,maint);
         }
     }
 

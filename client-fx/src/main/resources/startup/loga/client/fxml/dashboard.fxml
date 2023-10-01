@@ -28,17 +28,17 @@
                                  <children>
                                     <VBox alignment="CENTER" HBox.hgrow="SOMETIMES">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Profils">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dossiers">
                                              <font>
                                                 <Font name="System Bold" size="24.0" />
                                              </font>
                                           </Text>
                                           <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../assets/img/main/profil.png" />
+                                                <Image url="@../assets/img/main/dossier.png" />
                                              </image>
                                           </ImageView>
-                                          <Text fx:id="count_profil" strokeType="OUTSIDE" strokeWidth="0.0">
+                                          <Text fx:id="count_dossier" strokeType="OUTSIDE" strokeWidth="0.0">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
@@ -47,36 +47,17 @@
                                     </VBox>
                                     <VBox alignment="CENTER" HBox.hgrow="SOMETIMES">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Clients">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Diagnostics">
                                              <font>
                                                 <Font name="System Bold" size="24.0" />
                                              </font>
                                           </Text>
                                           <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../assets/img/main/client.png" />
+                                                <Image url="@../assets/img/main/reception.png" />
                                              </image>
                                           </ImageView>
-                                          <Text fx:id="count_client" strokeType="OUTSIDE" strokeWidth="0.0">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Text>
-                                       </children>
-                                    </VBox>
-                                    <VBox alignment="CENTER" HBox.hgrow="SOMETIMES">
-                                       <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Véhicules">
-                                             <font>
-                                                <Font name="System Bold" size="24.0" />
-                                             </font>
-                                          </Text>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../assets/img/main/automobile.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Text fx:id="count_automobile" strokeType="OUTSIDE" strokeWidth="0.0">
+                                          <Text fx:id="count_diagnosis" strokeType="OUTSIDE" strokeWidth="0.0">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
@@ -95,7 +76,26 @@
                                                 <Image url="@../assets/img/main/reparation.png" />
                                              </image>
                                           </ImageView>
-                                          <Text fx:id="count_reparation" strokeType="OUTSIDE" strokeWidth="0.0">
+                                          <Text fx:id="count_repair" strokeType="OUTSIDE" strokeWidth="0.0">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pièces">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/img/main/article.PNG" />
+                                             </image>
+                                          </ImageView>
+                                          <Text fx:id="count_spare" strokeType="OUTSIDE" strokeWidth="0.0">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
@@ -125,7 +125,7 @@
                   </ImageView>
                </graphic>
             </Tab>
-            <Tab text="Statistiques">
+            <Tab disable="true" text="Statistiques">
               <content>
                 <AnchorPane>
                      <children>
@@ -213,7 +213,7 @@
                   </ImageView>
                </graphic>
             </Tab>
-            <Tab text="Flux de trésoreries">
+            <Tab disable="true" text="Flux de trésoreries">
               <content>
                 <AnchorPane>
                      <children>

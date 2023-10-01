@@ -10,15 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c8c6a4f-f30a-4310-8dde-920cd0febf4c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../client-react/src/api/AuthenticationProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client-react/src/api/AuthenticationProxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client-react/src/api/CustomerProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client-react/src/api/CustomerProxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client-react/src/api/MaintenanceProxy.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client-react/src/api/MaintenanceProxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client-react/src/components/AutomobileList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client-react/src/components/AutomobileList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client-react/src/components/CustomerList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client-react/src/components/CustomerList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client-react/src/components/DiagnosisList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client-react/src/components/DiagnosisList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client-react/src/components/RepairList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client-react/src/components/RepairList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client-react/src/components/RepairTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client-react/src/components/RepairTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/app/api/JenaAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/app/api/JenaAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/app/api/JenaAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/app/api/JenaAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Task.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +23,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -41,6 +35,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2HWiVPqqSmSjL5q8oA2oExkXndl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -58,7 +59,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/client-fx&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/rochdane/IdeaProjects/WORKSHOP/Project/TFE/client-fx/src/main/java/startup/loga/client/app&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -68,6 +69,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/startup/loga/client/app" />
       <recent name="$PROJECT_DIR$/src/main/resources/startup/loga/client/assets/img/icon" />
       <recent name="$PROJECT_DIR$/src/main/java/startup/loga/client/app/model" />
       <recent name="$PROJECT_DIR$/src/main/java/startup/loga/client" />
@@ -171,6 +173,19 @@
       <option name="MAIN_CLASS_NAME" value="startup.loga.client.vendor.http.RestRequestTest" />
       <option name="METHOD_NAME" value="download" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="client-fx" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="client-fx" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

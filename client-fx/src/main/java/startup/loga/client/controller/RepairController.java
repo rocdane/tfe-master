@@ -124,22 +124,19 @@ public class RepairController implements Initializable {
     private TableColumn<Spare, String> column_new_spare_designation;
 
     @FXML
-    private TableColumn<Spare, Float> column_new_spare_price;
+    private TableColumn<Spare, Integer> column_new_spare_price;
 
     @FXML
     private TableColumn<Spare, Integer> column_new_spare_quantity;
 
     @FXML
-    private TableColumn<Spare, Float> column_new_spare_amount;
+    private TableColumn<Spare, Integer> column_new_spare_amount;
 
     @FXML
     private ComboBox<Task> new_task_description;
 
     @FXML
-    private TextField new_task_hourly;
-
-    @FXML
-    private TextField new_task_rate;
+    private TextField new_task_duration;
 
     @FXML
     private TextField new_task_cost;
@@ -151,13 +148,10 @@ public class RepairController implements Initializable {
     private TableColumn<Task, String> column_new_task_description;
 
     @FXML
-    private TableColumn<Task, Float> column_new_task_hourly;
+    private TableColumn<Task, Integer> column_new_task_duration;
 
     @FXML
-    private TableColumn<Task, Float> column_new_task_rate;
-
-    @FXML
-    private TableColumn<Task, Float> column_new_task_cost;
+    private TableColumn<Task, Integer> column_new_task_cost;
 
     @FXML
     private Tab tab_ordre_reparation;
@@ -193,13 +187,13 @@ public class RepairController implements Initializable {
     private TableColumn<Spare, String> column_edit_spare_designation;
 
     @FXML
-    private TableColumn<Spare, Float> column_edit_spare_price;
+    private TableColumn<Spare, Integer> column_edit_spare_price;
 
     @FXML
     private TableColumn<Spare, Integer> column_edit_spare_quantity;
 
     @FXML
-    private TableColumn<Spare, Float> column_edit_spare_amount;
+    private TableColumn<Spare, Integer> column_edit_spare_amount;
 
     @FXML
     private TextArea total_spare;
@@ -208,10 +202,7 @@ public class RepairController implements Initializable {
     private ComboBox<Task> edit_task_description;
 
     @FXML
-    private TextField edit_task_hourly;
-
-    @FXML
-    private TextField edit_task_rate;
+    private TextField edit_task_duration;
 
     @FXML
     private TextField edit_task_cost;
@@ -226,13 +217,10 @@ public class RepairController implements Initializable {
     private TableColumn<Task, String> column_edit_task_description;
 
     @FXML
-    private TableColumn<Task, Float> column_edit_task_hourly;
+    private TableColumn<Task, Integer> column_edit_task_duration;
 
     @FXML
-    private TableColumn<Task, Float> column_edit_task_rate;
-
-    @FXML
-    private TableColumn<Task, Float> column_edit_task_cost;
+    private TableColumn<Task, Integer> column_edit_task_cost;
 
     @FXML
     private TextArea total_task;
@@ -241,9 +229,9 @@ public class RepairController implements Initializable {
     void add_spare(ActionEvent event) {
         Spare fourniture = new Spare();
         fourniture.setDesignation(new_spare_designation.getEditor().getText().trim());
-        fourniture.setPrice(Float.parseFloat(new_spare_price.getText().trim()));
+        fourniture.setPrice(Integer.parseInt(new_spare_price.getText().trim()));
         fourniture.setQuantity(Integer.parseInt(new_spare_quantity.getText()));
-        fourniture.setAmount(Float.parseFloat(new_spare_amount.getText()));
+        fourniture.setAmount(Integer.parseInt(new_spare_amount.getText()));
         this.temp_spares.add(fourniture);
         table_new_spare.setItems(FXCollections.observableArrayList(temp_spares));
         new_spare_designation.getEditor().setText("");
@@ -256,8 +244,8 @@ public class RepairController implements Initializable {
     void apply_spare(ActionEvent event) {
         Spare fourniture = new Spare();
         fourniture.setDesignation(edit_spare_designation.getEditor().getText().trim());
-        fourniture.setPrice(Float.parseFloat(edit_spare_price.getText().trim()));
-        fourniture.setAmount(Float.parseFloat(edit_spare_amount.getText().trim()));
+        fourniture.setPrice(Integer.parseInt(edit_spare_price.getText().trim()));
+        fourniture.setAmount(Integer.parseInt(edit_spare_amount.getText().trim()));
         fourniture.setQuantity(Integer.parseInt(edit_spare_quantity.getText().trim()));
         fourniture.setRepair(currentRepair);
 
@@ -306,8 +294,7 @@ public class RepairController implements Initializable {
     void apply_task(ActionEvent event) {
 
         Task sub = new Task();
-        sub.setHourly(Float.parseFloat(edit_task_hourly.getText().trim()));
-        sub.setRate(Float.parseFloat(edit_task_rate.getText().trim()));
+        sub.setDuration(Integer.parseInt(edit_task_duration.getText().trim()));
         sub.setRepair(currentRepair);
 
         try {
@@ -323,8 +310,7 @@ public class RepairController implements Initializable {
         read_ordre_reparation_tache(currentRepair);
         edit_task_description.getEditor().setText("");
         edit_task_cost.setText("");
-        edit_task_hourly.setText("");
-        edit_task_rate.setText("");
+        edit_task_duration.setText("");
     }
 
     @FXML
@@ -367,13 +353,11 @@ public class RepairController implements Initializable {
     @FXML
     void add_task(ActionEvent event) {
         Task tache = new Task();
-        tache.setRate(Float.parseFloat(new_task_rate.getText()));
-        tache.setHourly(Float.parseFloat(new_task_hourly.getText()));
+        tache.setDuration(Integer.parseInt(new_task_duration.getText()));
         this.temp_tasks.add(tache);
         table_new_task.setItems(FXCollections.observableArrayList(temp_tasks));
-        new_task_hourly.setText("");
+        new_task_duration.setText("");
         new_task_cost.setText("");
-        new_task_rate.setText("");
         new_task_description.getEditor().setText("");
     }
 
@@ -449,8 +433,6 @@ public class RepairController implements Initializable {
 
     @FXML
     void new_cout(KeyEvent event) {
-        if(!new_task_hourly.getText().isEmpty())
-            new_task_rate.setText(String.valueOf(Float.parseFloat(new_task_cost.getText().trim())/Float.parseFloat(new_task_hourly.getText().trim())));
     }
 
     @FXML
@@ -505,24 +487,13 @@ public class RepairController implements Initializable {
     }
 
     @FXML
-    void new_taux(KeyEvent event) {
-        if(!new_task_rate.getText().isEmpty())
-            new_task_cost.setText(String.valueOf(Float.parseFloat(new_task_rate.getText()) * Float.parseFloat(new_task_hourly.getText().trim())));
-    }
-
-    @FXML
     void new_temps(KeyEvent event) {
-        if(!new_task_rate.getText().isEmpty()) {
-            new_task_cost.setText(String.valueOf(Float.parseFloat(new_task_rate.getText().trim()) * Float.parseFloat(new_task_hourly.getText().trim())));
-        }else if(!new_task_hourly.getText().isEmpty()){
-            new_task_rate.setText(String.valueOf(Float.parseFloat(new_task_cost.getText().trim())/Float.parseFloat(new_task_hourly.getText().trim())));
-        }
+
     }
 
     @FXML
     void ordre_cout(KeyEvent event) {
-        if(!edit_task_hourly.getText().isEmpty())
-            edit_task_rate.setText(String.valueOf(Float.parseFloat(edit_task_cost.getText().trim())/Float.parseFloat(edit_task_hourly.getText().trim())));
+
     }
 
     @FXML
@@ -596,18 +567,8 @@ public class RepairController implements Initializable {
     }
 
     @FXML
-    void ordre_taux_horaire(KeyEvent event) {
-        if(!edit_task_rate.getText().isEmpty())
-            edit_task_cost.setText(String.valueOf(Float.parseFloat(edit_task_rate.getText()) * Float.parseFloat(edit_task_hourly.getText().trim())));
-    }
-
-    @FXML
     void ordre_temps(KeyEvent event) {
-        if(!edit_task_rate.getText().isEmpty()) {
-            edit_task_cost.setText(String.valueOf(Float.parseFloat(edit_task_rate.getText().trim()) * Float.parseFloat(edit_task_hourly.getText().trim())));
-        }else if(!edit_task_hourly.getText().isEmpty()){
-            edit_task_rate.setText(String.valueOf(Float.parseFloat(edit_task_cost.getText().trim()) / Float.parseFloat(edit_task_hourly.getText().trim())));
-        }
+
     }
 
     @FXML
@@ -861,8 +822,7 @@ public class RepairController implements Initializable {
         table_new_spare.setItems(null);
 
         new_task_description.getEditor().setText("");
-        new_task_hourly.setText("");
-        new_task_rate.setText("");
+        new_task_duration.setText("");
         new_task_cost.setText("");
         table_new_task.setItems(null);
         temp_spares.clear();
@@ -879,8 +839,7 @@ public class RepairController implements Initializable {
         edit_spare_amount.setText("");
         table_edit_spare.setItems(null);
         edit_task_description.getEditor().setText("");
-        edit_task_hourly.setText("");
-        edit_task_rate.setText("");
+        edit_task_duration.setText("");
         edit_task_cost.setText("");
         table_edit_task.setItems(null);
         total_task.setText("");
@@ -941,26 +900,24 @@ public class RepairController implements Initializable {
         column_repair_profile.setCellValueFactory((TableColumn.CellDataFeatures<Repair, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getProfile()));
 
         column_new_spare_designation.setCellValueFactory((TableColumn.CellDataFeatures<Spare, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getDesignation()));
-        column_new_spare_price.setCellValueFactory((TableColumn.CellDataFeatures<Spare, Float> r)->new ReadOnlyObjectWrapper<>(r.getValue().getPrice()));
+        column_new_spare_price.setCellValueFactory((TableColumn.CellDataFeatures<Spare, Integer> r)->new ReadOnlyObjectWrapper<>(r.getValue().getPrice()));
         column_new_spare_quantity.setCellValueFactory((TableColumn.CellDataFeatures<Spare, Integer> r)->new ReadOnlyObjectWrapper<>(r.getValue().getQuantity()));
-        column_new_spare_amount.setCellValueFactory((TableColumn.CellDataFeatures<Spare, Float> r)->new ReadOnlyObjectWrapper<>(r.getValue().getAmount()));
+        column_new_spare_amount.setCellValueFactory((TableColumn.CellDataFeatures<Spare, Integer> r)->new ReadOnlyObjectWrapper<>(r.getValue().getAmount()));
 
         column_new_task_description.setCellValueFactory((TableColumn.CellDataFeatures<Task, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getDescription()));
-        column_new_task_hourly.setCellValueFactory((TableColumn.CellDataFeatures<Task, Float> r)->new ReadOnlyObjectWrapper<>(r.getValue().getHourly()));
-        column_new_task_rate.setCellValueFactory((TableColumn.CellDataFeatures<Task, Float> r)->new ReadOnlyObjectWrapper<>(r.getValue().getRate()));
-        column_new_task_cost.setCellValueFactory((TableColumn.CellDataFeatures<Task, Float> r)->new ReadOnlyObjectWrapper<>(r.getValue().getCost()));
+        column_new_task_duration.setCellValueFactory((TableColumn.CellDataFeatures<Task, Integer> r)->new ReadOnlyObjectWrapper<>(r.getValue().getDuration()));
+        column_new_task_cost.setCellValueFactory((TableColumn.CellDataFeatures<Task, Integer> r)->new ReadOnlyObjectWrapper<>(r.getValue().getCost()));
 
         column_edit_spare_id.setCellValueFactory((TableColumn.CellDataFeatures<Spare, Long> r)->new ReadOnlyObjectWrapper<>(r.getValue().getId()));
         column_edit_spare_designation.setCellValueFactory((TableColumn.CellDataFeatures<Spare, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getDesignation()));
-        column_edit_spare_price.setCellValueFactory((TableColumn.CellDataFeatures<Spare, Float> r)->new ReadOnlyObjectWrapper<>(r.getValue().getPrice()));
+        column_edit_spare_price.setCellValueFactory((TableColumn.CellDataFeatures<Spare, Integer> r)->new ReadOnlyObjectWrapper<>(r.getValue().getPrice()));
         column_edit_spare_quantity.setCellValueFactory((TableColumn.CellDataFeatures<Spare, Integer> r)->new ReadOnlyObjectWrapper<>(r.getValue().getQuantity()));
-        column_edit_spare_amount.setCellValueFactory((TableColumn.CellDataFeatures<Spare, Float> r)->new ReadOnlyObjectWrapper<>(r.getValue().getAmount()));
+        column_edit_spare_amount.setCellValueFactory((TableColumn.CellDataFeatures<Spare, Integer> r)->new ReadOnlyObjectWrapper<>(r.getValue().getAmount()));
 
         column_edit_task_id.setCellValueFactory((TableColumn.CellDataFeatures<Task, Long> r)->new ReadOnlyObjectWrapper<>(r.getValue().getId()));
         column_edit_task_description.setCellValueFactory((TableColumn.CellDataFeatures<Task, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getDescription()));
-        column_edit_task_hourly.setCellValueFactory((TableColumn.CellDataFeatures<Task, Float> r)->new ReadOnlyObjectWrapper<>(r.getValue().getHourly()));
-        column_edit_task_rate.setCellValueFactory((TableColumn.CellDataFeatures<Task, Float> r)->new ReadOnlyObjectWrapper<>(r.getValue().getRate()));
-        column_edit_task_cost.setCellValueFactory((TableColumn.CellDataFeatures<Task, Float> r)->new ReadOnlyObjectWrapper<>(r.getValue().getCost()));
+        column_edit_task_duration.setCellValueFactory((TableColumn.CellDataFeatures<Task, Integer> r)->new ReadOnlyObjectWrapper<>(r.getValue().getDuration()));
+        column_edit_task_cost.setCellValueFactory((TableColumn.CellDataFeatures<Task, Integer> r)->new ReadOnlyObjectWrapper<>(r.getValue().getCost()));
 
         new_repair_dossier.setConverter(new StringConverter<Dossier>() {
             @Override

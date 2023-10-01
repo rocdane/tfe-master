@@ -1,6 +1,5 @@
 package com.loga.maintenanceservice.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 import jakarta.persistence.*;
 import java.io.Serializable;

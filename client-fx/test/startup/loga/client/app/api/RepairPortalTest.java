@@ -27,14 +27,13 @@ class RepairPortalTest {
 
         Spare spare = new Spare();
         spare.setDesignation("fourniture");
-        spare.setAmount(10000F);
-        spare.setPrice(1000F);
+        spare.setAmount(10000);
+        spare.setPrice(1000);
         spare.setQuantity(10);
 
         Task task = new Task();
-        task.setHourly(20000F);
-        task.setRate(5F);
-        task.setCost(100000F);
+        task.setDuration(20000);
+        task.setCost(100000);
         task.setDescription("travaux");
 
         repair.addSpare(spare);

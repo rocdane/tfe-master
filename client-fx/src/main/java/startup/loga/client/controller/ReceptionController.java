@@ -15,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.StringConverter;
 import startup.loga.client.app.api.*;
+import startup.loga.client.app.factory.Diagnosis;
 import startup.loga.client.model.*;
 import startup.loga.client.view.AlertConfirm;
 import startup.loga.client.view.AlertError;
@@ -32,12 +33,13 @@ public class ReceptionController implements Initializable
     private final ReceptionPortal receptionPortal;
     private final DiagnosticPortal diagnosticPortal;
     private final ReportPortal reportPortal;
-    private static Set<String> dysfunctions, maintenances;
-    List<Notice> newEtats = new ArrayList<>();
-    List<Notice> list_etat = new ArrayList<>();
+    private List<Diagnosis> diagnoses;
+    private Set<String> dysfunctions, maintenances;
+    private List<Notice> newEtats = new ArrayList<>();
+    private List<Notice> list_etat = new ArrayList<>();
     AtomicInteger rowNbr;
-    List<Factor> list_factor = new ArrayList<>();
-    List<Dossier> allDossier = new ArrayList<>();
+    private List<Factor> list_factor = new ArrayList<>();
+    private List<Dossier> allDossier = new ArrayList<>();
     long dossierID, receptionID;
 
     String etat111 = "OK",etat112="OK",etat113="OK",etat114="OK",etat115="OK",etat116="OK",etat117="OK",etat221="OK",etat222="OK",etat223="OK",etat224="OK",etat225="OK",
@@ -510,7 +512,7 @@ public class ReceptionController implements Initializable
             AlertInfo.getInstance().show();
         }
         else {
-            Diagnosis diagnosis = new Diagnosis();
+            startup.loga.client.model.Diagnosis diagnosis = new startup.loga.client.model.Diagnosis();
             diagnosis.setDescription(diagnostic_description.getText());
             diagnosis.setMileage(Integer.parseInt(diagnostic_mileage.getText().trim()));
             diagnosis.setDossier(diagnostic_dossier.getValue());
@@ -529,8 +531,7 @@ public class ReceptionController implements Initializable
                 AlertInfo.getInstance().setHeaderText("Enregistrement diagnostic.");
                 AlertInfo.getInstance().setContentText("Nouveau diagnostic enregistré avec succès.\n Téléchargez le rapport de diagnostic ?");
                 if (AlertInfo.getInstance().showAndWait().get().equals(ButtonType.OK)){
-                    //TODO:Report diagnostic
-                    reportPortal.reportById("diagnostic",diagnosis.getId());
+                    reportPortal.reportById("diagnosis",diagnosis.getId());
                 }
                 reset_diagnostic_form();
             } catch (Exception e) {
@@ -1885,9 +1886,21 @@ public class ReceptionController implements Initializable
 
     @FXML
     void factor_dysfunction_entry(KeyEvent event) {
+        diagnoses.clear();
         dysfunctions.clear();
         maintenances.clear();
         String entry = factor_dysfunction.getEditor().getText().trim();
+        try {
+            diagnoses = diagnosticPortal.processDiagnosis(entry);
+            for (Diagnosis diagnosis:diagnoses) {
+                dysfunctions.add(diagnosis.getDysfunction());
+                maintenances.add(diagnosis.getMaintenance());
+            }
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        getInstance().factor_dysfunction.setItems(FXCollections.observableArrayList(dysfunctions));
+        getInstance().factor_maintenance.setItems(FXCollections.observableArrayList(maintenances));
     }
 
     public ReceptionController() {
@@ -1896,8 +1909,9 @@ public class ReceptionController implements Initializable
         this.receptionPortal = new ReceptionPortal();
         this.diagnosticPortal = new DiagnosticPortal();
         this.reportPortal = new ReportPortal();
-        maintenances = new HashSet<>();
+        diagnoses = new ArrayList<>();
         dysfunctions = new HashSet<>();
+        maintenances = new HashSet<>();
         rowNbr = new AtomicInteger(0);
     }
 
@@ -1970,8 +1984,9 @@ public class ReceptionController implements Initializable
         factor_maintenance.setItems(null);
         list_factor.clear();
         table_factor.setItems(null);
-        maintenances.clear();
+        diagnoses.clear();
         dysfunctions.clear();
+        maintenances.clear();
     }
 
     void reset_reception_form() {
@@ -2016,15 +2031,5 @@ public class ReceptionController implements Initializable
         }
         diagnostic_dossier.setItems(FXCollections.observableArrayList(this.allDossier));
         reception_dossier.setItems(FXCollections.observableArrayList(this.allDossier));
-    }
-
-    public static void addDysfunction(String dysfunction){
-        dysfunctions.add(dysfunction);
-        getInstance().factor_dysfunction.setItems(FXCollections.observableArrayList(dysfunctions));
-    }
-
-    public static void addMaintenance(String maintenance){
-        maintenances.add(maintenance);
-        getInstance().factor_maintenance.setItems(FXCollections.observableArrayList(maintenances));
     }
 }
