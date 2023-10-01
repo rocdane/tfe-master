@@ -14,7 +14,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.util.StringConverter;
+import startup.loga.client.app.api.DiagnosticPortal;
 import startup.loga.client.app.api.DossierPortal;
+import startup.loga.client.app.api.ReceptionPortal;
+import startup.loga.client.app.api.RepairPortal;
 import startup.loga.client.model.Diagnosis;
 import startup.loga.client.model.Dossier;
 import startup.loga.client.model.Reception;
@@ -29,6 +32,9 @@ import java.util.ResourceBundle;
 public class DossierController implements Initializable
 {
     final DossierPortal dossierPortal;
+    final DiagnosticPortal diagnosticPortal;
+    final RepairPortal repairPortal;
+    final ReceptionPortal receptionPortal;
 
     List<Dossier> allDossier;
 
@@ -155,19 +161,43 @@ public class DossierController implements Initializable
         unit.setText(dossier.getAutomobile().getUnit());
     }
 
-    void readReception(Dossier dossier) {
-        //List<Reception> receptions = dossier.getReceptions();
-        //table_reception.setItems(FXCollections.observableArrayList(receptions));
+    void readReception(String dossier) throws IOException, InterruptedException {
+        List<Reception> receptions = receptionPortal.read();
+        FilteredList<Reception> items = new FilteredList<>(FXCollections.observableArrayList(receptions));
+        items.setPredicate(item ->{
+            if(item.getDossier().equals(dossier))
+                return true;
+            else
+                return item.getDossier().contains(dossier);
+        });
+        SortedList<Reception> sorted = new SortedList<>(items);
+        table_reception.setItems(sorted);
     }
 
-    void readDiagnostic(Dossier dossier) {
-        //List<Diagnosis> diagnoses = dossier.getDiagnoses();
-        //table_diagnostic.setItems(FXCollections.observableArrayList(diagnoses));
+    void readDiagnostic(String dossier) throws IOException, InterruptedException {
+        List<Diagnosis> diagnoses = diagnosticPortal.read();
+        FilteredList<Diagnosis> items = new FilteredList<>(FXCollections.observableArrayList(diagnoses));
+        items.setPredicate(item ->{
+            if(item.getDossier().equals(dossier))
+                return true;
+            else
+                return item.getDossier().contains(dossier);
+        });
+        SortedList<Diagnosis> sorted = new SortedList<>(items);
+        table_diagnostic.setItems(sorted);
     }
 
-    void readReparation(Dossier dossier) {
-        //List<Repair> reparations = dossier.getRepairs();
-        //table_repair.setItems(FXCollections.observableArrayList(reparations));
+    void readReparation(String dossier) throws IOException, InterruptedException {
+        List<Repair> repairs = repairPortal.list();
+        FilteredList<Repair> items = new FilteredList<>(FXCollections.observableArrayList(repairs));
+        items.setPredicate(item ->{
+            if(item.getDossier().equals(dossier))
+                return true;
+            else
+                return item.getDossier().contains(dossier);
+        });
+        SortedList<Repair> sorted = new SortedList<>(items);
+        table_repair.setItems(sorted);
     }
 
     void readDossiers(){
@@ -181,6 +211,9 @@ public class DossierController implements Initializable
 
     public DossierController(){
         this.dossierPortal = new DossierPortal();
+        this.diagnosticPortal = new DiagnosticPortal();
+        this.repairPortal = new RepairPortal();
+        this.receptionPortal = new ReceptionPortal();
     }
     
     public void initialize(URL location, ResourceBundle resources) {
@@ -207,9 +240,13 @@ public class DossierController implements Initializable
             if (dossiers.getSelectionModel().getSelectedIndex() != -1) {
                 dossierCurrent = dossiers.getValue();
                 readInformation(dossierCurrent);
-                readReception(dossierCurrent);
-                readDiagnostic(dossierCurrent);
-                readReparation(dossierCurrent);
+                try {
+                    readReception(dossierCurrent.getReference());
+                    readDiagnostic(dossierCurrent.getReference());
+                    readReparation(dossierCurrent.getReference());
+                } catch (IOException | InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 

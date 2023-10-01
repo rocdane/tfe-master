@@ -32,6 +32,7 @@ public class ReceptionController implements Initializable
     private final DossierPortal dossierPortal;
     private final ReceptionPortal receptionPortal;
     private final DiagnosticPortal diagnosticPortal;
+    private final IntelligencePortal intelligencePortal;
     private final ReportPortal reportPortal;
     private List<Diagnosis> diagnoses;
     private Set<String> dysfunctions, maintenances;
@@ -515,7 +516,7 @@ public class ReceptionController implements Initializable
             startup.loga.client.model.Diagnosis diagnosis = new startup.loga.client.model.Diagnosis();
             diagnosis.setDescription(diagnostic_description.getText());
             diagnosis.setMileage(Integer.parseInt(diagnostic_mileage.getText().trim()));
-            diagnosis.setDossier(diagnostic_dossier.getValue());
+            diagnosis.setDossier(diagnostic_dossier.getValue().getReference());
 
             if(!diagnostic_profile.getText().isEmpty())
                 diagnosis.setProfile(diagnostic_profile.getText().trim());
@@ -703,7 +704,7 @@ public class ReceptionController implements Initializable
         newEtats.add(etat);
 
         Reception reception = new Reception();
-        //reception.setDossier(reception_dossier.getValue());
+        reception.setDossier(reception_dossier.getValue().getReference());
         reception.setNotices(newEtats);
 
         if(!etat8.getText().isEmpty())
@@ -731,7 +732,7 @@ public class ReceptionController implements Initializable
             if(AlertConfirm.getInstance().showAndWait().get().equals(ButtonType.OK)){
                 diagnostic_mileage.setText(String.valueOf(reception.getMileage()));
                 diagnostic_profile.setText(reception.getProfile());
-                diagnostic_dossier.setValue(reception.getDossier());
+                diagnostic_dossier.setValue(reception_dossier.getValue());
                 selectTab(2);
             }else {
                 //todo:Report.getInstance().createReport("/jrxml/reception.jrxml",(int)reception.getId());
@@ -1891,7 +1892,7 @@ public class ReceptionController implements Initializable
         maintenances.clear();
         String entry = factor_dysfunction.getEditor().getText().trim();
         try {
-            diagnoses = diagnosticPortal.processDiagnosis(entry);
+            diagnoses = intelligencePortal.processDiagnosis(entry);
             for (Diagnosis diagnosis:diagnoses) {
                 dysfunctions.add(diagnosis.getDysfunction());
                 maintenances.add(diagnosis.getMaintenance());
@@ -1908,6 +1909,7 @@ public class ReceptionController implements Initializable
         this.dossierPortal = new DossierPortal();
         this.receptionPortal = new ReceptionPortal();
         this.diagnosticPortal = new DiagnosticPortal();
+        this.intelligencePortal = new IntelligencePortal();
         this.reportPortal = new ReportPortal();
         diagnoses = new ArrayList<>();
         dysfunctions = new HashSet<>();

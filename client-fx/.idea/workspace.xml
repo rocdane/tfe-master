@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c8c6a4f-f30a-4310-8dde-920cd0febf4c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/app/api/JenaAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/src/main/java/com/loga/intelligentservice/app/api/JenaAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/app/api/JenaAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../intelligent-service/target/classes/com/loga/intelligentservice/app/api/JenaAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/../maintenance-service/src/main/java/com/loga/maintenanceservice/entity/Task.java" afterDir="false" />
-    </list>
+    <list default="true" id="3c8c6a4f-f30a-4310-8dde-920cd0febf4c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

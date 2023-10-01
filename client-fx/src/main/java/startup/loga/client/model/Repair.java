@@ -18,7 +18,7 @@ public class Repair implements Serializable
     private Double total;
     private String totalLetter;
     private Boolean billed;
-    private Dossier dossier;
+    private String dossier;
     private String profile;
     private List<Task> tasks = new ArrayList<>();
     private List<Spare> spares = new ArrayList<>();
@@ -107,11 +107,11 @@ public class Repair implements Serializable
         this.billed = billed;
     }
 
-    public Dossier getDossier() {
+    public String getDossier() {
         return dossier;
     }
 
-    public void setDossier(Dossier dossier) {
+    public void setDossier(String dossier) {
         this.dossier = dossier;
     }
 

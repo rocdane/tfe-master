@@ -316,7 +316,7 @@
                                                 <RowConstraints percentHeight="100.0" />
                                              </rowConstraints>
                                              <children>
-                                                <TextField fx:id="new_task_hourly" onKeyReleased="#new_temps" prefHeight="40.0" prefWidth="200.0" promptText="Temps d'exécution(minute)" GridPane.columnIndex="1">
+                                                <TextField fx:id="new_task_duration" onKeyReleased="#new_temps" prefHeight="40.0" prefWidth="200.0" promptText="Temps d'exécution(minute)" GridPane.columnIndex="1">
                                                    <GridPane.margin>
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </GridPane.margin>
@@ -353,7 +353,7 @@
                                                 <TableView fx:id="table_new_task" HBox.hgrow="SOMETIMES">
                                                    <columns>
                                                       <TableColumn fx:id="column_new_task_description" prefWidth="600.0" text="Description" />
-                                                      <TableColumn fx:id="column_new_task_hourly" maxWidth="2500.0" minWidth="0.0" prefWidth="150.0" text="Temps d'exécution (Minute)" />
+                                                      <TableColumn fx:id="column_new_task_duration" maxWidth="2500.0" minWidth="0.0" prefWidth="150.0" text="Temps d'exécution (Minute)" />
                                                       <TableColumn fx:id="column_new_task_cost" maxWidth="2500.0" prefWidth="150.0" text="Coût (F CFA)" />
                                                    </columns>
                                                    <columnResizePolicy>
@@ -655,7 +655,7 @@
                                                 <RowConstraints percentHeight="100.0" vgrow="SOMETIMES" />
                                              </rowConstraints>
                                              <children>
-                                                <TextField fx:id="edit_task_hourly" onKeyReleased="#ordre_temps" prefHeight="40.0" promptText="Temps d'exécution(Minute)" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                                                <TextField fx:id="edit_task_duration" onKeyReleased="#ordre_temps" prefHeight="40.0" promptText="Temps d'exécution(Minute)" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                                    <GridPane.margin>
                                                       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                    </GridPane.margin>
@@ -693,7 +693,7 @@
                                                    <columns>
                                                       <TableColumn fx:id="column_edit_task_id" prefWidth="75.0" text="Column X" visible="false" />
                                                       <TableColumn fx:id="column_edit_task_description" maxWidth="7500.0" prefWidth="497.0" text="Description" />
-                                                      <TableColumn fx:id="column_edit_task_hourly" maxWidth="2500.0" minWidth="0.0" prefWidth="150.0" text="Temps d'exécution (Minute)" />
+                                                      <TableColumn fx:id="column_edit_task_duration" maxWidth="2500.0" minWidth="0.0" prefWidth="150.0" text="Temps d'exécution (Minute)" />
                                                       <TableColumn fx:id="column_edit_task_cost" maxWidth="2500.0" prefWidth="150.0" text="Coût (F CFA)" />
                                                    </columns>
                                                    <columnResizePolicy>

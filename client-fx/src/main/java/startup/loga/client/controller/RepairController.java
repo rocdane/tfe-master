@@ -324,7 +324,7 @@ public class RepairController implements Initializable {
         } else {
             Repair repair = new Repair();
             repair.setApproved(false);
-            repair.setDossier(new_repair_dossier.getValue());
+            repair.setDossier(new_repair_dossier.getValue().getReference());
             repair.setDescription(new_repair_description.getText().trim());
             repair.setMileage(Integer.parseInt(new_repair_mileage.getText().trim()));
             repair.setProfile(new_repair_profile.getText().trim());
@@ -518,25 +518,6 @@ public class RepairController implements Initializable {
     }
 
     @FXML
-    void ordre_reparation(KeyEvent event){
-        ObservableList<String> results = FXCollections.observableArrayList();
-
-        List<Repair> reparations = null;//Todo:repairTaskService.listRepair(ordre_reparation.getEditor().getText());
-
-        for (Repair reparation:reparations) {
-            StringBuilder string = new StringBuilder();
-            string.append(reparation.getId());
-            string.append(" / ");
-            string.append(reparation.getDossier().getAutomobile().getNumber());
-            string.append(" / ");
-            string.append(reparation.getDossier().getReference());
-            string.append(" / ");
-            string.append(reparation.getCreatedAt());
-            results.add(string.toString());
-        }
-    }
-
-    @FXML
     void ordre_search_article(KeyEvent event) {
         FilteredList<Spare> items = new FilteredList<>(FXCollections.observableArrayList(spares));
         items.setPredicate(item ->{
@@ -610,10 +591,10 @@ public class RepairController implements Initializable {
         items.setPredicate(item ->{
             String lower = edit_repair.getEditor().getText().toLowerCase();
             String upper = edit_repair.getEditor().getText().toUpperCase();
-            if(item.getDossier().getAutomobile().getNumber().contains(lower))
+            if(item.getDossier().contains(lower))
                 return true;
             else
-                return item.getDossier().getAutomobile().getNumber().contains(upper);
+                return item.getDossier().contains(upper);
         });
         SortedList<Repair> sorted = new SortedList<>(items);
         edit_repair.setItems(sorted);
@@ -895,7 +876,7 @@ public class RepairController implements Initializable {
         column_repair_id.setCellValueFactory((TableColumn.CellDataFeatures<Repair, Long> r)->new ReadOnlyObjectWrapper<>(r.getValue().getId()));
         column_repair_date.setCellValueFactory((TableColumn.CellDataFeatures<Repair, String> r)->new ReadOnlyObjectWrapper<>(new SimpleDateFormat("dd/MM/yyyy").format(r.getValue().getCreatedAt())));
         column_repair_description.setCellValueFactory((TableColumn.CellDataFeatures<Repair, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getDescription()));
-        column_repair_dossier.setCellValueFactory((TableColumn.CellDataFeatures<Repair, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getDossier().getAutomobile().getNumber()));
+        column_repair_dossier.setCellValueFactory((TableColumn.CellDataFeatures<Repair, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getDossier()));
         column_repair_mileage.setCellValueFactory((TableColumn.CellDataFeatures<Repair, Integer> r)->new ReadOnlyObjectWrapper<>(r.getValue().getMileage()));
         column_repair_profile.setCellValueFactory((TableColumn.CellDataFeatures<Repair, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getProfile()));
 

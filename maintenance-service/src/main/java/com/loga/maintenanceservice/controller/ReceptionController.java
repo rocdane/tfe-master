@@ -1,6 +1,7 @@
 package com.loga.maintenanceservice.controller;
 
 import com.loga.maintenanceservice.app.api.ReportServiceProxy;
+import com.loga.maintenanceservice.entity.Diagnosis;
 import com.loga.maintenanceservice.entity.Reception;
 import com.loga.maintenanceservice.service.IReceptionService;
 import jakarta.servlet.http.HttpServletResponse;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -23,6 +26,11 @@ public class ReceptionController {
     @PostMapping(path = "/receptions", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Reception> create(@RequestBody Reception reception){
         return ResponseEntity.ok(repairReception.create(reception));
+    }
+
+    @GetMapping(path = "/receptions", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Reception> read() {
+        return repairReception.readAll();
     }
 
     @GetMapping(path = "/receptions/{id}", produces = MediaType.APPLICATION_JSON_VALUE)

@@ -66,7 +66,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextArea editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="N2A CONSULTING&#10;&#10;Contact : (229) 97947325&#10;&#10;Couriel : support@n2a-consulting.org&#10;&#10;Adresse : Cotonou, Littoral, Bénin" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <TextArea editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" text="N2A.CC&#10;&#10;Contact : (229) 97947325&#10;&#10;Courriel : support@n2a-cc.org&#10;&#10;Adresse : Cotonou, Littoral, Bénin" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>

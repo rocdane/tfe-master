@@ -13,7 +13,7 @@ public class Reception implements Serializable
     private String description;
     private List<Notice> notices = new ArrayList<>();
     private String profile;
-    private Dossier dossier;
+    private String dossier;
 
     public Reception() {
     }
@@ -66,11 +66,11 @@ public class Reception implements Serializable
         this.profile = profile;
     }
 
-    public Dossier getDossier() {
+    public String getDossier() {
         return dossier;
     }
 
-    public void setDossier(Dossier dossier) {
+    public void setDossier(String dossier) {
         this.dossier = dossier;
     }
 
