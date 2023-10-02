@@ -229,9 +229,9 @@ public class RepairController implements Initializable {
     void add_spare(ActionEvent event) {
         Spare fourniture = new Spare();
         fourniture.setDesignation(new_spare_designation.getEditor().getText().trim());
-        fourniture.setPrice(Integer.parseInt(new_spare_price.getText().trim()));
-        fourniture.setQuantity(Integer.parseInt(new_spare_quantity.getText()));
-        fourniture.setAmount(Integer.parseInt(new_spare_amount.getText()));
+        fourniture.setPrice(Integer.valueOf(new_spare_price.getText().trim()));
+        fourniture.setQuantity(Integer.valueOf(new_spare_quantity.getText().trim()));
+        fourniture.setAmount(Integer.valueOf(new_spare_amount.getText().trim()));
         this.temp_spares.add(fourniture);
         table_new_spare.setItems(FXCollections.observableArrayList(temp_spares));
         new_spare_designation.getEditor().setText("");
@@ -247,7 +247,6 @@ public class RepairController implements Initializable {
         fourniture.setPrice(Integer.parseInt(edit_spare_price.getText().trim()));
         fourniture.setAmount(Integer.parseInt(edit_spare_amount.getText().trim()));
         fourniture.setQuantity(Integer.parseInt(edit_spare_quantity.getText().trim()));
-        fourniture.setRepair(currentRepair);
 
         try {
             repairPortal.editSpare(fourniture,fourniture.getId());
@@ -294,8 +293,9 @@ public class RepairController implements Initializable {
     void apply_task(ActionEvent event) {
 
         Task sub = new Task();
+        sub.setDescription(edit_task_description.getEditor().getText().trim());
+        sub.setCost(Integer.valueOf(edit_task_cost.getText().trim()));
         sub.setDuration(Integer.parseInt(edit_task_duration.getText().trim()));
-        sub.setRepair(currentRepair);
 
         try {
             repairPortal.editTask(sub,table_edit_task.getSelectionModel().getSelectedItem().getId());
@@ -328,6 +328,8 @@ public class RepairController implements Initializable {
             repair.setDescription(new_repair_description.getText().trim());
             repair.setMileage(Integer.parseInt(new_repair_mileage.getText().trim()));
             repair.setProfile(new_repair_profile.getText().trim());
+            repair.setSpares(this.temp_spares);
+            repair.setTasks(this.temp_tasks);
 
             try {
                 repairPortal.create(repair);
@@ -353,6 +355,8 @@ public class RepairController implements Initializable {
     @FXML
     void add_task(ActionEvent event) {
         Task tache = new Task();
+        tache.setDescription(new_task_description.getEditor().getText().trim());
+        tache.setCost(Integer.valueOf(new_task_cost.getText().trim()));
         tache.setDuration(Integer.parseInt(new_task_duration.getText()));
         this.temp_tasks.add(tache);
         table_new_task.setItems(FXCollections.observableArrayList(temp_tasks));
@@ -438,21 +442,21 @@ public class RepairController implements Initializable {
     @FXML
     void new_montant(KeyEvent event) {
         if(!new_spare_quantity.getText().isEmpty())
-            new_spare_price.setText(String.valueOf(Double.parseDouble(new_spare_amount.getText().trim()) / Integer.parseInt(new_spare_quantity.getText().trim())));
+            new_spare_price.setText(String.valueOf(Integer.parseInt(new_spare_amount.getText().trim()) / Integer.parseInt(new_spare_quantity.getText().trim())));
     }
 
     @FXML
     void new_prix(KeyEvent event) {
         if(!new_spare_quantity.getText().isEmpty())
-            new_spare_amount.setText(String.valueOf(Integer.parseInt(new_spare_quantity.getText().trim()) * Double.parseDouble(new_spare_price.getText().trim())));
+            new_spare_amount.setText(String.valueOf(Integer.parseInt(new_spare_quantity.getText().trim()) * Integer.parseInt(new_spare_price.getText().trim())));
     }
 
     @FXML
     void new_quantite(KeyEvent event) {
         if(!new_spare_price.getText().isEmpty()) {
-            new_spare_amount.setText(String.valueOf(Integer.parseInt(new_spare_quantity.getText().trim()) * Double.parseDouble(new_spare_price.getText().trim())));
+            new_spare_amount.setText(String.valueOf(Integer.parseInt(new_spare_quantity.getText().trim()) * Integer.parseInt(new_spare_price.getText().trim())));
         }else if(!new_spare_amount.getText().isEmpty()){
-            new_spare_price.setText(String.valueOf(Double.parseDouble(new_spare_amount.getText().trim()) / Integer.parseInt(new_spare_quantity.getText().trim())));
+            new_spare_price.setText(String.valueOf(Integer.parseInt(new_spare_amount.getText().trim()) / Integer.parseInt(new_spare_quantity.getText().trim())));
         }
     }
 
@@ -499,21 +503,21 @@ public class RepairController implements Initializable {
     @FXML
     void ordre_montant(KeyEvent event) {
         if(!edit_spare_quantity.getText().isEmpty())
-            edit_spare_price.setText(String.valueOf(Double.parseDouble(edit_spare_amount.getText().trim()) / Integer.parseInt(edit_spare_quantity.getText().trim())));
+            edit_spare_price.setText(String.valueOf(Integer.parseInt(edit_spare_amount.getText().trim()) / Integer.parseInt(edit_spare_quantity.getText().trim())));
     }
 
     @FXML
     void ordre_prix(KeyEvent event) {
         if(!edit_spare_quantity.getText().isEmpty())
-            edit_spare_amount.setText(String.valueOf(Integer.parseInt(edit_spare_quantity.getText().trim()) * Double.parseDouble(edit_spare_price.getText().trim())));
+            edit_spare_amount.setText(String.valueOf(Integer.parseInt(edit_spare_quantity.getText().trim()) * Integer.parseInt(edit_spare_price.getText().trim())));
     }
 
     @FXML
     void ordre_quantite(KeyEvent event) {
         if(!edit_spare_price.getText().isEmpty()) {
-            edit_spare_amount.setText(String.valueOf(Integer.parseInt(edit_spare_quantity.getText().trim()) * Double.parseDouble(edit_spare_price.getText().trim())));
+            edit_spare_amount.setText(String.valueOf(Integer.parseInt(edit_spare_quantity.getText().trim()) * Integer.parseInt(edit_spare_price.getText().trim())));
         }else if(!edit_spare_amount.getText().isEmpty()){
-            edit_spare_price.setText(String.valueOf(Double.parseDouble(edit_spare_amount.getText().trim()) / Integer.parseInt(edit_spare_quantity.getText().trim())));
+            edit_spare_price.setText(String.valueOf(Integer.parseInt(edit_spare_amount.getText().trim()) / Integer.parseInt(edit_spare_quantity.getText().trim())));
         }
     }
 
@@ -711,7 +715,7 @@ public class RepairController implements Initializable {
             throw new RuntimeException(e);
         }
         show_reparation(this.allRepairs);
-        edit_repair.setItems(FXCollections.observableArrayList(allRepairs));
+        edit_repair.setItems(FXCollections.observableArrayList(this.allRepairs));
     }
 
     void read_ordered_reparation(){
@@ -769,7 +773,7 @@ public class RepairController implements Initializable {
 
     void read_ordre_reparation_fourniture(Repair repair){
         table_edit_spare.setItems(FXCollections.observableArrayList(repair.getSpares()));
-        this.totalSpare = 0.0;
+        this.totalSpare = 0;
         for (Spare fourniture : repair.getSpares()) {
             this.totalSpare += fourniture.getAmount();
         }
@@ -856,8 +860,8 @@ public class RepairController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         this.temp_spares = FXCollections.observableArrayList();
         this.temp_tasks = FXCollections.observableArrayList();
-        this.totalSpare = 0.0;
-        this.totalTask = 0.0;
+        this.totalSpare = 0;
+        this.totalTask = 0;
 
         read_dossier();
 

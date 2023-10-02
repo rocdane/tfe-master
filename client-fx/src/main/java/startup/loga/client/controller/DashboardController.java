@@ -14,11 +14,13 @@ import startup.loga.client.view.Popup;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable{
 
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     private final MonitoringPortal monitoringPortal;
 
     private Dashboard dashboard;
@@ -35,27 +37,9 @@ public class DashboardController implements Initializable{
     @FXML
     private Text count_spare;
 
-    @FXML
-    private Text count_article;
-
-    @FXML
-    private Text count_commande;
-
-    @FXML
-    private Text count_vente;
-
-    @FXML
-    private Text count_versement;
-
-    @FXML
-    private Text count_salaire;
-
-    @FXML
-    private Text count_depense;
-
     @Getter
     @FXML
-    private BarChart<Date, Integer> chart_reparation;
+    private AreaChart<String, Integer> chart_reparation;
 
     @FXML
     private CategoryAxis chart_reparation_x;
@@ -63,47 +47,8 @@ public class DashboardController implements Initializable{
     @FXML
     private NumberAxis chart_reparation_y;
 
-    @Getter
-    @FXML
-    private BarChart<Date, Integer> chart_vente;
-
-    @FXML
-    private CategoryAxis chart_vente_x;
-
-    @FXML
-    private NumberAxis chart_vente_y;
-
-    @FXML
-    private AreaChart<String, Double> chart_cashflow;
-
-    @FXML
-    private CategoryAxis chart_cashflow_x;
-
-    @FXML
-    private NumberAxis chart_cashflow_y;
-
     public DashboardController() {
         this.monitoringPortal = new MonitoringPortal();
-    }
-
-    public void setCount_profil(Text count_dossier) {
-        this.count_dossier=count_dossier;
-    }
-
-    public void setCount_dossier(Text count_dossier) {
-        this.count_dossier = count_dossier;
-    }
-
-    public void setCount_diagnosis(Text count_diagnosis) {
-        this.count_diagnosis = count_diagnosis;
-    }
-
-    public void setCount_repair(Text count_repair) {
-        this.count_repair = count_repair;
-    }
-
-    public void setCount_article(Text count_article) {
-        this.count_article=count_article;
     }
 
     public void loadDashboard(){
@@ -126,18 +71,18 @@ public class DashboardController implements Initializable{
 
     public void processReparationParPeriode(){
 
-        XYChart.Series<Date,Integer> tacheParPeriode = new XYChart.Series<>();
+        XYChart.Series<String,Integer> tacheParPeriode = new XYChart.Series<>();
         tacheParPeriode.setName("Prestations");
 
-        for (Tasks tasks:dashboard.getTasks()){
-            tacheParPeriode.getData().add(new XYChart.Data<>(tasks.getPeriod(), tasks.getAmount()));
-        }
-
-        XYChart.Series<Date,Integer> fournitureParPeriode = new XYChart.Series<>();
+        XYChart.Series<String,Integer> fournitureParPeriode = new XYChart.Series<>();
         fournitureParPeriode.setName("Fournitures");
 
         for (Spares spares:dashboard.getSpares()){
-            fournitureParPeriode.getData().add(new XYChart.Data<>(spares.getPeriod(),spares.getAmount()));
+            fournitureParPeriode.getData().add(new XYChart.Data<>(sdf.format(spares.getPeriod()),spares.getAmount()));
+        }
+
+        for (Tasks tasks:dashboard.getTasks()){
+            tacheParPeriode.getData().add(new XYChart.Data<>(sdf.format(tasks.getPeriod()), tasks.getAmount()));
         }
 
         getChart_reparation().getData().add(fournitureParPeriode);

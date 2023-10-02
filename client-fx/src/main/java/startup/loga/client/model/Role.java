@@ -5,19 +5,19 @@ public enum Role {
     ADMINISTRATOR {
         @Override
         public String getRole() {
-            return "ADMINISTRATEUR";
+            return "ADMIN";
         }
     },
     SUPERVISOR {
         @Override
         public String getRole() {
-            return "SUPERVISEUR";
+            return "SUPER";
         }
     },
-    MEMBER {
+    USER {
         @Override
         public String getRole() {
-            return "MEMBRE";
+            return "USER";
         }
     };
 

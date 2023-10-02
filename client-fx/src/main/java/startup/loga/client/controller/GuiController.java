@@ -46,7 +46,7 @@ public class GuiController implements Initializable
 
     @FXML
     void menu_admin(ActionEvent event) {
-        if("ADMINISTRATEUR".equals(session.getUser().getRole())){
+        if("ADMIN".equals(session.getUser().getRole())){
             View.scene(FxmlView.ADMIN);
         }else{
             AlertError.getInstance().setContentText("Violation d'accès !!!");
@@ -71,7 +71,7 @@ public class GuiController implements Initializable
     
     @FXML
     void menu_reparation(ActionEvent event) {
-        if ("UTILISATEUR".equals(session.getUser().getRole())) {
+        if ("USER".equals(session.getUser().getRole())) {
             AlertError.getInstance().setContentText("Violation d'accès !!!");
             AlertError.getInstance().showAndWait();
         } else {
@@ -91,7 +91,7 @@ public class GuiController implements Initializable
     
     @FXML
     void versReparation(ActionEvent event) {
-        if ("UTILISATEUR".equals(session.getUser().getRole())) {
+        if ("USER".equals(session.getUser().getRole())) {
             AlertError.getInstance().setContentText("Violation d'accès !!!");
             AlertError.getInstance().showAndWait();
         } else {
@@ -111,7 +111,7 @@ public class GuiController implements Initializable
     
     @FXML
     void versDossier(ActionEvent event) {
-        if("UTILISATEUR".equals(session.getUser().getRole())){
+        if("USER".equals(session.getUser().getRole())){
             AlertError.getInstance().setContentText("Violation d'accès !!!");
             AlertError.getInstance().showAndWait();
         }else {

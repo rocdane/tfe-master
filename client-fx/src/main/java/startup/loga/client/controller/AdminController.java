@@ -2,6 +2,7 @@ package startup.loga.client.controller;
 
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.concurrent.Task;
 import javafx.concurrent.Worker;
 import javafx.event.ActionEvent;
@@ -9,16 +10,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import startup.loga.client.app.api.AuthPortal;
 import startup.loga.client.model.*;
 import startup.loga.client.view.AlertError;
 import startup.loga.client.view.AlertInfo;
 import startup.loga.client.view.Popup;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AdminController implements Initializable
 {
+    private AuthPortal authPortal;
     @FXML
     private AnchorPane content;
 
@@ -59,8 +63,7 @@ public class AdminController implements Initializable
     @FXML
     void delete(ActionEvent event) {
         try {
-            //TODO: delete user from controller
-            // Manage.getInstance().supprimerUtilisateur(table_users.getSelectionModel().getSelectedItem());
+            authPortal.archive(table_users.getSelectionModel().getSelectedItem().getId());
             AlertInfo.getInstance().setHeaderText("Succès d'archivage !!!");
             AlertInfo.getInstance().setContentText("Utilisateur supprimé avec succès.");
             AlertInfo.getInstance().show();
@@ -106,10 +109,15 @@ public class AdminController implements Initializable
     }
 
     public AdminController() {
+        this.authPortal = new AuthPortal();
     }
 
     public void read() {
-        //todo:table_users.setItems(FXCollections.observableArrayList(Manage.getInstance().listerUtilisateur()));
+        try {
+            table_users.setItems(FXCollections.observableArrayList(authPortal.list()));
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void refresh(){
@@ -143,7 +151,7 @@ public class AdminController implements Initializable
         t_id.setCellValueFactory((TableColumn.CellDataFeatures<User, Long> r)->new ReadOnlyObjectWrapper<>(r.getValue().getId()));
         t_username.setCellValueFactory((TableColumn.CellDataFeatures<User, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getUsername()));
         t_password.setCellValueFactory((TableColumn.CellDataFeatures<User, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getPassword()));
-        t_role.setCellValueFactory((TableColumn.CellDataFeatures<User, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getRole().name()));
+        t_role.setCellValueFactory((TableColumn.CellDataFeatures<User, String> r)->new ReadOnlyObjectWrapper<>(r.getValue().getRole()));
 
         refresh();
     }

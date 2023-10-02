@@ -9,7 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c8c6a4f-f30a-4310-8dde-920cd0febf4c" name="Changes" comment="" />
+    <list default="true" id="3c8c6a4f-f30a-4310-8dde-920cd0febf4c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../authentication-service/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/src/main/java/com/loga/authenticationservice/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/src/main/java/com/loga/authenticationservice/controller/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/src/main/java/com/loga/authenticationservice/vendor/config/Loader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/src/main/java/com/loga/authenticationservice/vendor/config/Loader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/authentication-service-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/target/authentication-service-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/authentication-service-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/target/authentication-service-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/authenticationservice/controller/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/authenticationservice/controller/AuthenticationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/authenticationservice/vendor/config/Loader.class" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/target/classes/com/loga/authenticationservice/vendor/config/Loader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../authentication-service/target/surefire-reports/TEST-com.loga.authenticationservice.AuthenticationServiceTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../authentication-service/target/surefire-reports/TEST-com.loga.authenticationservice.AuthenticationServiceTests.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

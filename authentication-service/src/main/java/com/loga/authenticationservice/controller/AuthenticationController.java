@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/authentication-service")
@@ -39,13 +41,23 @@ public class AuthenticationController {
         authentication.updateUser(user,id);
     }
 
+    @GetMapping(path = "/session/{token}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public AuthSession checkSession(@PathVariable String token){
+        return authentication.check(token);
+    }
+
     @PostMapping(path = "/logout/{token}")
     public void logout(@PathVariable String token){
         authentication.logout(token);
     }
 
-    @GetMapping(path = "/session/{token}",produces = MediaType.APPLICATION_JSON_VALUE)
-    public AuthSession checkSession(@PathVariable String token){
-        return authentication.check(token);
+    @DeleteMapping(path = "/users/{id}")
+    public void delete(@PathVariable Long id){
+        authentication.deleteUser(id);
+    }
+
+    @GetMapping(path = "/users",produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<User> list() {
+        return authentication.allUser();
     }
 }

@@ -17,13 +17,16 @@ public class Loader {
     IAuthenticate authentication;
     @Bean
     CommandLineRunner init() {
-        if(authentication.find(new User("admin","secret"))!=null)
+        User user = new User("admin","secret");
+        user.setRole("ADMIN");
+        user.setActive(true);
+        if(authentication.find(user)!=null)
             return args -> {
                 log.info("Preloading !!!");
             };
         else
             return args -> {
-                log.info("Preloading " + authentication.signUp(new User("admin","secret")));
+                log.info("Preloading " + authentication.signUp(user));
             };
     }
 }
